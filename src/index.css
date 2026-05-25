@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "./styles/tokens.css";
+@import "./styles/globals.css";
+
+/* Fonts */
+@import "@fontsource-variable/plus-jakarta-sans/wght-italic.css";
+@import "@fontsource-variable/cormorant-garamond/wght-italic.css";
+@import "@fontsource-variable/jetbrains-mono/wght-italic.css";

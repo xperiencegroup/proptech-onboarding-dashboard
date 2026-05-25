@@ -1,0 +1,47 @@
+:root {
+  /* Dashboard XP */
+  --xp-yellow: #fbcb22;
+  --xp-yellow-glow: rgba(251, 203, 34, 0.18);
+  --xp-yellow-soft: rgba(251, 203, 34, 0.08);
+  --xp-black: #000000;
+
+  --bg-deep: #0a0b0d;
+  --bg-panel: #111317;
+  --bg-panel-2: #15181d;
+  --bg-panel-3: #1b1f26;
+  --bg-line: rgba(255, 255, 255, 0.06);
+  --bg-line-strong: rgba(255, 255, 255, 0.12);
+  --bg-line-yellow: rgba(251, 203, 34, 0.25);
+
+  --text: #eceef2;
+  --text-mid: #9aa1ae;
+  --text-dim: #5c6370;
+  --text-low: #3d434c;
+
+  --status-hot: #ff6b47;
+  --status-hot-bg: rgba(255, 107, 71, 0.12);
+  --status-warm: #fbcb22;
+  --status-warm-bg: rgba(251, 203, 34, 0.12);
+  --status-cool: #5bb3f0;
+  --status-cool-bg: rgba(91, 179, 240, 0.12);
+  --status-cold: #6b7280;
+  --status-cold-bg: rgba(107, 114, 128, 0.12);
+  --status-won: #3dd68c;
+  --status-won-bg: rgba(61, 214, 140, 0.12);
+
+  --cream: #f5efe6;
+  --cream-soft: rgba(245, 239, 230, 0.92);
+
+  /* Home */
+  --aluna-green: #b8d99c;
+  --aluna-green-deep: #8bb56b;
+  --aluna-green-dark: #5a7d3f;
+  --aluna-cream: #f5efe1;
+  --aluna-cream-soft: #faf6ec;
+  --aluna-stone: #2d2d2d;
+  --aluna-stone-soft: #4a4a4a;
+  --aluna-terracotta: #d9876e;
+  --aluna-line: rgba(45, 45, 45, 0.12);
+  --aluna-shadow: 0 8px 32px rgba(45, 45, 45, 0.18);
+  --aluna-shadow-soft: 0 4px 16px rgba(45, 45, 45, 0.08);
+}

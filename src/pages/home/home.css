@@ -1,0 +1,157 @@
+.face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+.face-front {
+  background: #ffffff;
+  padding: 18px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.face-front-frame {
+  position: absolute;
+  inset: 18px;
+  overflow: hidden;
+  background: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+.aluna-welcome {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  background: var(--aluna-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  transition:
+    opacity 0.5s,
+    visibility 0.5s;
+}
+.aluna-welcome.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.aluna-welcome-logo {
+  font-family: "Plus Jakarta Sans Variable", sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--aluna-stone);
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.aluna-welcome-sub {
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: var(--aluna-stone-soft);
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+.aluna-welcome-title {
+  font-family: "Cormorant Garamond Variable", serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--aluna-stone);
+  line-height: 1.2;
+  max-width: 600px;
+  margin-bottom: 14px;
+}
+.aluna-welcome-text {
+  font-size: 14px;
+  color: var(--aluna-stone-soft);
+  max-width: 520px;
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+.aluna-welcome-cta {
+  background: var(--aluna-stone);
+  color: var(--aluna-cream);
+  border: none;
+  border-radius: 999px;
+  padding: 11px 24px;
+  font-family: "Plus Jakarta Sans Variable", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+.aluna-welcome-cta svg {
+  width: 12px;
+  height: 12px;
+}
+.aluna-welcome-cta:hover {
+  background: var(--aluna-green-dark);
+  transform: translateY(-2px);
+}
+.aluna-welcome-corner {
+  position: absolute;
+  bottom: 22px;
+  right: 28px;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: var(--aluna-stone-soft);
+  text-align: right;
+}
+.aluna-welcome-corner strong {
+  display: block;
+  font-weight: 700;
+  color: var(--aluna-stone);
+  margin-top: 2px;
+}
+.aluna-welcome-stamp {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  font-size: 9px;
+  letter-spacing: 0.3em;
+  color: var(--aluna-stone-soft);
+}
+.aluna-welcome-logo-wrap {
+  text-align: center;
+  margin-bottom: 32px;
+  position: relative;
+  padding: 14px 24px;
+  border: 1.5px dashed rgba(45, 45, 45, 0.18);
+  border-radius: 16px;
+  transition: all 0.2s;
+}
+.aluna-welcome-logo-wrap:hover {
+  border-color: rgba(45, 45, 45, 0.4);
+  background: rgba(255, 255, 255, 0.35);
+}
+.aluna-welcome-logo-wrap .aluna-welcome-logo {
+  margin-bottom: 4px;
+}
+.aluna-welcome-logo-wrap .aluna-welcome-sub {
+  margin-bottom: 0;
+}
+.aluna-welcome-logo-hint {
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  background: var(--aluna-stone);
+  color: var(--aluna-cream);
+  font-family: "JetBrains Mono Variable", monospace;
+  font-size: 9px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.aluna-welcome-logo-wrap:hover .aluna-welcome-logo-hint {
+  opacity: 1;
+}
