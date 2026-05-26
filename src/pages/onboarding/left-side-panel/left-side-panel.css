@@ -1,0 +1,113 @@
+/* Side panel (izquierdo, branding + contexto) */
+.aluna-ob-side {
+  width: 38%;
+  min-width: 280px;
+  background: linear-gradient(
+    155deg,
+    var(--aluna-green) 0%,
+    var(--aluna-cream) 100%
+  );
+  padding: 44px 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+/* Decorative shape on side */
+.aluna-ob-side::before {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4),
+    transparent 70%
+  );
+}
+.aluna-ob-side::after {
+  content: "";
+  position: absolute;
+  left: -120px;
+  bottom: -120px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 45, 45, 0.05), transparent 60%);
+}
+.aluna-ob-side-top {
+  position: relative;
+  z-index: 2;
+}
+.aluna-ob-side-logo {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--aluna-stone);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.aluna-ob-side-logo-sub {
+  font-size: 9px;
+  letter-spacing: 0.36em;
+  color: var(--aluna-stone-soft);
+  font-weight: 700;
+  margin-top: 3px;
+}
+.aluna-ob-side-mid {
+  position: relative;
+  z-index: 2;
+}
+.aluna-ob-side-eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--aluna-stone-soft);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.aluna-ob-side-eyebrow::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: var(--aluna-stone-soft);
+}
+.aluna-ob-side-quote {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--aluna-stone);
+  font-weight: 500;
+  max-width: 340px;
+}
+.aluna-ob-side-quote em {
+  font-style: italic;
+  color: var(--aluna-green-dark);
+}
+.aluna-ob-side-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--aluna-stone-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.aluna-ob-side-bottom strong {
+  display: block;
+  color: var(--aluna-stone);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  margin-top: 3px;
+}

@@ -1,0 +1,9 @@
+.aluna-onboarding {
+  position: absolute;
+  inset: 0;
+  z-index: 70;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}

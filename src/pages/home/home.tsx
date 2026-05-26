@@ -1,6 +1,7 @@
+import { useNavigate } from "react-router-dom";
+import OverlayShadow from "../../components/overlays/overlay-shadow";
 import React from "react";
 import "./home.css";
-import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ export default function Home() {
 
   return (
     <div className="face face-front">
+      <OverlayShadow />
       <div className="face-front-frame">
         <div className="aluna-welcome" id="alunaWelcome">
           <div className="aluna-welcome-stamp">ALUNA RESIDENCIAL · 2026</div>

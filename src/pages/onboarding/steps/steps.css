@@ -1,0 +1,344 @@
+.aluna-ob-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 540px;
+}
+
+.aluna-ob-question {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--aluna-stone);
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.aluna-ob-helper {
+  font-size: 13px;
+  color: var(--aluna-stone-soft);
+  margin-bottom: 26px;
+  line-height: 1.55;
+  max-width: 440px;
+}
+
+.aluna-ob-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 16px;
+  margin-bottom: 16px;
+}
+.aluna-ob-row .aluna-ob-field.full {
+  grid-column: 1 / -1;
+}
+.aluna-ob-field {
+  display: flex;
+  flex-direction: column;
+}
+.aluna-ob-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--aluna-stone);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+.aluna-ob-label .req {
+  color: var(--aluna-terracotta);
+}
+.aluna-ob-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1.5px solid var(--aluna-line);
+  border-radius: 0;
+  padding: 9px 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  color: var(--aluna-stone);
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.aluna-ob-input:focus {
+  outline: none;
+  border-bottom-color: var(--aluna-green-deep);
+}
+.aluna-ob-input::placeholder {
+  color: var(--aluna-stone-soft);
+  opacity: 0.45;
+}
+
+.aluna-ob-block-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--aluna-stone);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+  margin-top: 4px;
+}
+.aluna-ob-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.aluna-ob-chip {
+  border: 1.5px solid var(--aluna-line);
+  background: #fff;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--aluna-stone);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.aluna-ob-chip:hover {
+  border-color: var(--aluna-green-deep);
+}
+.aluna-ob-chip.active {
+  background: var(--aluna-green);
+  border-color: var(--aluna-green-deep);
+  color: var(--aluna-stone);
+}
+
+/* Bottom actions: alineados a la derecha (no flex:1) */
+.aluna-ob-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+  justify-content: flex-end;
+  align-items: center;
+}
+.aluna-ob-btn {
+  background: var(--aluna-stone);
+  color: var(--aluna-cream);
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-transform: uppercase;
+}
+.aluna-ob-btn:hover {
+  background: var(--aluna-green-dark);
+  transform: translateY(-1px);
+}
+.aluna-ob-btn svg {
+  width: 12px;
+  height: 12px;
+}
+.aluna-ob-btn.secondary {
+  background: transparent;
+  color: var(--aluna-stone-soft);
+  padding: 10px 14px;
+}
+.aluna-ob-btn.secondary:hover {
+  color: var(--aluna-stone);
+  background: transparent;
+  transform: none;
+}
+.aluna-ob-btn.link {
+  background: transparent;
+  color: var(--aluna-stone-soft);
+  padding: 8px 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+.aluna-ob-btn.link:hover {
+  color: var(--aluna-stone);
+  background: transparent;
+  transform: none;
+}
+
+/* Branch step (alternative center layout) */
+.aluna-ob-branch {
+  text-align: left;
+}
+.aluna-ob-branch-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--aluna-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  font-size: 22px;
+  color: var(--aluna-stone);
+}
+.aluna-ob-perks {
+  margin: 20px 0 12px;
+  background: var(--aluna-cream-soft);
+  border-radius: 14px;
+  padding: 18px 22px;
+  max-width: 460px;
+}
+.aluna-ob-perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 13px;
+  color: var(--aluna-stone);
+  margin-bottom: 11px;
+  line-height: 1.45;
+}
+.aluna-ob-perk:last-child {
+  margin-bottom: 0;
+}
+.aluna-ob-perk-check {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  background: var(--aluna-green-deep);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+/* Final step */
+.aluna-ob-final {
+  text-align: left;
+  max-width: 480px;
+}
+.aluna-ob-final-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--aluna-green);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+.aluna-ob-final-hello {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--aluna-stone-soft);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.aluna-ob-final-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--aluna-stone);
+  line-height: 1.1;
+  margin-bottom: 22px;
+}
+.aluna-ob-final-folio {
+  display: inline-flex;
+  flex-direction: column;
+  background: var(--aluna-cream-soft);
+  border: 1.5px dashed var(--aluna-green-deep);
+  border-radius: 12px;
+  padding: 12px 22px;
+  margin-bottom: 22px;
+}
+.aluna-ob-final-folio-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--aluna-stone-soft);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.aluna-ob-final-folio-code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--aluna-stone);
+  letter-spacing: 0.04em;
+}
+.aluna-ob-final-text {
+  font-size: 13px;
+  color: var(--aluna-stone-soft);
+  line-height: 1.6;
+  margin-bottom: 22px;
+  max-width: 440px;
+}
+.aluna-ob-channels {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+.aluna-ob-channel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--aluna-green-dark);
+  background: rgba(184, 217, 156, 0.22);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.aluna-ob-channel svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* Step content base */
+.aluna-ob-step-content {
+  animation: obStepIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes obStepIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive: stack vertically on narrow widths */
+@media (max-width: 880px) {
+  .aluna-onboarding {
+    flex-direction: column;
+  }
+  .aluna-ob-side {
+    width: 100%;
+    min-height: 140px;
+    padding: 24px 28px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .aluna-ob-side-mid {
+    display: none;
+  }
+  .aluna-ob-side-bottom {
+    display: none;
+  }
+  .aluna-ob-pane {
+    padding: 28px 24px;
+  }
+  .aluna-ob-question {
+    font-size: 26px;
+  }
+  .aluna-ob-row {
+    grid-template-columns: 1fr;
+  }
+}

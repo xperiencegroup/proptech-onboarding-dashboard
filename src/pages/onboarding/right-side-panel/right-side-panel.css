@@ -1,0 +1,55 @@
+/* Right pane (formulario) */
+.aluna-ob-pane {
+  flex: 1;
+  background: #fff;
+  padding: 40px 56px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.aluna-ob-pane-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+}
+.aluna-ob-progress-wrap {
+  flex: 1;
+  max-width: 280px;
+}
+.aluna-ob-progress {
+  height: 3px;
+  background: var(--aluna-line);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.aluna-ob-progress-fill {
+  height: 100%;
+  background: var(--aluna-green-deep);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 25%;
+}
+.aluna-ob-step-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--aluna-stone-soft);
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+.aluna-ob-powered {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--aluna-stone-soft);
+  text-align: right;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.aluna-ob-powered strong {
+  display: block;
+  color: var(--aluna-stone);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
