@@ -29,6 +29,7 @@ export default function Step4() {
     (state) => state.finishOnboarding,
   );
 
+  const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, boolean>>({});
 
   const triggerShake = (keys: string[]) => {
@@ -41,7 +42,7 @@ export default function Step4() {
     }, 40);
   };
 
-  const handleClickContinue = () => {
+  const handleClickContinue = async () => {
     const missing: string[] = [];
     if (!presupuesto) missing.push("presupuesto");
     if (!subsidio) missing.push("subsidio");
@@ -52,7 +53,9 @@ export default function Step4() {
       return;
     }
 
-    finishOnboarding();
+    setIsLoading(true);
+    await finishOnboarding();
+    setIsLoading(false);
   };
 
   return (
@@ -130,18 +133,20 @@ export default function Step4() {
           ← Atrás
         </button>
         <button className="aluna-ob-btn" onClick={handleClickContinue}>
-          Iniciar experiencia
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            viewBox="0 0 24 24"
-          >
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
+          {isLoading ? "Guardando..." : "Iniciar experiencia"}
+          {isLoading && (
+            <svg
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          )}
         </button>
       </div>
     </div>
