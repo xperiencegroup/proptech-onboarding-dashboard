@@ -10,7 +10,7 @@ export const step1Schema = z.object({
 
   phone: z
     .string()
-    .min(8, "Teléfono muy corto")
+    .min(6, "Teléfono muy corto")
     .max(20, "Teléfono muy largo")
     .regex(/^[\d\s+\-()]+$/, "Formato inválido"),
 

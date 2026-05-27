@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useOnboardingStore } from "../../../store/formulario/useOnboardingStore";
-import { step1Schema, type Step1Data } from "../../../schemas/onboradingSchema";
+import { step1Schema, type Step1Data } from "../../../schemas/onboardingSchema";
 
 export default function Step1() {
   const setField = useOnboardingStore((state) => state.setField);
