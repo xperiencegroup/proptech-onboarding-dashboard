@@ -23,11 +23,11 @@ export default function Step1() {
     },
   });
 
-  const onSubmit = (data: Step1Data) => {
+  const onSubmit = async (data: Step1Data) => {
     setField("name", data.name);
     setField("phone", data.phone);
     setField("email", data.email);
-    finishStep1(); // crea el lead en BD y avanza al step 2
+    await finishStep1(); // crea el lead en BD y avanza al step 2
   };
 
   return (
