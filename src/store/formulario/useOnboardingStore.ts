@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
+import { API_ROUTES } from "../../config/api";
 
 // Separar los datos del lead en su propio tipo
 type LeadData = {
@@ -57,9 +58,9 @@ export const useOnboardingStore = create<OnboardingState>()(
 
     // Step 1 — crear lead en BD con datos mínimos
     finishStep1: async () => {
-      const { name, phone, email } = get();
+      const { name, email } = get();
       const num = Math.floor(Math.random() * 9000 + 1000);
-      const folio = `AR-2026-${num}`;
+      const folio = `PT-2026-${num}`;
 
       try {
         // await api.post('/leads', { name, phone, email, folio });
@@ -85,6 +86,19 @@ export const useOnboardingStore = create<OnboardingState>()(
     finishOnboarding: async ({ skipped = false } = {}) => {
       const state = get();
       if (!state.lead?.lead_id) return;
+
+      // Send Email
+      await fetch(API_ROUTES.leads.email, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: state.name,
+          email: state.email,
+          folio: state.lead.folio,
+        }),
+      });
 
       try {
         // await api.patch(`/leads/${state.lead.lead_id}`, {
