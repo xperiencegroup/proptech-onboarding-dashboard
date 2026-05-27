@@ -58,27 +58,51 @@ export const useOnboardingStore = create<OnboardingState>()(
 
     // Step 1 — crear lead en BD con datos mínimos
     finishStep1: async () => {
-      const { name, email } = get();
-      const num = Math.floor(Math.random() * 9000 + 1000);
-      const folio = `PT-2026-${num}`;
+      const { name, phone, email, lead } = get();
 
-      try {
-        // await api.post('/leads', { name, phone, email, folio });
-        // const { lead_id } = response.data;
+      // Update lead or save new lead
+      if (lead?.lead_id) {
+        try {
+          const response = await fetch(API_ROUTES.leads.update(lead.lead_id), {
+            method: "PATCH",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({ name, phone, email }),
+          });
 
-        // por ahora sin BD, simulamos el lead_id
-        const lead_id = crypto.randomUUID();
+          const { success } = await response.json();
 
-        set({
-          lead: {
-            lead_id,
-            folio,
-            firstName: name.split(" ")[0],
-          },
-          currentStep: 2,
-        });
-      } catch (e) {
-        console.warn("Error al crear el lead:", e);
+          if (success) {
+            set({ currentStep: 2 });
+          }
+        } catch (error) {
+          console.error("Error al actualizar el lead:", error);
+        }
+      } else {
+        const num = Math.floor(Math.random() * 9000 + 1000);
+        const folio = `PT-2026-${num}`;
+
+        try {
+          const response = await fetch(API_ROUTES.leads.create, {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify({ name, phone, email, folio }),
+          });
+
+          const { data } = await response.json();
+          const { id } = data;
+          set({
+            lead: {
+              lead_id: id,
+              folio,
+              firstName: name.split(" ")[0],
+            },
+            currentStep: 2,
+          });
+        } catch (e) {
+          console.warn("Error al crear el lead:", e);
+        }
       }
     },
 
@@ -88,30 +112,39 @@ export const useOnboardingStore = create<OnboardingState>()(
       if (!state.lead?.lead_id) return;
 
       // Send Email
-      await fetch(API_ROUTES.leads.email, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: state.name,
-          email: state.email,
-          folio: state.lead.folio,
-        }),
-      });
-
       try {
-        // await api.patch(`/leads/${state.lead.lead_id}`, {
-        //   ...(skipped ? {} : {
-        //     edad:        state.edad,
-        //     familia:     state.familia,
-        //     uso:         state.uso,
-        //     presupuesto: state.presupuesto,
-        //     subsidio:    state.subsidio,
-        //     interes:     state.interes,
-        //   }),
-        //   status:   'complete',
-        // });
+        await fetch(API_ROUTES.leads.email, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: state.name,
+            email: state.email,
+            folio: state.lead.folio,
+          }),
+        });
+      } catch (e) {
+        console.warn("Error al enviar email:", e);
+      }
+
+      // Update lead
+      try {
+        if (!skipped) {
+          await fetch(API_ROUTES.leads.update(state.lead.lead_id), {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              edad: state.edad,
+              familia: state.familia,
+              uso: state.uso,
+              presupuesto: state.presupuesto,
+              subsidio: state.subsidio,
+              interes: state.interes,
+              status: "complete",
+            }),
+          });
+        }
 
         set({ currentStep: 5 });
       } catch (e) {
