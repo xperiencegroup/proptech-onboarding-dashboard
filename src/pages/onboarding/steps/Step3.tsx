@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useOnboardingStore } from "../../../store/formulario/useOnboardingStore";
 
 const RANGOS_EDAD = ["25-34", "35-44", "45-54", "55+"];
@@ -16,6 +17,31 @@ export default function Step3() {
   const familia = useOnboardingStore((state) => state.familia);
   const uso = useOnboardingStore((state) => state.uso);
 
+  const [errors, setErrors] = useState<Record<string, boolean>>({});
+
+  const triggerShake = (keys: string[]) => {
+    setErrors({});
+    setTimeout(() => {
+      const newErrors: Record<string, boolean> = {};
+      keys.forEach((k) => (newErrors[k] = true));
+      setErrors(newErrors);
+    }, 40);
+  };
+
+  const handleClickContinue = () => {
+    const missing: string[] = [];
+    if (!edad) missing.push("edad");
+    if (!familia) missing.push("familia");
+    if (!uso) missing.push("uso");
+
+    if (missing.length > 0) {
+      triggerShake(missing);
+      return;
+    }
+
+    goToStep(4);
+  };
+
   return (
     <div className="aluna-ob-step-content" data-step="3">
       <div className="aluna-ob-question">Cuéntanos un poco de ti</div>
@@ -23,39 +49,60 @@ export default function Step3() {
         Estos datos nos ayudan a sugerirte el modelo y el plan correctos.
       </div>
 
-      <div className="aluna-ob-block-label">Rango de edad</div>
-      <div className="aluna-ob-chips">
+      <div
+        className={`aluna-ob-block-label ${errors.edad ? "label-error" : ""}`}
+      >
+        Rango de edad
+      </div>
+      <div className={`aluna-ob-chips ${errors.edad ? "chips-shake" : ""}`}>
         {RANGOS_EDAD.map((op) => (
           <div
             key={op}
             className={`aluna-ob-chip ${edad === op ? "active" : ""}`}
-            onClick={() => setField("edad", op)}
+            onClick={() => {
+              setField("edad", op);
+              setErrors((prev) => ({ ...prev, edad: false }));
+            }}
           >
             {op}
           </div>
         ))}
       </div>
 
-      <div className="aluna-ob-block-label">Integrantes de la familia</div>
-      <div className="aluna-ob-chips">
+      <div
+        className={`aluna-ob-block-label ${errors.familia ? "label-error" : ""}`}
+      >
+        Integrantes de la familia
+      </div>
+      <div className={`aluna-ob-chips ${errors.familia ? "chips-shake" : ""}`}>
         {INTEGRANTES_FAMILIA.map((op) => (
           <div
             key={op}
             className={`aluna-ob-chip ${familia === op ? "active" : ""}`}
-            onClick={() => setField("familia", op)}
+            onClick={() => {
+              setField("familia", op);
+              setErrors((prev) => ({ ...prev, familia: false }));
+            }}
           >
             {op}
           </div>
         ))}
       </div>
 
-      <div className="aluna-ob-block-label">¿Para qué la usarás?</div>
-      <div className="aluna-ob-chips">
+      <div
+        className={`aluna-ob-block-label ${errors.uso ? "label-error" : ""}`}
+      >
+        ¿Para qué la usarás?
+      </div>
+      <div className={`aluna-ob-chips ${errors.uso ? "chips-shake" : ""}`}>
         {USO_OPTIONS.map((op) => (
           <div
             key={op}
             className={`aluna-ob-chip ${uso === op ? "active" : ""}`}
-            onClick={() => setField("uso", op)}
+            onClick={() => {
+              setField("uso", op);
+              setErrors((prev) => ({ ...prev, uso: false }));
+            }}
           >
             {op}
           </div>
@@ -66,7 +113,7 @@ export default function Step3() {
         <button className="aluna-ob-btn link" onClick={() => goToStep(2)}>
           ← Atrás
         </button>
-        <button className="aluna-ob-btn" onClick={() => goToStep(4)}>
+        <button className="aluna-ob-btn" onClick={handleClickContinue}>
           Continuar
           <svg
             fill="none"

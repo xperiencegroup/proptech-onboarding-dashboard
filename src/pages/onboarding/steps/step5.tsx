@@ -4,7 +4,7 @@ import { useOnboardingStore } from "../../../store/formulario/useOnboardingStore
 export default function Step5() {
   const navigate = useNavigate();
   const name = useOnboardingStore((state) => state.name);
-  const folio = useOnboardingStore((state) => state.folio);
+  const lead = useOnboardingStore((state) => state.lead);
   const reset = useOnboardingStore((state) => state.reset);
 
   const firstName = name.split(" ")[0] || "Visitante";
@@ -25,7 +25,7 @@ export default function Step5() {
 
         <div className="aluna-ob-final-folio">
           <div className="aluna-ob-final-folio-label">Tu Folio</div>
-          <div className="aluna-ob-final-folio-code">{folio}</div>
+          <div className="aluna-ob-final-folio-code">{lead?.folio}</div>
         </div>
 
         <div className="aluna-ob-final-text">

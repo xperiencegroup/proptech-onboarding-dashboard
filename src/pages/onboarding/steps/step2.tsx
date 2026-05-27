@@ -11,7 +11,7 @@ export default function Step2() {
   };
 
   const handleSkipToFinal = () => {
-    finishOnboarding();
+    finishOnboarding({ skipped: true });
   };
   return (
     // <!-- STEP 2: branch (¿personalizar?) -->
@@ -42,24 +42,30 @@ export default function Step2() {
           </div>
         </div>
 
-        <div className="aluna-ob-actions">
-          <button className="aluna-ob-btn link" onClick={handleSkipToFinal}>
-            Por ahora no, gracias
+        <div className="flex mt-7.5 justify-between">
+          <button className="aluna-ob-btn link" onClick={() => goToStep(1)}>
+            ← Atrás
           </button>
-          <button className="aluna-ob-btn" onClick={handleClickContinue}>
-            Sí, continuar
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              viewBox="0 0 24 24"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </button>
+
+          <div className="flex gap-2.5">
+            <button className="aluna-ob-btn link" onClick={handleSkipToFinal}>
+              Por ahora no, gracias
+            </button>
+            <button className="aluna-ob-btn" onClick={handleClickContinue}>
+              Sí, continuar
+              <svg
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 24 24"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>
