@@ -10,9 +10,19 @@ export default function ProtectedRoute({
   const [session, setSession] = useState<boolean | null>(null);
 
   useEffect(() => {
+    // Sesión inicial
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(!!session);
     });
+
+    // Escucha expiración, logout, refresh en tiempo real
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(!!session);
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
 
   if (session === null) return null;
