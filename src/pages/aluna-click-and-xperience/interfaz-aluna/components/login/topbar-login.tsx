@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function TopbarLogin() {
   const navigate = useNavigate();
+  const [userName, setUsername] = useState("");
   const [isLogged, setIsLogged] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -50,6 +51,9 @@ export default function TopbarLogin() {
     // Leer sesión existente al montar
     supabase.auth.getSession().then(({ data: { session } }) => {
       setIsLogged(!!session);
+
+      const name = session?.user?.email?.split("@")[0] ?? "";
+      setUsername(name);
     });
 
     // Escuchar cambios (login, logout, token refresh) si se refresca token en segundo plano
@@ -57,6 +61,9 @@ export default function TopbarLogin() {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setIsLogged(!!session);
+
+      const name = session?.user?.email?.split("@")[0] ?? "";
+      setUsername(name);
     });
 
     return () => subscription.unsubscribe();
@@ -149,7 +156,7 @@ export default function TopbarLogin() {
           R
         </div>
         <div className="aluna-logged-name" id="alunaLoggedName">
-          HOLA, ROBERTO
+          HOLA, <span className="uppercase">{userName}</span>
         </div>
         <svg
           className="aluna-logged-caret"
