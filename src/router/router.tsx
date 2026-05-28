@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "../pages/home/home";
 import Onboarding from "../pages/onboarding/onboarding";
 import Dashboard from "../pages/dashboard/dashboard";
+import AlunaClickAndXperience from "../pages/aluna-click-and-xperience/aluna-click-and-xperience";
+import ProtectedRoute from "../components/protected-route/protected-route";
 
 export default function Router() {
   return (
@@ -9,7 +11,18 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/onboarding" element={<Onboarding />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/click-and-xperience"
+          element={<AlunaClickAndXperience />}
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -11,7 +11,7 @@ export default function Step5() {
 
   const handleEnterApp = () => {
     reset();
-    navigate("/dashboard");
+    navigate("/click-and-xperience");
   };
 
   return (

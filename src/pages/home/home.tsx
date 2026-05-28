@@ -8,7 +8,7 @@ export default function Home() {
   const alunaDevShortcut:
     | React.MouseEventHandler<HTMLDivElement>
     | undefined = () => {
-    navigate("/dashbaord");
+    navigate("/click-and-xperience");
   };
 
   const alunaStartOnboarding:
@@ -48,9 +48,9 @@ export default function Home() {
             <svg
               fill="none"
               stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               viewBox="0 0 24 24"
             >
               <line x1="5" y1="12" x2="19" y2="12" />
