@@ -44,7 +44,9 @@
   z-index: 2;
 }
 .aluna-ob-side-logo {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family:
+    Plus Jakarta Sans Variable,
+    sans-serif;
   font-size: 32px;
   font-weight: 800;
   font-style: italic;

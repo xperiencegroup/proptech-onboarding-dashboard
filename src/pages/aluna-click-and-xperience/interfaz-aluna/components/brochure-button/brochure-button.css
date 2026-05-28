@@ -1,0 +1,25 @@
+.aluna-brochure {
+  position: absolute;
+  bottom: 22px;
+  right: 22px;
+  z-index: 30;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--aluna-shadow-soft);
+  transition: all 0.2s;
+}
+.aluna-brochure:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+.aluna-brochure svg {
+  width: 18px;
+  height: 18px;
+  color: var(--aluna-stone);
+}

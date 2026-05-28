@@ -1,0 +1,71 @@
+.aluna-side-menu {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  background: var(--aluna-green);
+  border-radius: 14px;
+  padding: 14px 0;
+  box-shadow: var(--aluna-shadow);
+  transition: all 0.3s ease;
+}
+.aluna-side-menu.minimized {
+  padding: 8px 0;
+}
+.aluna-side-menu.minimized .aluna-menu-item {
+  padding: 12px 14px;
+}
+.aluna-side-menu.minimized .aluna-menu-label {
+  display: none;
+}
+.aluna-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 22px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: var(--aluna-stone);
+}
+.aluna-menu-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+.aluna-menu-item.active {
+  background: rgba(255, 255, 255, 0.4);
+}
+.aluna-menu-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--aluna-stone);
+  flex-shrink: 0;
+}
+.aluna-menu-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.aluna-menu-toggle {
+  position: absolute;
+  top: 8px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background: var(--aluna-stone);
+  color: var(--aluna-cream);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 11px;
+  box-shadow: var(--aluna-shadow-soft);
+  transition: transform 0.2s;
+}
+.aluna-menu-toggle:hover {
+  transform: scale(1.1);
+}
