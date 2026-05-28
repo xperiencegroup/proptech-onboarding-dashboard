@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { supabase } from "../../../../../utils/supabase";
 import "./topbar-login.css";
 import { useNavigate } from "react-router-dom";
+import { useSessionStore } from "../../../../../store/session/useSessionStore";
 
 export default function TopbarLogin() {
   const navigate = useNavigate();
-  const [userName, setUsername] = useState("");
-  const [isLogged, setIsLogged] = useState(false);
+  const { setSession, clearSession, name, isLoggedIn } = useSessionStore();
   const [hasError, setHasError] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [credentials, setCredentials] = useState({
@@ -21,9 +21,7 @@ export default function TopbarLogin() {
         password: credentials.password,
       });
 
-      if (!error) {
-        setIsLogged(true);
-      } else {
+      if (error) {
         setHasError(true);
         setTimeout(() => setHasError(false), 300);
       }
@@ -34,7 +32,7 @@ export default function TopbarLogin() {
     const { error } = await supabase.auth.signOut();
 
     if (!error) {
-      setIsLogged(false);
+      clearSession();
       setCredentials({ username: "", password: "" });
     }
   };
@@ -50,30 +48,47 @@ export default function TopbarLogin() {
   useEffect(() => {
     // Leer sesión existente al montar
     supabase.auth.getSession().then(({ data: { session } }) => {
-      setIsLogged(!!session);
-
-      const name = session?.user?.email?.split("@")[0] ?? "";
-      setUsername(name);
+      if (session) {
+        const rawName = session.user.email?.split("@")[0] ?? "";
+        setSession({
+          isLoggedIn: true,
+          userId: session.user.id,
+          name: rawName.charAt(0).toUpperCase() + rawName.slice(1),
+          email: session.user.email ?? "",
+          avatarInitials: rawName.slice(0, 2).toUpperCase(),
+        });
+      } else {
+        clearSession();
+      }
     });
 
     // Escuchar cambios (login, logout, token refresh) si se refresca token en segundo plano
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      setIsLogged(!!session);
-
-      const name = session?.user?.email?.split("@")[0] ?? "";
-      setUsername(name);
+      if (session) {
+        const rawName = session.user.email?.split("@")[0] ?? "";
+        setSession({
+          isLoggedIn: true,
+          userId: session.user.id,
+          name: rawName.charAt(0).toUpperCase() + rawName.slice(1),
+          email: session.user.email ?? "",
+          avatarInitials: rawName.slice(0, 2).toUpperCase(),
+          role: "Asesor",
+        });
+      } else {
+        clearSession();
+      }
     });
 
     return () => subscription.unsubscribe();
-  }, []);
+  }, [setSession, clearSession]);
 
   return (
     <>
       {/* <!-- Login form (when nobody is logged in) --> */}
       <div
-        className={`aluna-login ${isLogged ? "hidden" : ""} ${hasError ? "error" : ""}`}
+        className={`aluna-login ${isLoggedIn ? "hidden" : ""} ${hasError ? "error" : ""}`}
         id="alunaLogin"
       >
         <div className="aluna-login-label">Iniciar Sesión</div>
@@ -148,15 +163,15 @@ export default function TopbarLogin() {
 
       {/* <!-- Logged-in chip (when advisor is logged in) --> */}
       <div
-        className={`aluna-logged ${isLogged ? "visible" : ""} ${isDropdownOpen ? "open" : ""}`}
+        className={`aluna-logged ${isLoggedIn ? "visible" : ""} ${isDropdownOpen ? "open" : ""}`}
         id="alunaLogged"
         onClick={alunaToggleDropdown}
       >
         <div className="aluna-logged-avatar" id="alunaAvatar">
-          R
+          {name.charAt(0)}
         </div>
         <div className="aluna-logged-name" id="alunaLoggedName">
-          HOLA, <span className="uppercase">{userName}</span>
+          HOLA, <span className="uppercase">{name}</span>
         </div>
         <svg
           className="aluna-logged-caret"
