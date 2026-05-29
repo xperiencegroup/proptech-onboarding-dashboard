@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { API_ROUTES } from "../../config/api";
+import { leadStorage } from "../../utils/leadStorage";
 
 // Separar los datos del lead en su propio tipo
 type LeadData = {
@@ -51,7 +52,7 @@ export const useOnboardingStore = create<OnboardingState>()(
     presupuesto: "",
     subsidio: "",
     interes: "",
-    lead: null,
+    lead: leadStorage.get() ?? null,
 
     goToStep: (step) => set({ currentStep: step }),
     setField: (key, value) => set({ [key]: value } as Partial<OnboardingState>),
@@ -145,6 +146,12 @@ export const useOnboardingStore = create<OnboardingState>()(
             }),
           });
         }
+
+        leadStorage.save({
+          lead_id: state.lead.lead_id!,
+          folio: state.lead.folio!,
+          firstName: state.lead.firstName,
+        });
 
         set({ currentStep: 5 });
       } catch (e) {
