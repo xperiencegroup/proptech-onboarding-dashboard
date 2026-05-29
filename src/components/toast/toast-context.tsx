@@ -1,5 +1,5 @@
 import { createContext, useContext, type ReactNode } from "react";
-import { useToast, type ToastType } from "./use-Toast";
+import { useToast, type ToastType } from "./use-toast";
 import { ToastContainer } from "./toast";
 
 interface ToastContextValue {

@@ -1,4 +1,4 @@
-import { type ToastMessage } from "./use-Toast";
+import { type ToastMessage } from "./use-toast";
 import "./toast.css";
 
 const ICONS: Record<ToastMessage["type"], string> = {
