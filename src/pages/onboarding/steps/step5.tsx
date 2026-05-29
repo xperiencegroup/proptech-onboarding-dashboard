@@ -1,11 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useOnboardingStore } from "../../../store/formulario/useOnboardingStore";
+import { leadStorage } from "../../../utils/leadStorage";
 
 export default function Step5() {
   const navigate = useNavigate();
   const name = useOnboardingStore((state) => state.name);
   const lead = useOnboardingStore((state) => state.lead);
   const reset = useOnboardingStore((state) => state.reset);
+
+  const leadStored = leadStorage.get();
 
   const firstName = name.split(" ")[0] || "Visitante";
 
@@ -19,13 +22,15 @@ export default function Step5() {
       <div className="aluna-ob-final">
         <div className="aluna-ob-final-icon">✦</div>
         <div className="aluna-ob-final-hello">
-          Hola, <span>{firstName}</span>
+          Hola, <span>{leadStored?.firstName ?? firstName}</span>
         </div>
         <div className="aluna-ob-final-title">Aluna te está esperando</div>
 
         <div className="aluna-ob-final-folio">
           <div className="aluna-ob-final-folio-label">Tu Folio</div>
-          <div className="aluna-ob-final-folio-code">{lead?.folio}</div>
+          <div className="aluna-ob-final-folio-code">
+            {lead?.folio ?? leadStored?.folio}
+          </div>
         </div>
 
         <div className="aluna-ob-final-text">
