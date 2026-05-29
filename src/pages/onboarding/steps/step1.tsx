@@ -40,7 +40,7 @@ export default function Step1() {
           y te mandamos tu información por WhatsApp y correo.
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
           <div className="aluna-ob-row">
             <div className="aluna-ob-field full">
               <label className="aluna-ob-label">
@@ -52,7 +52,7 @@ export default function Step1() {
                 className="aluna-ob-input"
                 id="obName"
                 placeholder="Tu nombre y apellido"
-                autoComplete="off"
+                autoComplete="given-name"
               />
               {errors.name && (
                 <span className="aluna-ob-error">{errors.name.message}</span>
@@ -68,7 +68,7 @@ export default function Step1() {
                 className="aluna-ob-input"
                 id="obPhone"
                 placeholder="+502 0000 0000"
-                autoComplete="off"
+                autoComplete="tel"
               />
               {errors.phone && (
                 <span className="aluna-ob-error">{errors.phone.message}</span>
@@ -84,7 +84,7 @@ export default function Step1() {
                 className="aluna-ob-input"
                 id="obEmail"
                 placeholder="tu@correo.com"
-                autoComplete="off"
+                autoComplete="email"
               />
               {errors.email && (
                 <span className="aluna-ob-error">{errors.email.message}</span>
