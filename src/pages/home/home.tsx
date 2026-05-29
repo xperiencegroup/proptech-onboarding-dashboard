@@ -5,11 +5,6 @@ import "./home.css";
 
 export default function Home() {
   const navigate = useNavigate();
-  const alunaDevShortcut:
-    | React.MouseEventHandler<HTMLDivElement>
-    | undefined = () => {
-    navigate("/click-and-xperience");
-  };
 
   const alunaStartOnboarding:
     | React.MouseEventHandler<HTMLButtonElement>
@@ -23,16 +18,9 @@ export default function Home() {
       <div className="face-front-frame">
         <div className="aluna-welcome" id="alunaWelcome">
           <div className="aluna-welcome-stamp">ALUNA RESIDENCIAL · 2026</div>
-          <div
-            className="aluna-welcome-logo-wrap cursor-pointer"
-            onClick={alunaDevShortcut}
-            title="DEV · click para brincar al dashboard como Roberto"
-          >
+          <div className="aluna-welcome-logo-wrap">
             <div className="aluna-welcome-logo">Aluna</div>
             <div className="aluna-welcome-sub">RESIDENCIAL</div>
-            <div className="aluna-welcome-logo-hint">
-              ⚡ DEV · saltar al dashboard
-            </div>
           </div>
           <div className="aluna-welcome-title">
             El lugar donde nace tu historia
