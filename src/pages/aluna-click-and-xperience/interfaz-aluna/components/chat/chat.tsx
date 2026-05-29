@@ -40,7 +40,7 @@ function ChatDrawer({
   open: boolean;
 }) {
   const alunaChatQuickSend = (text: string) => {
-    console.log("enviado");
+    console.log("enviado", text);
   };
 
   const alunaChatSend = () => {
