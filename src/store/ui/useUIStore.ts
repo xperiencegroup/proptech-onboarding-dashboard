@@ -1,12 +1,16 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
+import type { Stage } from "../../types/lead";
+
+type StageFilter = Stage | "todos";
 
 interface UIState {
   // Vista
   isClientMode: boolean;
 
-  // Buscador
+  // Filtrador
   searchQuery: string;
+  activeStage: StageFilter;
 
   // Alertas
   isAlertsOpen: boolean;
@@ -17,6 +21,7 @@ interface UIState {
   // Acciones
   toggleClientMode: () => void;
   setSearchQuery: (query: string) => void;
+  setActiveStage: (stage: StageFilter) => void;
   toggleAlerts: () => void;
   closeAlerts: () => void;
   toggleChat: () => void;
@@ -28,6 +33,7 @@ export const useUIStore = create<UIState>()(
     (set) => ({
       isClientMode: false,
       searchQuery: "",
+      activeStage: "todos",
       isAlertsOpen: false,
       isChatOpen: false,
 
@@ -45,6 +51,7 @@ export const useUIStore = create<UIState>()(
         }),
 
       setSearchQuery: (query) => set({ searchQuery: query }),
+      setActiveStage: (stage) => set({ activeStage: stage }),
 
       toggleAlerts: () =>
         set((state) => ({

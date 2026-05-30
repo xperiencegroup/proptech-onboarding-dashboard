@@ -1,12 +1,24 @@
 import "./unit-comparator.css";
 
+type CompCell = {
+  value: string;
+  cls?: string;
+  style?: React.CSSProperties;
+};
+
+type CompRow = {
+  label: string;
+  cells?: CompCell[];
+  simCells?: string[];
+};
+
 const UNITS = [
   { id: "A 146", type: "Aluna 100", preferred: true },
   { id: "A 155", type: "Aluna 100", preferred: false },
   { id: "A 111", type: "Aluna 90", preferred: false },
 ];
 
-const ROWS = [
+const ROWS: CompRow[] = [
   {
     label: "Nivel",
     cells: [

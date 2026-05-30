@@ -9,13 +9,19 @@ export default function LeadsList() {
   const selectedLeadId = useDashboardStore((state) => state.selectedLeadId);
   const selectLead = useDashboardStore((state) => state.selectLead);
   const searchQuery = useUIStore((state) => state.searchQuery);
+  const activeStage = useUIStore((state) => state.activeStage);
+
   const handleSelectLead = (id: string) => {
     selectLead(id);
     selectLeadId(id);
   };
 
   const filteredLeads = leads.filter((lead) => {
+    const matchesStage = activeStage === "todos" || lead.stage === activeStage;
+
+    if (!matchesStage) return false;
     if (!searchQuery) return true;
+
     const q = searchQuery.toLowerCase();
     return (
       lead.name.toLowerCase().includes(q) ||
