@@ -1,7 +1,6 @@
 import { useDashboardStore } from "../../../../../store/dashboard/useDashboardStore";
 import type { LeadDetail } from "../../../../../types/lead";
 import "./detail-header.css";
-import { FAKE_LEADS } from "../../../../../data/fake-lead-data";
 
 const STAGE_LABELS = {
   cotizacion: "Cotización",
@@ -134,25 +133,13 @@ const getIdentityFields = (lead: LeadDetail) => [
   },
 ];
 
-export default function DetailHeader({
-  selectedLeadId,
-}: {
-  selectedLeadId: string;
-}) {
+export default function DetailHeader() {
   const clearLead = useDashboardStore((state) => state.clearLead);
+  const selectedLead = useDashboardStore((state) => state.selectedLead);
 
-  if (!selectedLeadId) return null;
+  if (!selectedLead) return null;
 
-  const getLeadDetailsById = (id: string) => {
-    const details = FAKE_LEADS.find((fake_lead) => fake_lead.id === id);
-    return details;
-  };
-
-  const leadDetails = getLeadDetailsById(selectedLeadId);
-
-  if (!leadDetails) return null;
-
-  const fields = getIdentityFields(leadDetails);
+  const fields = getIdentityFields(selectedLead);
 
   return (
     <>
@@ -175,13 +162,13 @@ export default function DetailHeader({
       <div className="detail-head-row">
         <div className="detail-name-block">
           <div className="detail-avatar">
-            {leadDetails.initials}
+            {selectedLead.initials}
             <div className="detail-avatar-live" />
           </div>
           <div className="detail-name-info">
-            <div className="detail-folio">FOLIO · {leadDetails.folio}</div>
+            <div className="detail-folio">FOLIO · {selectedLead.folio}</div>
             <div className="detail-name">
-              {leadDetails.name}
+              {selectedLead.name}
               <span className="detail-name-live">EN LÍNEA</span>
             </div>
             <div className="identity-grid">
@@ -212,8 +199,8 @@ export default function DetailHeader({
         </div>
 
         <div className="score-badge-big">
-          <div className="label">Score · {leadDetails.stage}</div>
-          <div className="num">{leadDetails.score}</div>
+          <div className="label">Score · {selectedLead.stage}</div>
+          <div className="num">{selectedLead.score}</div>
           <div className="desc">Alta intención</div>
         </div>
       </div>

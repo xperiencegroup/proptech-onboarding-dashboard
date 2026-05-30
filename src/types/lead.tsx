@@ -1,4 +1,9 @@
-type Stage = "cotizacion" | "apartado" | "cerrado" | "visita" | "prospecto";
+export type Stage =
+  | "cotizacion"
+  | "apartado"
+  | "cerrado"
+  | "visita"
+  | "prospecto";
 type Source = "meta" | "google" | "referido" | "organic" | "feria";
 type HeatStatus = "hot" | "warm" | "cool" | "won";
 

@@ -1,12 +1,14 @@
 import "./leads-list.css";
 import LeadRow from "./lead-row/lead-row";
 import { useDashboardStore } from "../../../../store/dashboard/useDashboardStore";
-import { FAKE_LEADS } from "../../../../data/fake-lead-data";
 
 export default function LeadsList() {
+  const leads = useDashboardStore((state) => state.leads);
   const selectLeadId = useDashboardStore((state) => state.selectLeadId);
   const selectedLeadId = useDashboardStore((state) => state.selectedLeadId);
+  const selectLead = useDashboardStore((state) => state.selectLead);
   const handleSelectLead = (id: string) => {
+    selectLead(id);
     selectLeadId(id);
   };
 
@@ -38,7 +40,7 @@ export default function LeadsList() {
       </div>
 
       {/* Rows */}
-      {FAKE_LEADS.map((lead, i) => (
+      {leads.map((lead, i) => (
         <LeadRow
           key={lead.initials + i}
           lead={lead}

@@ -1,6 +1,21 @@
 import "./filter-bar.css";
+import type { Lead, Stage } from "../../../types/lead";
+import { useDashboardStore } from "../../../store/dashboard/useDashboardStore";
+
+const getQuantityByFilter = (array: Lead[], filterValue: Stage) => {
+  const result = array.filter((a) => a.stage === filterValue);
+  return result.length;
+};
 
 export default function FilterBar() {
+  const leads = useDashboardStore((state) => state.leads);
+  const leadsQuantity = leads.length;
+  const leadsProspect = getQuantityByFilter(leads, "prospecto");
+  const leadsQuotation = getQuantityByFilter(leads, "cotizacion");
+  const leadsVisitOrMeet = getQuantityByFilter(leads, "visita");
+  const leadsReserved = getQuantityByFilter(leads, "apartado");
+  const leadsClosed = getQuantityByFilter(leads, "cerrado");
+
   return (
     <div className="filter-bar">
       <span className="filter-label">Etapa</span>
@@ -9,62 +24,45 @@ export default function FilterBar() {
         data-stage="todos"
         // onClick="setFilter(this)"
       >
-        Todos <span className="filter-chip-count">20</span>
+        Todos <span className="filter-chip-count">{leadsQuantity}</span>
       </button>
       <button
         className="filter-chip"
         data-stage="prospecto"
         // onClick="setFilter(this)"
       >
-        Prospecto <span className="filter-chip-count">8</span>
+        Prospecto <span className="filter-chip-count">{leadsProspect}</span>
       </button>
       <button
         className="filter-chip"
         data-stage="cotizacion"
         // onClick="setFilter(this)"
       >
-        Cotización <span className="filter-chip-count">4</span>
+        Cotización <span className="filter-chip-count">{leadsQuotation}</span>
       </button>
       <button
         className="filter-chip"
         data-stage="visita"
         // onClick="setFilter(this)"
       >
-        Visita/Junta <span className="filter-chip-count">4</span>
+        Visita/Junta{" "}
+        <span className="filter-chip-count">{leadsVisitOrMeet}</span>
       </button>
       <button
         className="filter-chip"
         data-stage="apartado"
         // onClick="setFilter(this)"
       >
-        Apartado <span className="filter-chip-count">2</span>
+        Apartado <span className="filter-chip-count">{leadsReserved}</span>
       </button>
       <button
         className="filter-chip"
         data-stage="cerrado"
         // onClick="setFilter(this)"
       >
-        Cerrado <span className="filter-chip-count">2</span>
+        Cerrado <span className="filter-chip-count">{leadsClosed}</span>
       </button>
       <div className="filter-spacer"></div>
-
-      <button
-        id="clearSessionsBtn"
-        className="session-leads-clear"
-        // onClick="clearAllSessionLeads()"
-        title="Borrar todos los leads de sesión generados por onboarding"
-      >
-        <svg
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <polyline points="3 6 5 6 21 6" />
-          <path d="M19 6l-2 14a2 2 0 01-2 2H9a2 2 0 01-2-2L5 6" />
-        </svg>
-        Limpiar sesiones · <span className="count">0</span>
-      </button>
     </div>
   );
 }

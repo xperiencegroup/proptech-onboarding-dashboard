@@ -11,7 +11,7 @@ export default function LeadDetail() {
       id="leadDetail"
     >
       <div className="detail-header">
-        <DetailHeader selectedLeadId={selectedLeadId} />
+        <DetailHeader />
       </div>
       <div className="detail-body"></div>
     </div>
