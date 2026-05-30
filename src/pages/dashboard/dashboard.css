@@ -1,3 +1,17 @@
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-line-strong);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-low);
+}
+
 .face-back {
   background:
     radial-gradient(
@@ -16,4 +30,43 @@
   pointer-events: none;
   mix-blend-mode: overlay;
   opacity: 0.5;
+}
+/* Presenter mode: hide secondary panels, expand main work area */
+.face-back.presenter-mode .leads-list,
+.face-back.presenter-mode .action-bar,
+.face-back.presenter-mode .panel-analytics,
+.face-back.presenter-mode .chat-xp-panel,
+.face-back.presenter-mode .funnel-panel,
+.face-back.presenter-mode .contracts-panel,
+.face-back.presenter-mode .greeting-bar,
+.face-back.presenter-mode .filters-bar,
+.face-back.presenter-mode .filters-row,
+.face-back.presenter-mode .filter-bar {
+  display: none !important;
+}
+/* Force leads-container to single column (only the detail) */
+.face-back.presenter-mode .leads-container {
+  grid-template-columns: 1fr !important;
+  padding: 0;
+}
+/* Make sure detail is visible and styled big in presenter */
+.face-back.presenter-mode .lead-detail {
+  display: block !important;
+}
+.face-back.presenter-mode .lead-detail {
+  margin-left: 0 !important;
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 32px 40px !important;
+}
+.face-back.presenter-mode .panel-comparator,
+.face-back.presenter-mode .panel-cotizador {
+  border: 1.5px solid rgba(251, 203, 34, 0.22);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.02);
+}
+.face-back.presenter-mode .panel-comparator .panel-title,
+.face-back.presenter-mode .panel-cotizador .panel-title {
+  font-size: 1.05rem;
 }
