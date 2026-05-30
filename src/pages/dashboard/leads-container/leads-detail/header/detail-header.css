@@ -219,3 +219,205 @@
 .source-dot.feria {
   background: #b388ff;
 }
+
+/* Action bar */
+.face-back.presenter-mode .action-bar {
+  display: none !important;
+}
+.action-bar {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  padding: 22px 0 18px;
+  border-top: 1px solid var(--bg-line);
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+.action-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+  position: relative;
+}
+.action-group:not(:last-child) {
+  border-right: 1px solid var(--bg-line);
+}
+.action-group:first-child {
+  padding-left: 0;
+}
+.action-group:last-child {
+  padding-right: 0;
+  margin-left: auto;
+}
+.action-group-label {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.55rem;
+  color: var(--text-dim);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.action-group:not(:first-child) .action-group-label {
+  left: 20px;
+}
+
+.btn-whatsapp {
+  padding: 11px 18px;
+  background: rgba(37, 211, 102, 0.12);
+  color: #25d366;
+  border: 1px solid #25d366;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-whatsapp:hover {
+  background: #25d366;
+  color: white;
+}
+.btn-email {
+  /* IDÉNTICO al .btn-whatsapp en padding/tamaño/forma — solo cambia el ícono y la palabra */
+  padding: 11px 18px;
+  background: rgba(37, 211, 102, 0.12);
+  color: #25d366;
+  border: 1px solid #25d366;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+.btn-email:hover {
+  background: rgba(37, 211, 102, 0.22);
+  border-color: #4ade80;
+  color: #4ade80;
+}
+.btn-email svg {
+  width: 14px;
+  height: 14px;
+}
+.btn-whatsapp svg {
+  width: 14px;
+  height: 14px;
+}
+
+.btn-analysis {
+  padding: 11px 18px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--bg-line-strong);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+.btn-analysis:hover {
+  border-color: var(--xp-yellow);
+  color: var(--xp-yellow);
+}
+.btn-analysis svg {
+  width: 14px;
+  height: 14px;
+}
+/* Highlight pulse for scrolled-to panel */
+.panel.highlight {
+  animation: highlightPulse 1.6s ease-out;
+}
+@keyframes highlightPulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--xp-yellow);
+    border-color: var(--xp-yellow);
+  }
+  50% {
+    box-shadow: 0 0 0 8px transparent;
+    border-color: var(--xp-yellow);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+.btn-chat-takeover {
+  padding: 11px 20px;
+  background: var(--status-won);
+  color: var(--bg-deep);
+  border: 1px solid var(--status-won);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  position: relative;
+}
+.btn-chat-takeover:hover {
+  background: #5ee5a5;
+}
+.btn-chat-takeover svg {
+  width: 14px;
+  height: 14px;
+}
+.btn-chat-takeover .takeover-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--status-hot);
+  color: white;
+  border-radius: 100px;
+  min-width: 18px;
+  height: 18px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+.btn-primery {
+  padding: 11px 20px;
+  background: var(--xp-yellow);
+  color: var(--xp-black);
+  border: 1px solid var(--xp-yellow);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+.btn-primery:hover {
+  background: #ffd93d;
+  transform: translateY(-1px);
+}
+.btn-primery svg {
+  width: 14px;
+  height: 14px;
+}

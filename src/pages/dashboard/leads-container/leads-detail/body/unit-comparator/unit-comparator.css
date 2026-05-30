@@ -1,0 +1,87 @@
+.panel-comparator {
+  grid-column: 1 / -1;
+}
+
+.comparator-grid {
+  display: grid;
+  grid-template-columns: 160px repeat(3, 1fr) 1fr;
+  border: 1px solid var(--bg-line);
+}
+.comp-header-cell {
+  padding: 14px 16px;
+  background: var(--bg-panel-2);
+  border-right: 1px solid var(--bg-line);
+  border-bottom: 1px solid var(--bg-line);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.comp-cell {
+  padding: 14px 16px;
+  border-right: 1px solid var(--bg-line);
+  border-bottom: 1px solid var(--bg-line);
+  font-size: 0.85rem;
+}
+.comp-cell:last-child {
+  border-right: none;
+}
+.comp-unit-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  background: var(--bg-panel-3);
+  border-right: 1px solid var(--bg-line);
+  border-bottom: 1px solid var(--bg-line);
+  position: relative;
+}
+.comp-unit-header.preferred {
+  background: var(--xp-yellow-soft);
+  border-bottom-color: var(--xp-yellow);
+}
+.comp-unit-header.preferred::before {
+  content: "PREFERIDA";
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: var(--xp-yellow);
+  letter-spacing: 0.18em;
+}
+.comp-unit-num {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.comp-unit-num.preferred {
+  color: var(--xp-yellow);
+}
+.comp-unit-type {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+}
+.comp-value-strong {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+}
+.comp-value-yellow {
+  color: var(--xp-yellow);
+  font-weight: 600;
+}
+.comp-check {
+  color: var(--status-won);
+}
+.comp-x {
+  color: var(--text-low);
+}
+.comp-sims-empty {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}

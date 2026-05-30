@@ -1,0 +1,106 @@
+.panel-cotizador {
+  grid-column: 1 / -1;
+}
+
+.cotizador-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 0;
+  border: 1px solid var(--bg-line);
+}
+.cotizador-col {
+  padding: 18px 20px;
+  border-right: 1px solid var(--bg-line);
+}
+.cotizador-col:last-child {
+  border-right: none;
+}
+.cotizador-col-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.cot-input-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+.cot-label {
+  font-size: 0.72rem;
+  color: var(--text-mid);
+  margin-bottom: 6px;
+}
+.cot-input {
+  background: var(--bg-deep);
+  border: 1px solid var(--bg-line);
+  padding: 8px 12px;
+  color: var(--text);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  outline: none;
+}
+.cot-input:focus {
+  border-color: var(--xp-yellow);
+}
+.cot-summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--bg-line);
+  font-size: 0.78rem;
+}
+.cot-summary-row:last-child {
+  border-bottom: none;
+}
+.cot-summary-row.total {
+  border-top: 2px solid var(--xp-yellow);
+  border-bottom: none;
+  padding-top: 14px;
+  margin-top: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.cot-summary-row.total .cot-amount {
+  color: var(--xp-yellow);
+  font-size: 1.2rem;
+}
+.cot-summary-label {
+  color: var(--text-mid);
+}
+.cot-amount {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+}
+.cot-amortization-preview {
+  margin-top: 12px;
+  background: var(--bg-deep);
+  border: 1px solid var(--bg-line);
+  max-height: 220px;
+  overflow-y: auto;
+}
+.amort-row {
+  display: grid;
+  grid-template-columns: 30px 80px 1fr 1fr;
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--bg-line);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--text-mid);
+}
+.amort-row.header {
+  background: var(--bg-panel-2);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+}
+.cotizador-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}

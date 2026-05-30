@@ -1,0 +1,298 @@
+.panel-analytics {
+  grid-column: 1;
+  background: linear-gradient(
+    160deg,
+    var(--bg-panel) 0%,
+    var(--bg-panel-2) 100%
+  );
+  border-color: var(--bg-line-yellow);
+  box-shadow: 0 0 0 1px var(--xp-yellow-glow);
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--bg-line);
+  margin-bottom: 24px;
+}
+.activity-cell {
+  padding: 14px 16px;
+  border-right: 1px solid var(--bg-line);
+  position: relative;
+}
+.activity-cell:last-child {
+  border-right: none;
+}
+.activity-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.activity-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 4px;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.activity-trend {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--status-won);
+  margin-top: 2px;
+}
+.activity-cell.clickable {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.activity-cell.clickable:hover {
+  background: var(--bg-panel-3);
+}
+.activity-cell.clickable::after {
+  content: "↗";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  transition: all 0.2s;
+}
+.activity-cell.clickable:hover::after {
+  color: var(--xp-yellow);
+  transform: translate(2px, -2px);
+}
+
+.path-section-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.path-section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--bg-line);
+}
+
+.path {
+  position: relative;
+  padding-left: 30px;
+  counter-reset: step;
+}
+.path::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--xp-yellow) 0%,
+    var(--xp-yellow) 70%,
+    var(--text-low) 70%,
+    var(--text-low) 100%
+  );
+}
+.path-step {
+  position: relative;
+  padding: 0 0 18px 24px;
+}
+.path-step:last-child {
+  padding-bottom: 0;
+}
+.path-step::before {
+  content: counter(step);
+  counter-increment: step;
+  position: absolute;
+  left: -30px;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--bg-panel-2);
+  border: 2px solid var(--xp-yellow);
+  color: var(--xp-yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  z-index: 2;
+  box-shadow: 0 0 0 4px var(--bg-panel);
+}
+.path-step.now::before {
+  background: var(--xp-yellow);
+  color: var(--xp-black);
+  box-shadow:
+    0 0 0 4px var(--bg-panel),
+    0 0 16px var(--xp-yellow-glow);
+  animation: nowPulse 2s ease-in-out infinite;
+}
+@keyframes nowPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 4px var(--bg-panel),
+      0 0 16px var(--xp-yellow-glow);
+  }
+  50% {
+    box-shadow:
+      0 0 0 4px var(--bg-panel),
+      0 0 24px var(--xp-yellow);
+  }
+}
+
+.path-step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.path-step-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.path-step-title svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--xp-yellow);
+  flex-shrink: 0;
+}
+.path-step-time {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+.path-step-duration {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 7px;
+  background: var(--xp-yellow-soft);
+  color: var(--xp-yellow);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.58rem;
+  border-radius: 3px;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.path-step-detail {
+  font-size: 0.78rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+.path-step-tag {
+  display: inline-block;
+  padding: 3px 9px;
+  background: var(--bg-panel-3);
+  border: 1px solid var(--bg-line);
+  color: var(--text-mid);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 6px;
+  margin-right: 4px;
+}
+.path-step-tag.chat {
+  color: var(--xp-yellow);
+  border-color: var(--bg-line-yellow);
+}
+.path-step-tag.action {
+  color: var(--status-won);
+  border-color: rgba(61, 214, 140, 0.3);
+}
+.path-step-quote {
+  margin-top: 6px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.25);
+  border-left: 2px solid var(--xp-yellow);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.time-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+.time-bar-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 60px;
+  gap: 14px;
+  align-items: center;
+}
+.time-bar-label {
+  font-size: 0.8rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.time-bar-label svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--text-mid);
+}
+.time-bar-track {
+  height: 8px;
+  background: var(--bg-panel-3);
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
+}
+.time-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--xp-yellow) 0%, #e0b048 100%);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.time-bar-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.time-bar-value {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--xp-yellow);
+  text-align: right;
+}

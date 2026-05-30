@@ -1,0 +1,70 @@
+.contracts-panel {
+  grid-column: 1 / -1;
+}
+
+.contract-list {
+  display: flex;
+  flex-direction: column;
+}
+.contract-item {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--bg-line);
+}
+.contract-item:last-child {
+  border-bottom: none;
+}
+.contract-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--bg-panel-3);
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contract-icon svg {
+  width: 14px;
+  height: 14px;
+}
+.contract-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.contract-title {
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+.contract-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.66rem;
+  color: var(--text-dim);
+}
+.btn-secondary {
+  padding: 11px 18px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--bg-line-strong);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  border-color: var(--xp-yellow);
+  color: var(--xp-yellow);
+}
+.btn-secondary svg {
+  width: 14px;
+  height: 14px;
+}

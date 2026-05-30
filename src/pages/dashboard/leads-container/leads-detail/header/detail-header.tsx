@@ -204,6 +204,91 @@ export default function DetailHeader() {
           <div className="desc">Alta intención</div>
         </div>
       </div>
+
+      {/* <!-- ACTION BAR — 4 buttons grouped --> */}
+      <div className="action-bar">
+        <div className="action-group">
+          <span className="action-group-label">Contacto</span>
+          <button
+            className="btn-chat-takeover"
+            // onClick="openChatDrawer()"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
+            </svg>
+            Chat XP en vivo
+            <span className="takeover-badge">3</span>
+          </button>
+          <button
+            className="btn-whatsapp"
+            title="Enviar WhatsApp"
+            // onClick="
+            //   alunaToast(
+            //     'Mensaje WhatsApp enviado a Patricio Treviño',
+            //   )
+            // "
+          >
+            <svg fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.5 14.4l-2.2-1.1c-.3-.1-.6-.1-.8.2l-.7.9c-.2.2-.4.3-.7.2-.9-.3-1.9-1-2.6-1.7-.7-.7-1.4-1.7-1.7-2.6-.1-.3 0-.5.2-.7l.9-.7c.3-.2.4-.5.2-.8L9 4.9c-.2-.4-.6-.5-1-.4-1 .3-1.8 1.1-2 2.1-.2 1.6.5 4 3 6.5s4.9 3.2 6.5 3c1-.2 1.8-1 2.1-2 .1-.4-.1-.8-.5-1zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.2c1.4.8 3 1.2 4.6 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z" />
+            </svg>
+            WhatsApp
+          </button>
+          <button
+            className="btn-email"
+            title="Enviar correo"
+            // onClick="
+            //   alunaToast('Correo enviado a p.trevino@gmail.com')
+            // "
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              viewBox="0 0 24 24"
+            >
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <polyline points="3 7 12 13 21 7" />
+            </svg>
+            Correo
+          </button>
+        </div>
+        <div className="action-group">
+          <span className="action-group-label">CRM</span>
+          <button className="btn-primery">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+            </svg>
+            Enviar a HubSpot
+          </button>
+        </div>
+        <div className="action-group">
+          <span className="action-group-label">Reporte</span>
+          <button
+            className="btn-analysis"
+            // onClick="openAnalysisModal()"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+            </svg>
+            Experience Analysis
+          </button>
+        </div>
+      </div>
     </>
   );
 }

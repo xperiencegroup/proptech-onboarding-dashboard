@@ -1,0 +1,87 @@
+.funnel-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.funnel-stage {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 0;
+}
+.funnel-step {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--bg-line-strong);
+  color: var(--text-dim);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-panel-2);
+}
+.funnel-stage.done .funnel-step {
+  background: var(--status-won);
+  color: var(--xp-black);
+  border-color: var(--status-won);
+}
+.funnel-stage.current .funnel-step {
+  background: var(--xp-yellow);
+  color: var(--xp-black);
+  border-color: var(--xp-yellow);
+  box-shadow: 0 0 0 4px var(--xp-yellow-soft);
+}
+.funnel-stage-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.funnel-stage-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.funnel-stage.current .funnel-stage-name {
+  font-weight: 700;
+  color: var(--xp-yellow);
+}
+.funnel-stage:not(.current):not(.done) .funnel-stage-name {
+  color: var(--text-dim);
+}
+.funnel-stage-time {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.66rem;
+  color: var(--text-dim);
+}
+.funnel-connector {
+  width: 1px;
+  height: 8px;
+  background: var(--bg-line-strong);
+  margin-left: 12px;
+}
+.funnel-stage.done + .funnel-connector {
+  background: var(--status-won);
+}
+
+.contract-status {
+  padding: 3px 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.contract-status.draft {
+  background: var(--bg-panel-3);
+  color: var(--text-dim);
+}
+.contract-status.signed {
+  background: var(--status-won-bg);
+  color: var(--status-won);
+}
+.contract-status.pending {
+  background: var(--status-warm-bg);
+  color: var(--status-warm);
+}

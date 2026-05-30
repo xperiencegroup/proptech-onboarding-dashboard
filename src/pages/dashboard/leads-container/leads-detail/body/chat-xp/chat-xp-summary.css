@@ -1,0 +1,39 @@
+.chat-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-row {
+  padding: 10px 12px;
+  background: var(--bg-panel-2);
+  border-left: 2px solid var(--xp-yellow);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.chat-row-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--xp-yellow);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+}
+.chat-row-tag.objection {
+  color: var(--status-hot);
+}
+.chat-row-tag.intent {
+  color: var(--status-won);
+}
+.chat-row-tag.pref {
+  color: var(--status-cool);
+}
+.chat-row.objection {
+  border-left-color: var(--status-hot);
+}
+.chat-row.intent {
+  border-left-color: var(--status-won);
+}
+.chat-row.pref {
+  border-left-color: var(--status-cool);
+}
