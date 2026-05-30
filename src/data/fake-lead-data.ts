@@ -22,7 +22,7 @@ export const FAKE_LEADS: LeadDetail[] = [
     age: "38-45 años",
     family: "Familia · 4 integrantes",
     usage: "Vivir con la familia",
-    budget: "Q 750k – 900k",
+    budget: "Q 750k - 900k",
     subsidy: "Sí, ya califica · LIP activo",
     interest: "Modelos de casa, plan de financiamiento",
     status: "complete",

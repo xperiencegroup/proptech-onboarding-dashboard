@@ -1,16 +1,28 @@
 import "./leads-list.css";
 import LeadRow from "./lead-row/lead-row";
 import { useDashboardStore } from "../../../../store/dashboard/useDashboardStore";
+import { useUIStore } from "../../../../store/ui/useUIStore";
 
 export default function LeadsList() {
   const leads = useDashboardStore((state) => state.leads);
   const selectLeadId = useDashboardStore((state) => state.selectLeadId);
   const selectedLeadId = useDashboardStore((state) => state.selectedLeadId);
   const selectLead = useDashboardStore((state) => state.selectLead);
+  const searchQuery = useUIStore((state) => state.searchQuery);
   const handleSelectLead = (id: string) => {
     selectLead(id);
     selectLeadId(id);
   };
+
+  const filteredLeads = leads.filter((lead) => {
+    if (!searchQuery) return true;
+    const q = searchQuery.toLowerCase();
+    return (
+      lead.name.toLowerCase().includes(q) ||
+      lead.folio.toLowerCase().includes(q) ||
+      lead.last_units_visited.some((unit) => unit.toLowerCase().includes(q))
+    );
+  });
 
   return (
     <div className="leads-list">
@@ -40,7 +52,7 @@ export default function LeadsList() {
       </div>
 
       {/* Rows */}
-      {leads.map((lead, i) => (
+      {filteredLeads.map((lead, i) => (
         <LeadRow
           key={lead.initials + i}
           lead={lead}
