@@ -1,0 +1,9 @@
+/* Leads layout */
+.leads-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  transition: grid-template-columns 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.leads-container.collapsed {
+  grid-template-columns: 320px 1fr;
+}

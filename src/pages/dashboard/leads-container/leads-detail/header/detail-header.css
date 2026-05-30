@@ -1,0 +1,221 @@
+.detail-header {
+  padding: 24px 32px 20px;
+  background: linear-gradient(180deg, var(--bg-panel) 0%, transparent 100%);
+  border-bottom: 1px solid var(--bg-line);
+}
+
+.detail-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+}
+.detail-nav-btn {
+  width: 26px;
+  height: 26px;
+  background: var(--bg-panel-2);
+  border: 1px solid var(--bg-line);
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.detail-nav-btn:hover {
+  border-color: var(--xp-yellow);
+  color: var(--xp-yellow);
+}
+.detail-nav-btn svg {
+  width: 12px;
+  height: 12px;
+}
+.detail-nav-pos {
+  color: var(--xp-yellow);
+  font-weight: 600;
+}
+
+.detail-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+.detail-name-block {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.detail-avatar {
+  width: 64px;
+  height: 64px;
+  background: var(--status-hot-bg);
+  color: var(--status-hot);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  position: relative;
+}
+.detail-avatar-live {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  background: var(--status-won);
+  border: 3px solid var(--bg-deep);
+  border-radius: 50%;
+  animation: livePulse 1.5s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
+
+.detail-name-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.detail-folio {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--xp-yellow);
+  letter-spacing: 0.18em;
+}
+.detail-name {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.detail-name-live {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.62rem;
+  color: var(--status-won);
+  letter-spacing: 0.2em;
+  padding: 3px 8px;
+  background: var(--status-won-bg);
+  border: 1px solid var(--status-won);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.detail-name-live::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--status-won);
+  border-radius: 50%;
+  animation: livePulse 1.5s ease-in-out infinite;
+}
+
+.score-badge-big {
+  text-align: center;
+  padding: 16px 20px;
+  background: var(--bg-panel-2);
+  border: 1px solid var(--bg-line);
+  min-width: 130px;
+}
+.score-badge-big .label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.score-badge-big .num {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--status-hot);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 6px 0 4px;
+}
+.score-badge-big .desc {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--status-hot);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.identity-grid {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 22px 32px;
+  margin-top: 14px;
+}
+.identity-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.identity-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.58rem;
+  color: var(--text-dim);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.identity-label svg {
+  width: 11px;
+  height: 11px;
+  stroke: var(--text-dim);
+}
+.identity-value {
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 500;
+}
+.identity-value.mono {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.84rem;
+}
+.identity-value.source {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.source-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.source-dot.meta {
+  background: #4267b2;
+}
+.source-dot.google {
+  background: #ea4335;
+}
+.source-dot.organic {
+  background: var(--status-won);
+}
+.source-dot.referido {
+  background: var(--xp-yellow);
+}
+.source-dot.feria {
+  background: #b388ff;
+}

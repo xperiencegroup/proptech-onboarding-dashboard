@@ -1,0 +1,28 @@
+.leads-list {
+  border-right: 1px solid var(--bg-line);
+}
+
+.leads-container.collapsed .lead-row {
+  grid-template-columns: 32px 1fr;
+  padding: 12px 16px;
+}
+.leads-container.collapsed .lead-row .col-stage,
+.leads-container.collapsed .lead-row .col-touch,
+.leads-container.collapsed .lead-row .col-value,
+.leads-container.collapsed .lead-row .col-source,
+.leads-container.collapsed .lead-row .col-actions,
+.leads-container.collapsed .lead-row .lead-score {
+  display: none;
+}
+.leads-container.collapsed .lead-row .col-info {
+  font-size: 0.78rem;
+}
+.leads-container.collapsed .lead-row .lead-name {
+  font-size: 0.85rem;
+}
+.leads-container.collapsed .lead-row .lead-meta {
+  font-size: 0.7rem;
+}
+.leads-container.collapsed .header-row {
+  display: none;
+}
