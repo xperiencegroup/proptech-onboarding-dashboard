@@ -57,10 +57,16 @@ export default function LeadRow({ lead, selected, onSelect }: LeadRowProps) {
       <div className="col-value">{lead.value}</div>
 
       <p className="col-source">
-        <span className={`source-dot ${lead.source}`} />
+        <span className={`source-dot ${lead.source ?? "google"}`} />
         <span>
-          <span className="uppercase">{lead.source.charAt(0)}</span>
-          {lead.source.slice(1)}
+          {lead.source ? (
+            <>
+              <span className="uppercase">{lead?.source?.charAt(0)}</span>
+              {lead?.source?.slice(1)}
+            </>
+          ) : (
+            <span>Google</span>
+          )}
         </span>
       </p>
 
