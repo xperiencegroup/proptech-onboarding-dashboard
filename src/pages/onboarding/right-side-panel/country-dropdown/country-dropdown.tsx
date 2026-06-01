@@ -3,11 +3,18 @@ import { countries } from "country-data-list";
 import { CircleFlag } from "react-circle-flags";
 import { useOnboardingStore } from "../../../../store/formulario/useOnboardingStore";
 
+const getCountryCodeFromDial = (dial: string) => {
+  const found = countries.all.find((c) => c.countryCallingCodes?.[0] === dial);
+  return found?.alpha2.toLowerCase() ?? "mx";
+};
+
 export default function CountryComponent() {
   const [open, setOpen] = useState(false);
   const dialCode = useOnboardingStore((state) => state.dialCode);
   const setField = useOnboardingStore((state) => state.setField);
-  const [countryCode, setCountryCode] = useState("mx");
+  const [countryCode, setCountryCode] = useState(
+    dialCode ? getCountryCodeFromDial(dialCode) : "mx",
+  );
   const [search, setSearch] = useState("");
   const [highlighted, setHighlighted] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -79,6 +86,13 @@ export default function CountryComponent() {
       item?.scrollIntoView({ block: "nearest" });
     }
   }, [highlighted]);
+
+  useEffect(() => {
+    // Sincroniza el dialCode inicial con el store al montar
+    if (!dialCode) {
+      setField("dialCode", "+52");
+    }
+  }, []);
 
   return (
     <div

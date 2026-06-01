@@ -45,7 +45,7 @@ export const useOnboardingStore = create<OnboardingState>()(
   devtools((set, get) => ({
     currentStep: 1,
     name: "",
-    dialCode: "+52",
+    dialCode: "",
     phone: "",
     email: "",
     edad: "",
@@ -61,7 +61,8 @@ export const useOnboardingStore = create<OnboardingState>()(
 
     // Step 1 — crear lead en BD con datos mínimos
     finishStep1: async () => {
-      const { name, phone, email, lead } = get();
+      const { name, phone, dialCode, email, lead } = get();
+      const fullPhone = `${dialCode}${phone}`;
 
       // Update lead or save new lead
       if (lead?.lead_id) {
@@ -69,7 +70,7 @@ export const useOnboardingStore = create<OnboardingState>()(
           const response = await fetch(API_ROUTES.leads.update(lead.lead_id), {
             method: "PATCH",
             headers: { "Content-type": "application/json" },
-            body: JSON.stringify({ name, phone, email }),
+            body: JSON.stringify({ name, phone: fullPhone, email }),
           });
 
           const { success } = await response.json();
@@ -90,7 +91,7 @@ export const useOnboardingStore = create<OnboardingState>()(
             headers: {
               "Content-type": "application/json",
             },
-            body: JSON.stringify({ name, phone, email, folio }),
+            body: JSON.stringify({ name, phone: fullPhone, email, folio }),
           });
 
           const { data } = await response.json();
