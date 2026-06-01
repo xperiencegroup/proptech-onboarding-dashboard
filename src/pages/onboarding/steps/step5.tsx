@@ -4,15 +4,12 @@ import { leadStorage } from "../../../utils/leadStorage";
 export default function Step5() {
   const name = useOnboardingStore((state) => state.name);
   const lead = useOnboardingStore((state) => state.lead);
-  const reset = useOnboardingStore((state) => state.reset);
 
   const leadStored = leadStorage.get();
 
   const firstName = name.split(" ")[0] || "Visitante";
 
   const handleEnterApp = () => {
-    reset();
-
     window.location.href = `https://aluna-clon-frontend.vercel.app/inicio?user_id=${lead?.lead_id}`;
   };
 
