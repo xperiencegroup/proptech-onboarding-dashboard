@@ -84,7 +84,17 @@ export const useDashboardStore = create<DashboardState>()(
           return;
         }
 
-        set({ selectedLead: json.data });
+        const lead: LeadDetail = {
+          ...json.data,
+          initials: json.data.name
+            .split(" ")
+            .slice(0, 2)
+            .map((w: string) => w[0])
+            .join("")
+            .toUpperCase(),
+        };
+
+        set({ selectedLead: lead });
       } catch (error) {
         console.error("Error al obtener detalle del lead:", error);
         set({ selectedLead: null });

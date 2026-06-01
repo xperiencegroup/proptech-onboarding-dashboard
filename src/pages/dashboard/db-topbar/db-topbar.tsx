@@ -132,7 +132,7 @@ export default function DBTopbar() {
           >
             <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
-          Volver a Click &amp; Xperience
+          Ir a Click &amp; Xperience
         </Link>
 
         {/* Perfil con dropdown */}

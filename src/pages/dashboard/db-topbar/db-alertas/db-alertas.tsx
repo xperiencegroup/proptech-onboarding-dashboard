@@ -1,3 +1,4 @@
+import { useDashboardStore } from "../../../../store/dashboard/useDashboardStore";
 import { useUIStore } from "../../../../store/ui/useUIStore";
 
 interface Alert {
@@ -40,6 +41,15 @@ const ALERTS: Alert[] = [
 
 export default function DBAlertas() {
   const { toggleAlerts, isAlertsOpen } = useUIStore();
+  const leads = useDashboardStore((state) => state.leads);
+  const lastConnections = [...leads]
+    .sort(
+      (a, b) =>
+        new Date(b.last_contact).getTime() - new Date(a.last_contact).getTime(),
+    )
+    .slice(0, 3);
+
+  console.log(lastConnections);
 
   const openAlertLead = (key: string) => {
     console.log("lead:", key);
