@@ -26,6 +26,6 @@ export default function ProtectedRoute({
   }, []);
 
   if (session === null) return null;
-  if (!session) return <Navigate to="/click-and-xperience" replace />;
+  if (!session) return <Navigate to="/login" replace />;
   return children;
 }

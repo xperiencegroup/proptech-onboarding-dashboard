@@ -5,6 +5,7 @@ import Dashboard from "../pages/dashboard/dashboard";
 import AlunaClickAndXperience from "../pages/aluna-click-and-xperience/aluna-click-and-xperience";
 import ProtectedRoute from "../components/protected-route/protected-route";
 import { ToastProvider } from "../components/toast/toast-context";
+import Login from "../pages/login/login";
 
 export default function Router() {
   return (
@@ -12,11 +13,14 @@ export default function Router() {
       <ToastProvider>
         <Routes>
           <Route path="/" element={<Home />} />
+
           <Route path="/onboarding" element={<Onboarding />} />
+
           <Route
             path="/click-and-xperience"
             element={<AlunaClickAndXperience />}
           />
+
           <Route
             path="/dashboard"
             element={
@@ -25,6 +29,8 @@ export default function Router() {
               </ProtectedRoute>
             }
           />
+
+          <Route path="/login" element={<Login />} />
         </Routes>
       </ToastProvider>
     </BrowserRouter>

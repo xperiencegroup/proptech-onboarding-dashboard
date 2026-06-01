@@ -6,15 +6,31 @@ import "./home.css";
 export default function Home() {
   const navigate = useNavigate();
 
-  const alunaStartOnboarding:
-    | React.MouseEventHandler<HTMLButtonElement>
-    | undefined = () => {
+  const alunaStartOnboarding: React.MouseEventHandler<
+    HTMLButtonElement
+  > = () => {
     navigate("/onboarding");
   };
 
   return (
     <div className="face face-front">
       <OverlayShadow />
+
+      {/* Botón asesor — esquina superior derecha */}
+      <button className="home-advisor-btn" onClick={() => navigate("/login")}>
+        ¿Eres asesor?
+        <svg
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4" />
+          <polyline points="10 17 15 12 10 7" />
+          <line x1="15" y1="12" x2="3" y2="12" />
+        </svg>
+      </button>
+
       <div className="face-front-frame">
         <div className="aluna-welcome" id="alunaWelcome">
           <div className="aluna-welcome-stamp">ALUNA RESIDENCIAL · 2026</div>

@@ -1,21 +1,23 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./db-topbar.css";
 import { useSessionStore } from "../../../store/session/useSessionStore";
 import { useUIStore } from "../../../store/ui/useUIStore";
+import { supabase } from "../../../utils/supabase";
 import DBAlertas from "./db-alertas/db-alertas";
 
 export default function DBTopbar() {
   const inputRef = useRef<HTMLInputElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
   const { isClientMode, toggleClientMode, setSearchQuery, searchQuery } =
     useUIStore();
-  const { name, avatarInitials, role } = useSessionStore();
+  const { name, avatarInitials, role, clearSession } = useSessionStore();
 
   const toggleViewMode = () => {
     toggleClientMode();
-
     if (!isClientMode) {
-      // si está pasando a cliente
       setTimeout(() => {
         document
           .querySelector(".panel-comparator")
@@ -24,6 +26,28 @@ export default function DBTopbar() {
     }
   };
 
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (!error) {
+      clearSession();
+    }
+  };
+
+  // Cerrar dropdown al hacer click fuera
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setIsProfileOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  // Shortcut ⌘K
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -38,7 +62,6 @@ export default function DBTopbar() {
   return (
     <div className="db-topbar">
       <div className="db-brand">
-        {/* LOGO PLACEHOLDER · reemplazar div.db-brand-x por el logo oficial de Aluna */}
         <div
           className="db-brand-x logo-placeholder"
           title="LOGO PLACEHOLDER · reemplazar con logo oficial"
@@ -51,7 +74,6 @@ export default function DBTopbar() {
         </div>
       </div>
 
-      {/* Vista cliente <-> Vista vendedor (toggle) */}
       <div
         className={`view-toggle ${isClientMode ? "client-mode" : ""}`}
         id="viewToggle"
@@ -59,11 +81,11 @@ export default function DBTopbar() {
         title={
           isClientMode
             ? "En vista cliente · click para volver a vista vendedor"
-            : "En vista vendedor · click para vista cliente (concentra comparador/cotizador)"
+            : "En vista vendedor · click para vista cliente"
         }
       >
         <div className="view-toggle-track">
-          <div className="view-toggle-thumb"></div>
+          <div className="view-toggle-thumb" />
         </div>
         <div className="view-toggle-labels">
           <span
@@ -82,7 +104,6 @@ export default function DBTopbar() {
       </div>
 
       <div className="db-actions">
-        {/* Buscador */}
         <div className="db-search">
           <svg
             fill="none"
@@ -103,11 +124,9 @@ export default function DBTopbar() {
           <kbd>⌘K</kbd>
         </div>
 
-        {/* Alertas */}
         <DBAlertas />
 
-        {/* Volver a click & xperience */}
-        <Link className="back-to-platform" to={"/click-and-xperience"}>
+        <Link className="back-to-platform" to="/click-and-xperience">
           <svg
             fill="none"
             stroke="currentColor"
@@ -119,13 +138,56 @@ export default function DBTopbar() {
           Volver a Click &amp; Xperience
         </Link>
 
-        {/* Perfil del usuario */}
-        <div className="vendor-chip">
-          <div className="vendor-avatar">{avatarInitials}</div>
-          <div>
-            <div className="vendor-name">{name}</div>
-            <div className="vendor-role">{role}</div>
+        {/* Perfil con dropdown */}
+        <div className="vendor-chip-wrap" ref={dropdownRef}>
+          <div
+            className={`vendor-chip ${isProfileOpen ? "vendor-chip--open" : ""}`}
+            onClick={() => setIsProfileOpen((prev) => !prev)}
+          >
+            <div className="vendor-avatar">{avatarInitials}</div>
+            <div>
+              <div className="vendor-name">{name}</div>
+              <div className="vendor-role">{role}</div>
+            </div>
+            <svg
+              className={`vendor-caret ${isProfileOpen ? "vendor-caret--open" : ""}`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              viewBox="0 0 24 24"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
           </div>
+
+          {isProfileOpen && (
+            <div className="vendor-dropdown">
+              <div className="vendor-dropdown-header">
+                <div className="vendor-dropdown-avatar">{avatarInitials}</div>
+                <div>
+                  <div className="vendor-dropdown-name">{name}</div>
+                  <div className="vendor-dropdown-email">{role}</div>
+                </div>
+              </div>
+              <div className="vendor-dropdown-divider" />
+              <button
+                className="vendor-dropdown-item vendor-dropdown-item--danger"
+                onClick={handleLogout}
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
+                  <polyline points="16 17 21 12 16 7" />
+                  <line x1="21" y1="12" x2="9" y2="12" />
+                </svg>
+                Cerrar sesión
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
