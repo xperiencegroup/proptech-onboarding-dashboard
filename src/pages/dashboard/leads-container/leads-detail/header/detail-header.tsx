@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { useDashboardStore } from "../../../../../store/dashboard/useDashboardStore";
+import { useUIStore } from "../../../../../store/ui/useUIStore";
 import type { LeadDetail } from "../../../../../types/lead";
 import "./detail-header.css";
 
@@ -136,15 +138,31 @@ const getIdentityFields = (lead: LeadDetail) => [
 export default function DetailHeader() {
   const clearLead = useDashboardStore((state) => state.clearLead);
   const selectedLead = useDashboardStore((state) => state.selectedLead);
+  const { isClientMode, toggleClientMode } = useUIStore();
+  const selectedLeadId = useDashboardStore((state) => state.selectedLeadId);
+
+  useEffect(() => {
+    if (selectedLeadId) {
+      document.querySelector(".face-back")?.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [selectedLeadId]);
 
   if (!selectedLead) return null;
 
   const fields = getIdentityFields(selectedLead);
 
+  const handleBack = () => {
+    if (isClientMode) toggleClientMode();
+    clearLead();
+  };
+
   return (
     <>
       <div className="detail-nav">
-        <button onClick={clearLead} className="detail-nav-btn">
+        <button onClick={handleBack} className="detail-nav-btn">
           <svg
             fill="none"
             stroke="currentColor"

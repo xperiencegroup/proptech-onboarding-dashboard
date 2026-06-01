@@ -5,11 +5,13 @@ import { useSessionStore } from "../../../store/session/useSessionStore";
 import { useUIStore } from "../../../store/ui/useUIStore";
 import { supabase } from "../../../utils/supabase";
 import DBAlertas from "./db-alertas/db-alertas";
+import { useDashboardStore } from "../../../store/dashboard/useDashboardStore";
 
 export default function DBTopbar() {
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const selectedLeadId = useDashboardStore((state) => state.selectedLeadId);
 
   const { isClientMode, toggleClientMode, setSearchQuery, searchQuery } =
     useUIStore();
@@ -17,13 +19,6 @@ export default function DBTopbar() {
 
   const toggleViewMode = () => {
     toggleClientMode();
-    if (!isClientMode) {
-      setTimeout(() => {
-        document
-          .querySelector(".panel-comparator")
-          ?.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 300);
-    }
   };
 
   const handleLogout = async () => {
@@ -75,13 +70,15 @@ export default function DBTopbar() {
       </div>
 
       <div
-        className={`view-toggle ${isClientMode ? "client-mode" : ""}`}
+        className={`view-toggle ${isClientMode ? "client-mode" : ""} ${!selectedLeadId ? "view-toggle--disabled" : ""}`}
         id="viewToggle"
-        onClick={toggleViewMode}
+        onClick={selectedLeadId ? toggleViewMode : undefined}
         title={
-          isClientMode
-            ? "En vista cliente · click para volver a vista vendedor"
-            : "En vista vendedor · click para vista cliente"
+          !selectedLeadId
+            ? "Selecciona un lead para activar la vista cliente"
+            : isClientMode
+              ? "En vista cliente · click para volver a vista vendedor"
+              : "En vista vendedor · click para vista cliente"
         }
       >
         <div className="view-toggle-track">

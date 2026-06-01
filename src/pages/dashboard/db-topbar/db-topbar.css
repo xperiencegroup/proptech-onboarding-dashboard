@@ -540,3 +540,8 @@
 .vendor-dropdown-item--danger:hover {
   background: var(--status-hot-bg);
 }
+.view-toggle--disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}

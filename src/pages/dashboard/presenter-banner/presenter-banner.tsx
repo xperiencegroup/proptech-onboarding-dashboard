@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDashboardStore } from "../../../store/dashboard/useDashboardStore";
 import "./presenter-banner.css";
+import { useSessionStore } from "../../../store/session/useSessionStore";
 
 export default function PresenterBanner() {
   const fetchLeads = useDashboardStore((state) => state.fetchLeads);
@@ -9,6 +10,7 @@ export default function PresenterBanner() {
   const cerrados = useDashboardStore((state) => state.cerrados);
   const pipeline = useDashboardStore((state) => state.pipeline);
   const conversion = useDashboardStore((state) => state.conversion);
+  const name = useSessionStore((state) => state.name);
 
   useEffect(() => {
     fetchLeads();
@@ -23,7 +25,7 @@ export default function PresenterBanner() {
             Cargando fecha…
           </div>
           <div className="greeting-title" id="greetingTitle">
-            Buenas tardes, <span className="name">Carlos</span>.
+            Buenas tardes, <span className="name">{name}</span>.
           </div>
           <div className="greeting-sub" id="greetingSub">
             {leads.length} leads activos · {leads.length} Experience Analysis

@@ -42,9 +42,10 @@ export const useUIStore = create<UIState>()(
           const goingToClient = !state.isClientMode;
           if (goingToClient) {
             setTimeout(() => {
-              document
-                .querySelector(".panel-comparator")
-                ?.scrollIntoView({ behavior: "smooth", block: "start" });
+              document.querySelector(".face-back")?.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
             }, 300);
           }
           return { isClientMode: goingToClient };
