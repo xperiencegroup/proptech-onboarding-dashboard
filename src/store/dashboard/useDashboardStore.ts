@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { type Lead, type LeadDetail } from "../../types/lead";
-import { FAKE_LEADS } from "../../data/fake-lead-data";
+import { API_ROUTES } from "../../config/api";
 
 type DashboardState = {
   // Lista — datos livianos
@@ -28,42 +28,67 @@ export const useDashboardStore = create<DashboardState>()(
   devtools((set) => ({
     // Datos de leads en forma de lista
     leads: [],
-    leadsLoading: false,
     enSeguimiento: 0,
     cerrados: 0,
     pipeline: "Q 0M",
     conversion: "0.0",
 
     fetchLeads: async () => {
-      const leads = FAKE_LEADS;
+      try {
+        const res = await fetch(`${API_ROUTES.leads.list}`);
+        const json = await res.json();
+        const leads: Lead[] = json.data.map((lead: Lead) => ({
+          ...lead,
+          initials: lead.name
+            .split(" ")
+            .slice(0, 2)
+            .map((w: string) => w[0])
+            .join("")
+            .toUpperCase(),
+        }));
 
-      const cerrados = leads.filter((l) => l.stage === "cerrado").length;
-      const enSeguimiento = leads.filter((l) =>
-        ["cotizacion", "apartado", "visita"].includes(l.stage),
-      ).length;
+        const cerrados = leads.filter((l) => l.stage === "cerrado").length;
+        const enSeguimiento = leads.filter((l) =>
+          ["cotizacion", "apartado", "visita"].includes(l.stage),
+        ).length;
 
-      const pipeline = leads.reduce((acc, l) => {
-        const num = parseFloat(l.value.replace(/[^0-9.]/g, ""));
-        const isMillions = l.value.includes("M");
-        return acc + (isMillions ? num * 1_000_000 : num * 1_000);
-      }, 0);
+        const pipeline = leads.reduce((acc, l) => {
+          if (!l.value) return acc; // ← algunos leads pueden no tener value
+          const num = parseFloat(l.value.replace(/[^0-9.]/g, ""));
+          const isMillions = l.value.includes("M");
+          return acc + (isMillions ? num * 1_000_000 : num * 1_000);
+        }, 0);
 
-      set({
-        leads,
-        enSeguimiento,
-        cerrados,
-        pipeline: `Q ${(pipeline / 1_000_000).toFixed(1)}M`,
-        conversion: `${((cerrados / leads.length) * 100).toFixed(1)}%`,
-      });
+        set({
+          leads,
+          enSeguimiento,
+          cerrados,
+          pipeline: `Q ${(pipeline / 1_000_000).toFixed(1)}M`,
+          conversion: leads.length
+            ? `${((cerrados / leads.length) * 100).toFixed(1)}%`
+            : "0%", // ← evita división por cero si no hay leads
+        });
+      } catch (error) {
+        console.error("Error al obtener leads:", error);
+      }
     },
 
     selectedLead: null,
     selectLead: async (id) => {
-      // Simula fetch
-      await new Promise((resolve) => setTimeout(resolve, 300));
-      const detail = FAKE_LEADS.find((l) => l.id === id) ?? null;
+      try {
+        const res = await fetch(API_ROUTES.leads.detail(id));
+        const json = await res.json();
 
-      set({ selectedLead: detail });
+        if (!json.success) {
+          set({ selectedLead: null });
+          return;
+        }
+
+        set({ selectedLead: json.data });
+      } catch (error) {
+        console.error("Error al obtener detalle del lead:", error);
+        set({ selectedLead: null });
+      }
     },
 
     // Id
