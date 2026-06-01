@@ -97,7 +97,7 @@ export default function CountryComponent() {
           "relative flex justify-center items-center w-fit gap-[clamp(6px,0.42vw,8px)] overflow-hidden whitespace-nowrap cursor-pointer bg-white px-[clamp(12px,0.83vw,16px)] py-[clamp(8px,0.52vw,10px)] rounded-[clamp(8px,0.52vw,10px)] border-[clamp(1px,0.08vw,1.5px)] transition-all duration-200 text-stone-800/80 text-[clamp(11px,0.68vw,13px)] font-medium tracking-wide touch-action-manipulation",
           open
             ? "border-aluna-green-dark"
-            : "border-[#2a2a2a] hover:border-yellow-xg active:border-yellow-xg",
+            : "border-[#2a2a2a]/80 hover:border-yellow-xg active:border-yellow-xg",
         ].join(" ")}
       >
         <CircleFlag
