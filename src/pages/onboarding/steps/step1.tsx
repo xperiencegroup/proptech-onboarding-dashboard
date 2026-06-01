@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useOnboardingStore } from "../../../store/formulario/useOnboardingStore";
 import { step1Schema, type Step1Data } from "../../../schemas/onboardingSchema";
+import CountryComponent from "../right-side-panel/country-dropdown/country-dropdown";
 
 export default function Step1() {
   const setField = useOnboardingStore((state) => state.setField);
@@ -57,21 +58,27 @@ export default function Step1() {
                 <span className="aluna-ob-error">{errors.name.message}</span>
               )}
             </div>
+
             <div className="aluna-ob-field">
               <label className="aluna-ob-label">
                 Teléfono <span className="req">*</span>
               </label>
-              <input
-                {...register("phone")}
-                type="tel"
-                className="aluna-ob-input"
-                id="obPhone"
-                placeholder="+502 0000 0000"
-              />
+              <div className="flex gap-[.5vw]">
+                <CountryComponent />
+
+                <input
+                  {...register("phone")}
+                  type="tel"
+                  className="aluna-ob-input"
+                  id="obPhone"
+                  placeholder="00 0000 0000"
+                />
+              </div>
               {errors.phone && (
                 <span className="aluna-ob-error">{errors.phone.message}</span>
               )}
             </div>
+
             <div className="aluna-ob-field">
               <label className="aluna-ob-label">
                 Correo <span className="req">*</span>

@@ -16,6 +16,7 @@ type OnboardingState = {
 
   // step 1 — obligatorios
   name: string;
+  dialCode: string;
   phone: string;
   email: string;
 
@@ -44,6 +45,7 @@ export const useOnboardingStore = create<OnboardingState>()(
   devtools((set, get) => ({
     currentStep: 1,
     name: "",
+    dialCode: "+52",
     phone: "",
     email: "",
     edad: "",
