@@ -10,6 +10,7 @@ export default function Step1() {
   const name = useOnboardingStore((state) => state.name);
   const phone = useOnboardingStore((state) => state.phone);
   const email = useOnboardingStore((state) => state.email);
+  const dialCode = useOnboardingStore((state) => state.dialCode);
 
   const {
     register,
@@ -27,6 +28,7 @@ export default function Step1() {
   const onSubmit = async (data: Step1Data) => {
     setField("name", data.name);
     setField("phone", data.phone);
+    setField("phone", `${dialCode}${data.phone}`);
     setField("email", data.email);
     await finishStep1(); // crea el lead en BD y avanza al step 2
   };

@@ -10,9 +10,8 @@ export const step1Schema = z.object({
 
   phone: z
     .string()
-    .min(6, "Teléfono muy corto")
-    .max(20, "Teléfono muy largo")
-    .regex(/^[\d\s+\-()]+$/, "Formato inválido"),
+    .transform((v) => v.replace(/\D/g, ""))
+    .refine((v) => v.length >= 8 && v.length <= 15, "Número inválido"),
 
   email: z.email("Correo inválido").max(100, "Correo muy largo"),
 });

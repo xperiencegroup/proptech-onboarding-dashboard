@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { countries } from "country-data-list";
 import { CircleFlag } from "react-circle-flags";
 import { useOnboardingStore } from "../../../../store/formulario/useOnboardingStore";
-import "../../../../styles/tokens.css";
 
 export default function CountryComponent() {
   const [open, setOpen] = useState(false);
@@ -94,10 +93,10 @@ export default function CountryComponent() {
         aria-expanded={open}
         aria-haspopup="listbox"
         className={[
-          "relative flex justify-center items-center w-fit gap-[clamp(6px,0.42vw,8px)] overflow-hidden whitespace-nowrap cursor-pointer bg-white px-[clamp(12px,0.83vw,16px)] py-[clamp(8px,0.52vw,10px)] rounded-[clamp(8px,0.52vw,10px)] border-[clamp(1px,0.08vw,1.5px)] transition-all duration-200 text-stone-800/80 text-[clamp(11px,0.68vw,13px)] font-medium tracking-wide touch-action-manipulation",
+          "relative flex justify-center items-center w-fit gap-[clamp(6px,0.42vw,8px)] overflow-hidden whitespace-nowrap cursor-pointer bg-white px-[clamp(12px,0.83vw,16px)] py-[clamp(8px,0.52vw,10px)] rounded-[clamp(8px,0.52vw,10px)] border-[clamp(1px,0.08vw,1.5px)] transition-all duration-200 text-aluna-stone text-[clamp(11px,0.68vw,13px)] font-medium tracking-wide touch-action-manipulation",
           open
-            ? "border-aluna-green-dark"
-            : "border-[#2a2a2a]/80 hover:border-yellow-xg active:border-yellow-xg",
+            ? "border-aluna-green-deep"
+            : "border-aluna-stone-soft/50 hover:border-aluna-green-deep active:border-aluna-green-deep",
         ].join(" ")}
       >
         <CircleFlag
@@ -105,7 +104,9 @@ export default function CountryComponent() {
           countryCode={countryCode}
         />
 
-        <span className="text-yellow-xg font-medium">{dialCode}</span>
+        <span className="text-alborder-aluna-green-deep font-medium">
+          {dialCode}
+        </span>
 
         {/* Chevron */}
         <svg
@@ -117,7 +118,9 @@ export default function CountryComponent() {
           strokeLinejoin="round"
           className={[
             "w-[clamp(12px,0.73vw,14px)] h-[clamp(12px,0.73vw,14px)] shrink-0 transition-all duration-200",
-            open ? "text-yellow-xg" : "rotate-180 text-[#666]",
+            open
+              ? "text-aluna-green-deep"
+              : "rotate-180 text-aluna-stone-soft/70",
           ].join(" ")}
         >
           <polyline points="6 9 12 15 18 9" />
@@ -128,10 +131,10 @@ export default function CountryComponent() {
       {open && (
         <div
           role="listbox"
-          className="absolute bottom-full left-0 -translate-y-[clamp(5px,0.52vw,10px)] z-9999 w-[clamp(82.88px,14.58vw,280px)] overflow-hidden origin-bottom-left bg-[#111] border-[clamp(0.44px,0.08vw,1.5px)] border-[#2a2a2a] rounded-[clamp(4.14px,0.73vw,14px)]"
+          className="absolute bottom-full left-0 -translate-y-[clamp(5px,0.52vw,10px)] z-9999 w-[clamp(82.88px,14.58vw,280px)] overflow-hidden origin-bottom-left bg-white border-[clamp(0.44px,0.08vw,1.5px)] border-aluna-stone-soft/40 rounded-[clamp(4.14px,0.73vw,14px)]"
         >
           {/* Search */}
-          <div className="relative flex items-center px-[clamp(3.55px,0.62vw,12px)] pt-[clamp(1px,0.62vw,12px)] pb-[clamp(2.37px,0.42vw,8px)] border-b border-[#1e1e1e]">
+          <div className="relative flex items-center px-[clamp(3.55px,0.62vw,12px)] pt-[clamp(1px,0.62vw,12px)] pb-[clamp(2.37px,0.42vw,8px)] border-b border-aluna-stone-soft/40">
             <svg
               viewBox="0 0 24 24"
               fill="none"
@@ -139,7 +142,7 @@ export default function CountryComponent() {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="absolute left-[clamp(6.51px,1.15vw,22px)] w-[clamp(4.14px,0.73vw,14px)] h-[clamp(4.14px,0.73vw,14px)] text-[#555] pointer-events-none"
+              className="absolute left-[clamp(6.51px,1.15vw,22px)] w-[clamp(4.14px,0.73vw,14px)] h-[clamp(4.14px,0.73vw,14px)] text-aluna-stone-soft pointer-events-none"
             >
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
@@ -153,7 +156,7 @@ export default function CountryComponent() {
                 setSearch(e.target.value);
                 setHighlighted(0);
               }}
-              className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg text-white text-[clamp(3.55px,0.62vw,12px)] pl-[clamp(10.07px,1.77vw,34px)] pr-[clamp(2.96px,0.52vw,10px)] py-[clamp(2.37px,0.42vw,8px)] outline-none placeholder-[#444] transition-colors duration-200 focus:border-yellow-xg"
+              className="w-full bg-aluna-cream border border-aluna-stone-soft/40 rounded-lg text-aluna-stone text-[clamp(3.55px,0.62vw,12px)] pl-[clamp(10.07px,1.77vw,34px)] pr-[clamp(2.96px,0.52vw,10px)] py-[clamp(2.37px,0.42vw,8px)] outline-none placeholder-aluna-stone-soft transition-colors duration-200 focus:border-aluna-green-deep"
             />
           </div>
 
@@ -164,12 +167,12 @@ export default function CountryComponent() {
             className="max-h-[clamp(65.14px,11.46vw,220px)] overflow-y-auto py-[clamp(1.78px,0.31vw,6px)]
     [scrollbar-width:thin] [scrollbar-color:#2a2a2a_transparent]
     [&::-webkit-scrollbar]:w-1
-    [&::-webkit-scrollbar-thumb]:bg-[#2a2a2a]
+    [&::-webkit-scrollbar-thumb]:bg-alunaborder-aluna-stone-soft
     [&::-webkit-scrollbar-thumb]:rounded-sm
     [&::-webkit-scrollbar-track]:bg-transparent"
           >
             {filtered.length === 0 ? (
-              <p className="py-[clamp(5.92px,1.04vw,20px)] px-[clamp(4.14px,0.73vw,14px)] text-center text-[#444] text-[clamp(3.55px,0.62vw,12px)]">
+              <p className="py-[clamp(5.92px,1.04vw,20px)] px-[clamp(4.14px,0.73vw,14px)] text-center text-aluplaceholder-aluna-stone-soft text-[clamp(3.55px,0.62vw,12px)]">
                 Sin resultados
               </p>
             ) : (
@@ -188,8 +191,8 @@ export default function CountryComponent() {
                       "text-[clamp(3.55px,0.62vw,12px)] text-left cursor-pointer border-none",
                       "transition-colors duration-100",
                       isActive
-                        ? "bg-yellow-xg/10 text-white"
-                        : "bg-transparent text-[#ccc] hover:bg-yellow-xg/[0.07] hover:text-white",
+                        ? "bg-aluna-green-deep text-aluna-stone"
+                        : "bg-transparent text-aluna-stone-soft hover:bg-aluna-green/10 hover:text-aluna-stone",
                     ].join(" ")}
                   >
                     <CircleFlag
@@ -199,7 +202,7 @@ export default function CountryComponent() {
                     <span className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap">
                       {country.name}
                     </span>
-                    <span className="flex-shrink-0 text-yellow-xg text-[clamp(3.26px,0.57vw,11px)] font-medium opacity-85">
+                    <span className="flex-shrink-0 text-alborder-aluna-green-deep text-[clamp(3.26px,0.57vw,11px)] font-medium opacity-85">
                       {dialCode}
                     </span>
                   </button>
