@@ -1,9 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { useOnboardingStore } from "../../../store/formulario/useOnboardingStore";
 import { leadStorage } from "../../../utils/leadStorage";
 
 export default function Step5() {
-  const navigate = useNavigate();
   const name = useOnboardingStore((state) => state.name);
   const lead = useOnboardingStore((state) => state.lead);
   const reset = useOnboardingStore((state) => state.reset);
@@ -14,7 +12,8 @@ export default function Step5() {
 
   const handleEnterApp = () => {
     reset();
-    navigate("/click-and-xperience");
+
+    window.location.href = `https://aluna-clon-frontend.vercel.app/inicio?user_id=${lead?.lead_id}`;
   };
 
   return (
