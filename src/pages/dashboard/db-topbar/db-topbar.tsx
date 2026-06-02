@@ -61,12 +61,7 @@ export default function DBTopbar() {
   return (
     <div className="db-topbar">
       <div className="db-brand">
-        <div
-          className="db-brand-x logo-placeholder"
-          title="LOGO PLACEHOLDER · reemplazar con logo oficial"
-        >
-          X
-        </div>
+        <div className="db-brand-x logo-placeholder">X</div>
         <div className="db-brand-name">
           <div className="db-brand-1">Dashboard Xperience</div>
           <div className="db-brand-2">ALUNA RESIDENCIAL 2026</div>
