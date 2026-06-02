@@ -99,6 +99,11 @@
   color: var(--aluna-stone-soft);
 }
 .aluna-welcome-logo-wrap {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 219px;
+  height: 147px;
   text-align: center;
   margin-bottom: 32px;
   position: relative;

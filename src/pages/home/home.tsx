@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import OverlayShadow from "../../components/overlays/overlay-shadow";
 import React from "react";
 import "./home.css";
+import logoPrincipalAluna from "../../assets/main/LogoPrincipal_Verdeobscuro.png";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -34,10 +35,13 @@ export default function Home() {
       <div className="face-front-frame">
         <div className="aluna-welcome" id="alunaWelcome">
           <div className="aluna-welcome-stamp">ALUNA RESIDENCIAL · 2026</div>
+
+          {/* Logo */}
           <div className="aluna-welcome-logo-wrap">
-            <div className="aluna-welcome-logo">Aluna</div>
-            <div className="aluna-welcome-sub">RESIDENCIAL</div>
+            <img src={logoPrincipalAluna} alt="Logo de Aluna" />
           </div>
+
+          {/* Title */}
           <div className="aluna-welcome-title">
             El lugar donde nace tu historia
             <br />y florece tu futuro.
