@@ -1,83 +1,25 @@
+import { useDashboardStore } from "../../../../../../store/dashboard/useDashboardStore";
 import "./unit-comparator.css";
+import aluna_lotes from "../../../../../../data/aluna_lotes_etapas.json";
 
-type CompCell = {
-  value: string;
-  cls?: string;
-  style?: React.CSSProperties;
-};
+function formatStatus(status: string) {
+  if (status === "for_sale") return { label: "Disponible", cls: "comp-check" };
+  if (status === "reserved")
+    return { label: "⚠ Reservada", style: { color: "var(--status-warm)" } };
+  if (status === "locked_sale") return { label: "Bloqueada", cls: "comp-x" };
+  return { label: status };
+}
 
-type CompRow = {
-  label: string;
-  cells?: CompCell[];
-  simCells?: string[];
-};
-
-const UNITS = [
-  { id: "A 146", type: "Aluna 100", preferred: true },
-  { id: "A 155", type: "Aluna 100", preferred: false },
-  { id: "A 111", type: "Aluna 90", preferred: false },
-];
-
-const ROWS: CompRow[] = [
-  {
-    label: "Nivel",
-    cells: [
-      { value: "Sección A · Casa esquina", cls: "comp-value-yellow" },
-      { value: "Sec A" },
-      { value: "Sec B" },
-    ],
-  },
-  {
-    label: "Superficie",
-    cells: [
-      { value: "100 m²", cls: "comp-value-strong" },
-      { value: "138 m²", cls: "comp-value-strong" },
-      { value: "98 m²", cls: "comp-value-strong" },
-    ],
-  },
-  {
-    label: "Recámaras",
-    cells: [{ value: "3 + estudio" }, { value: "3" }, { value: "2" }],
-  },
-  {
-    label: "Vista al cerro",
-    cells: [
-      { value: "✓ Casa esquina · premium", cls: "comp-check" },
-      { value: "✓ Premium", cls: "comp-check" },
-      { value: "— Vista interior", cls: "comp-x" },
-    ],
-  },
-  {
-    label: "Precio lista",
-    cells: [
-      { value: "Q 1.21M", cls: "comp-value-yellow" },
-      { value: "Q 1.08M", cls: "comp-value-strong" },
-      { value: "Q 951k", cls: "comp-value-strong" },
-    ],
-  },
-  {
-    label: "Mensualidad · 72m",
-    cells: [
-      { value: "Q 15k GTQ", cls: "comp-value-yellow" },
-      { value: "Q 14k", cls: "comp-value-strong" },
-      { value: "Q 12k", cls: "comp-value-strong" },
-    ],
-  },
-  {
-    label: "Disponibilidad",
-    cells: [
-      { value: "⚠ Reservada por 48h", style: { color: "var(--status-warm)" } },
-      { value: "Disponible", cls: "comp-check" },
-      { value: "Disponible", cls: "comp-check" },
-    ],
-  },
-  {
-    label: "Simulaciones cliente",
-    simCells: ["A146", "A155", "A111"],
-  },
-];
+function formatStage(stage_id: number) {
+  return `Etapa ${stage_id}`;
+}
 
 export default function UnitComparator() {
+  const selectedLead = useDashboardStore((state) => state.selectedLead);
+  const quotes = selectedLead?.quotes ?? [];
+
+  if (!quotes.length) return null;
+
   return (
     <div className="panel panel-comparator" id="panelComparator">
       <div className="panel-header">
@@ -90,71 +32,75 @@ export default function UnitComparator() {
       </div>
 
       <div className="comparator-grid">
-        {/* Header row */}
-        <div className="comp-header-cell" />
-        {UNITS.map(({ id, type, preferred }) => (
-          <div
-            key={id}
-            className={`comp-unit-header${preferred ? " preferred" : ""}`}
-          >
-            <div className={`comp-unit-num${preferred ? " preferred" : ""}`}>
-              {id}
-            </div>
-            <div className="comp-unit-type">{type}</div>
-          </div>
-        ))}
-        <div
-          className="comp-unit-header"
-          style={{
-            background: "transparent",
-            borderRight: "none",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "var(--text-dim)",
-            cursor: "pointer",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: '"JetBrains Mono", monospace',
-              fontSize: "0.7rem",
-              letterSpacing: "0.15em",
-            }}
-          >
-            + AGREGAR
-          </span>
+        {/* Columna de labels */}
+        <div className="comp-col-labels">
+          <div className="comp-unit-header h-full max-h-[81.4px] shrink-0" />
+          {/* celda vacía arriba */}
+          <div className="comp-header-cell">Nivel</div>
+          <div className="comp-header-cell">Superficie</div>
+          <div className="comp-header-cell">Recámaras</div>
+          <div className="comp-header-cell">Vista al cerro</div>
+          <div className="comp-header-cell">Precio lista</div>
+          <div className="comp-header-cell">Mensualidad 72M</div>
+          <div className="comp-header-cell">Disponibilidad</div>
+          <div className="comp-header-cell">Simulaciones cliente</div>
         </div>
 
-        {/* Data rows */}
-        {ROWS.map(({ label, cells, simCells }) => (
-          <>
-            <div key={`h-${label}`} className="comp-header-cell">
-              {label}
+        {/* Una columna por quote */}
+        {quotes.map((q, i) => {
+          const lot =
+            aluna_lotes[String(q.lot_number) as keyof typeof aluna_lotes];
+          const status = formatStatus(lot?.status ?? "");
+
+          return (
+            <div key={q.id} className="comp-col">
+              <div className={`comp-unit-header${i === 0 ? " preferred" : ""}`}>
+                <div className={`comp-unit-num${i === 0 ? " preferred" : ""}`}>
+                  Lote {q.lot_number}
+                </div>
+                <div className="comp-unit-type">{q.modelo}</div>
+              </div>
+
+              {/* Nivel — del JSON */}
+              <div className="comp-cell">
+                {lot ? formatStage(lot.stage_id) : "—"}
+              </div>
+
+              {/* Superficie — del JSON (más preciso que el quote) */}
+              <div className="comp-cell comp-value-strong">
+                {lot ? `${lot.area} m²` : `${q.area} m²`}
+              </div>
+
+              {/* Recámaras — no disponible */}
+              <div className="comp-cell comp-x">—</div>
+
+              {/* Vista al cerro — no disponible */}
+              <div className="comp-cell comp-x">—</div>
+
+              {/* Precio lista — del quote */}
+              <div className="comp-cell comp-value-yellow">
+                ${Number(q.precio_lista).toLocaleString("es-MX")}
+              </div>
+
+              {/* Mensualidad 72M — del quote (plazo real, no fijo) */}
+              <div className="comp-cell comp-value-yellow">
+                ${Number(q.cuota_mensual).toLocaleString("es-MX")} ·{" "}
+                {q.plazo_anios}a
+              </div>
+
+              {/* Disponibilidad — del JSON */}
+              <div
+                className={`comp-cell${status.cls ? ` ${status.cls}` : ""}`}
+                style={status.style}
+              >
+                {status.label}
+              </div>
+
+              {/* Simulaciones — del quote */}
+              <div className="comp-cell comp-value-strong">{q.id}</div>
             </div>
-            {simCells
-              ? simCells.map((unit) => (
-                  <div
-                    key={unit}
-                    className="comp-cell comp-sims"
-                    data-unit={unit}
-                    id={`simsFor${unit}`}
-                  >
-                    <div className="comp-sims-empty">Sin simulaciones</div>
-                  </div>
-                ))
-              : cells?.map((cell, i) => (
-                  <div
-                    key={i}
-                    className={`comp-cell${cell.cls ? ` ${cell.cls}` : ""}`}
-                    style={cell.style}
-                  >
-                    {cell.value}
-                  </div>
-                ))}
-            <div className="comp-cell" />
-          </>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

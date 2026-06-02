@@ -2,12 +2,27 @@
   grid-column: 1 / -1;
 }
 
+.comp-col-labels {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.comp-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-left: 1px solid var(--bg-line);
+}
+
 .comparator-grid {
-  display: grid;
-  grid-template-columns: 160px repeat(3, 1fr) 1fr;
+  display: flex;
+  align-items: stretch; /* ← todas las columnas misma altura total */
   border: 1px solid var(--bg-line);
 }
 .comp-header-cell {
+  height: 100%;
   padding: 14px 16px;
   background: var(--bg-panel-2);
   border-right: 1px solid var(--bg-line);
@@ -30,6 +45,7 @@
 .comp-unit-header {
   display: flex;
   flex-direction: column;
+  max-height: 81.4px;
   gap: 4px;
   padding: 16px;
   background: var(--bg-panel-3);

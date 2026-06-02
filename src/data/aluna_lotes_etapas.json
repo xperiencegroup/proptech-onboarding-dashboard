@@ -1,0 +1,3122 @@
+{
+    "1": {
+        "id": 165,
+        "name": "1 ALUNA 70",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5223.713647,
+        "total_price": 467000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0001"
+            }
+        ],
+        "lotNumber": "1",
+        "modelo": "ALUNA 70",
+        "stage_id": 2
+    },
+    "2": {
+        "id": 166,
+        "name": "2 ALUNA 70",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5223.713647,
+        "total_price": 467000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0002"
+            }
+        ],
+        "lotNumber": "2",
+        "modelo": "ALUNA 70",
+        "stage_id": 2
+    },
+    "3": {
+        "id": 167,
+        "name": "3 ALUNA 70",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5223.713647,
+        "total_price": 467000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0003"
+            }
+        ],
+        "lotNumber": "3",
+        "modelo": "ALUNA 70",
+        "stage_id": 2
+    },
+    "4": {
+        "id": 168,
+        "name": "4 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5223.713647,
+        "total_price": 467000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0004"
+            }
+        ],
+        "lotNumber": "4",
+        "modelo": "ALUNA 100",
+        "stage_id": 2
+    },
+    "5": {
+        "id": 169,
+        "name": "5 ALUNA 70",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5223.713647,
+        "total_price": 467000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0005"
+            }
+        ],
+        "lotNumber": "5",
+        "modelo": "ALUNA 70",
+        "stage_id": 2
+    },
+    "6": {
+        "id": 170,
+        "name": "6 ALUNA 70",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5223.713647,
+        "total_price": 467000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0006"
+            }
+        ],
+        "lotNumber": "6",
+        "modelo": "ALUNA 70",
+        "stage_id": 2
+    },
+    "7": {
+        "id": 171,
+        "name": "7 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5223.713647,
+        "total_price": 467000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0007"
+            }
+        ],
+        "lotNumber": "7",
+        "modelo": "ALUNA 100",
+        "stage_id": 2
+    },
+    "8": {
+        "id": 172,
+        "name": "8 ALUNA 100E",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6800.894855,
+        "total_price": 608000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0008"
+            }
+        ],
+        "lotNumber": "8",
+        "modelo": "ALUNA 100E",
+        "stage_id": 2
+    },
+    "9": {
+        "id": 139,
+        "name": "9 ALUNA 100E",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6521.252796,
+        "total_price": 583000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0009"
+            }
+        ],
+        "lotNumber": "9",
+        "modelo": "ALUNA 100E",
+        "stage_id": 1
+    },
+    "10": {
+        "id": 151,
+        "name": "10 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6521.252796,
+        "total_price": 583000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0010"
+            }
+        ],
+        "lotNumber": "10",
+        "modelo": "ALUNA 100",
+        "stage_id": 1
+    },
+    "11": {
+        "id": 152,
+        "name": "11 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6521.252796,
+        "total_price": 583000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0011"
+            }
+        ],
+        "lotNumber": "11",
+        "modelo": "ALUNA 100",
+        "stage_id": 1
+    },
+    "12": {
+        "id": 155,
+        "name": "12 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6521.252796,
+        "total_price": 583000,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0012"
+            }
+        ],
+        "lotNumber": "12",
+        "modelo": "ALUNA 100",
+        "stage_id": 1
+    },
+    "13": {
+        "id": 189,
+        "name": "13 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6521.252796,
+        "total_price": 583000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0013"
+            }
+        ],
+        "lotNumber": "13",
+        "modelo": "ALUNA 100",
+        "stage_id": 1
+    },
+    "14": {
+        "id": 190,
+        "name": "14 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6521.252796,
+        "total_price": 583000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0014"
+            }
+        ],
+        "lotNumber": "14",
+        "modelo": "ALUNA 100",
+        "stage_id": 1
+    },
+    "15": {
+        "id": 191,
+        "name": "15 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6521.252796,
+        "total_price": 583000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0015"
+            }
+        ],
+        "lotNumber": "15",
+        "modelo": "ALUNA 100",
+        "stage_id": 1
+    },
+    "16": {
+        "id": 192,
+        "name": "16 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 0,
+        "total_price": 0,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0016"
+            }
+        ],
+        "lotNumber": "16",
+        "modelo": "ALUNA 100",
+        "stage_id": 1
+    },
+    "17": {
+        "id": 193,
+        "name": "17 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6521.252796,
+        "total_price": 583000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0017"
+            }
+        ],
+        "lotNumber": "17",
+        "modelo": "ALUNA 100",
+        "stage_id": 1
+    },
+    "18": {
+        "id": 194,
+        "name": "18 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6521.252796,
+        "total_price": 583000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0018"
+            }
+        ],
+        "lotNumber": "18",
+        "modelo": "ALUNA 100",
+        "stage_id": 1
+    },
+    "19": {
+        "id": 195,
+        "name": "19 ALUNA 100+",
+        "depth": 14.9,
+        "front": 9.89,
+        "area": 243.87,
+        "price_square_meter": 2707.323574,
+        "total_price": 660235,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0019"
+            }
+        ],
+        "lotNumber": "19",
+        "modelo": "ALUNA 100+",
+        "stage_id": 1
+    },
+    "20": {
+        "id": 196,
+        "name": "20 ALUNA 90",
+        "depth": 16.91,
+        "front": 6,
+        "area": 84.58,
+        "price_square_meter": 6084.062426,
+        "total_price": 514590,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0020"
+            }
+        ],
+        "lotNumber": "20",
+        "modelo": "ALUNA 90",
+        "stage_id": 1
+    },
+    "21": {
+        "id": 197,
+        "name": "21 ALUNA 100+",
+        "depth": 22.53,
+        "front": 6,
+        "area": 118.33,
+        "price_square_meter": 5049.142229,
+        "total_price": 597465,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0021"
+            }
+        ],
+        "lotNumber": "21",
+        "modelo": "ALUNA 100+",
+        "stage_id": 1
+    },
+    "22": {
+        "id": 198,
+        "name": "22 ALUNA 100+",
+        "depth": 28.14,
+        "front": 6,
+        "area": 151.99,
+        "price_square_meter": 4041.680374,
+        "total_price": 614295,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0022"
+            }
+        ],
+        "lotNumber": "22",
+        "modelo": "ALUNA 100+",
+        "stage_id": 1
+    },
+    "23": {
+        "id": 199,
+        "name": "23 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5782.997763,
+        "total_price": 517000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0023"
+            }
+        ],
+        "lotNumber": "23",
+        "modelo": "ALUNA 90",
+        "stage_id": 1
+    },
+    "24": {
+        "id": 200,
+        "name": "24 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5782.997763,
+        "total_price": 517000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0024"
+            }
+        ],
+        "lotNumber": "24",
+        "modelo": "ALUNA 90",
+        "stage_id": 1
+    },
+    "25": {
+        "id": 201,
+        "name": "25 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5782.997763,
+        "total_price": 517000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0025"
+            }
+        ],
+        "lotNumber": "25",
+        "modelo": "ALUNA 90",
+        "stage_id": 1
+    },
+    "26": {
+        "id": 202,
+        "name": "26 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5782.997763,
+        "total_price": 517000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0026"
+            }
+        ],
+        "lotNumber": "26",
+        "modelo": "ALUNA 90",
+        "stage_id": 1
+    },
+    "27": {
+        "id": 203,
+        "name": "27 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5782.997763,
+        "total_price": 517000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0027"
+            }
+        ],
+        "lotNumber": "27",
+        "modelo": "ALUNA 90",
+        "stage_id": 1
+    },
+    "28": {
+        "id": 204,
+        "name": "28 ALUNA 100E",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6521.252796,
+        "total_price": 583000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0028"
+            }
+        ],
+        "lotNumber": "28",
+        "modelo": "ALUNA 100E",
+        "stage_id": 1
+    },
+    "29": {
+        "id": 173,
+        "name": "29 ALUNA 100E",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6800.894855,
+        "total_price": 608000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0029"
+            }
+        ],
+        "lotNumber": "29",
+        "modelo": "ALUNA 100E",
+        "stage_id": 2
+    },
+    "30": {
+        "id": 174,
+        "name": "30 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6683.445116,
+        "total_price": 597499.9934,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0030"
+            }
+        ],
+        "lotNumber": "30",
+        "modelo": "ALUNA 100",
+        "stage_id": 2
+    },
+    "31": {
+        "id": 175,
+        "name": "31 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6683.446116,
+        "total_price": 597500.0828,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0031"
+            }
+        ],
+        "lotNumber": "31",
+        "modelo": "ALUNA 100",
+        "stage_id": 2
+    },
+    "32": {
+        "id": 176,
+        "name": "32 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6683.446116,
+        "total_price": 597500.0828,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0032"
+            }
+        ],
+        "lotNumber": "32",
+        "modelo": "ALUNA 100",
+        "stage_id": 2
+    },
+    "33": {
+        "id": 177,
+        "name": "33 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6683.446116,
+        "total_price": 597500.0828,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0033"
+            }
+        ],
+        "lotNumber": "33",
+        "modelo": "ALUNA 100",
+        "stage_id": 2
+    },
+    "34": {
+        "id": 178,
+        "name": "34 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6683.446116,
+        "total_price": 597500.0828,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0034"
+            }
+        ],
+        "lotNumber": "34",
+        "modelo": "ALUNA 100",
+        "stage_id": 2
+    },
+    "35": {
+        "id": 179,
+        "name": "35 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6683.446116,
+        "total_price": 597500.0828,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0035"
+            }
+        ],
+        "lotNumber": "35",
+        "modelo": "ALUNA 100",
+        "stage_id": 2
+    },
+    "36": {
+        "id": 180,
+        "name": "36 ALUNA 70",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5559.284116,
+        "total_price": 497000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0036"
+            }
+        ],
+        "lotNumber": "36",
+        "modelo": "ALUNA 70",
+        "stage_id": 2
+    },
+    "37": {
+        "id": 181,
+        "name": "37 ALUNA 70",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5559.284116,
+        "total_price": 497000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0037"
+            }
+        ],
+        "lotNumber": "37",
+        "modelo": "ALUNA 70",
+        "stage_id": 2
+    },
+    "38": {
+        "id": 182,
+        "name": "38 ALUNA 70",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5559.284116,
+        "total_price": 497000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0038"
+            }
+        ],
+        "lotNumber": "38",
+        "modelo": "ALUNA 70",
+        "stage_id": 2
+    },
+    "39": {
+        "id": 206,
+        "name": "39 ALUNA 100+",
+        "depth": 22.91,
+        "front": 6,
+        "area": 115.25,
+        "price_square_meter": 5604.555315,
+        "total_price": 645925,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0039"
+            }
+        ],
+        "lotNumber": "39",
+        "modelo": "ALUNA 100+",
+        "stage_id": 3
+    },
+    "40": {
+        "id": 207,
+        "name": "40 ALUNA 100+",
+        "depth": 29.8,
+        "front": 6,
+        "area": 159.21,
+        "price_square_meter": 4195.119653,
+        "total_price": 667905,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0041"
+            }
+        ],
+        "lotNumber": "40",
+        "modelo": "ALUNA 100+",
+        "stage_id": 3
+    },
+    "41": {
+        "id": 208,
+        "name": "41 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6118.568233,
+        "total_price": 547000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0041"
+            }
+        ],
+        "lotNumber": "41",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "42": {
+        "id": 209,
+        "name": "42 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6118.568233,
+        "total_price": 547000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0042"
+            }
+        ],
+        "lotNumber": "42",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "43": {
+        "id": 210,
+        "name": "43 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6118.568233,
+        "total_price": 547000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0043"
+            }
+        ],
+        "lotNumber": "43",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "44": {
+        "id": 211,
+        "name": "44 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6118.568233,
+        "total_price": 547000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0044"
+            }
+        ],
+        "lotNumber": "44",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "45": {
+        "id": 212,
+        "name": "45 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6118.568233,
+        "total_price": 547000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0045"
+            }
+        ],
+        "lotNumber": "45",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "46": {
+        "id": 213,
+        "name": "46 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6118.568233,
+        "total_price": 547000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0046"
+            }
+        ],
+        "lotNumber": "46",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "47": {
+        "id": 214,
+        "name": "47 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6118.568233,
+        "total_price": 547000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0047"
+            }
+        ],
+        "lotNumber": "47",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "48": {
+        "id": 215,
+        "name": "48 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6118.568233,
+        "total_price": 547000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0048"
+            }
+        ],
+        "lotNumber": "48",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "49": {
+        "id": 216,
+        "name": "49 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6118.568233,
+        "total_price": 547000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0049"
+            }
+        ],
+        "lotNumber": "49",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "50": {
+        "id": 217,
+        "name": "50 ALUNA 100E",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7080.536913,
+        "total_price": 633000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0050"
+            }
+        ],
+        "lotNumber": "50",
+        "modelo": "ALUNA 100E",
+        "stage_id": 3
+    },
+    "51": {
+        "id": 183,
+        "name": "51 ALUNA 100E",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6800.894855,
+        "total_price": 608000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0051"
+            }
+        ],
+        "lotNumber": "51",
+        "modelo": "ALUNA 100E",
+        "stage_id": 2
+    },
+    "52": {
+        "id": 184,
+        "name": "52 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6800.894116,
+        "total_price": 607999.934,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0052"
+            }
+        ],
+        "lotNumber": "52",
+        "modelo": "ALUNA 100",
+        "stage_id": 2
+    },
+    "53": {
+        "id": 185,
+        "name": "53 ALUNA 70",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5559.284116,
+        "total_price": 497000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0053"
+            }
+        ],
+        "lotNumber": "53",
+        "modelo": "ALUNA 70",
+        "stage_id": 2
+    },
+    "54": {
+        "id": 186,
+        "name": "54 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5800.895116,
+        "total_price": 518600.0234,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0054"
+            }
+        ],
+        "lotNumber": "54",
+        "modelo": "ALUNA 100",
+        "stage_id": 2
+    },
+    "55": {
+        "id": 187,
+        "name": "55 ALUNA 100+",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 5800.895116,
+        "total_price": 518600.0234,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0055"
+            }
+        ],
+        "lotNumber": "55",
+        "modelo": "ALUNA 100+",
+        "stage_id": 2
+    },
+    "56": {
+        "id": 188,
+        "name": "56 TERRENO ADICIONAL",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 974.000116,
+        "total_price": 87075.6104,
+        "status": "locked_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0056"
+            }
+        ],
+        "lotNumber": "56",
+        "modelo": "TERRENO ADICIONAL",
+        "stage_id": 2
+    },
+    "57": {
+        "id": 218,
+        "name": "57 ALUNA 100E",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7080.536913,
+        "total_price": 633000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0057"
+            }
+        ],
+        "lotNumber": "57",
+        "modelo": "ALUNA 100E",
+        "stage_id": 3
+    },
+    "58": {
+        "id": 219,
+        "name": "58 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0058"
+            }
+        ],
+        "lotNumber": "58",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "59": {
+        "id": 220,
+        "name": "59 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0059"
+            }
+        ],
+        "lotNumber": "59",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "60": {
+        "id": 221,
+        "name": "60 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0060"
+            }
+        ],
+        "lotNumber": "60",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "61": {
+        "id": 222,
+        "name": "61 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0061"
+            }
+        ],
+        "lotNumber": "61",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "62": {
+        "id": 223,
+        "name": "62 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0062"
+            }
+        ],
+        "lotNumber": "62",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "63": {
+        "id": 224,
+        "name": "63 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0063"
+            }
+        ],
+        "lotNumber": "63",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "64": {
+        "id": 225,
+        "name": "64 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0064"
+            }
+        ],
+        "lotNumber": "64",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "65": {
+        "id": 226,
+        "name": "65 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0065"
+            }
+        ],
+        "lotNumber": "65",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "66": {
+        "id": 227,
+        "name": "66 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0066"
+            }
+        ],
+        "lotNumber": "66",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "67": {
+        "id": 228,
+        "name": "67 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0067"
+            }
+        ],
+        "lotNumber": "67",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "68": {
+        "id": 205,
+        "name": "68 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0068"
+            }
+        ],
+        "lotNumber": "68",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "69": {
+        "id": 324,
+        "name": "69 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6454.138702,
+        "total_price": 577000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0069"
+            }
+        ],
+        "lotNumber": "69",
+        "modelo": "ALUNA 90",
+        "stage_id": 3
+    },
+    "70": {
+        "id": 301,
+        "name": "70 ALUNA 100+",
+        "depth": 27.17,
+        "front": 6,
+        "area": 124.14,
+        "price_square_meter": 5440.389882,
+        "total_price": 675370,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0070"
+            }
+        ],
+        "lotNumber": "70",
+        "modelo": "ALUNA 100+",
+        "stage_id": 4
+    },
+    "71": {
+        "id": 302,
+        "name": "71 ALUNA 100+",
+        "depth": 29.8,
+        "front": 6,
+        "area": 165.66,
+        "price_square_meter": 4104.792949,
+        "total_price": 680000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0071"
+            }
+        ],
+        "lotNumber": "71",
+        "modelo": "ALUNA 100+",
+        "stage_id": 4
+    },
+    "72": {
+        "id": 303,
+        "name": "72 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7360.178971,
+        "total_price": 658000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0072"
+            }
+        ],
+        "lotNumber": "72",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "73": {
+        "id": 304,
+        "name": "73 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7360.178971,
+        "total_price": 658000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0073"
+            }
+        ],
+        "lotNumber": "73",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "74": {
+        "id": 305,
+        "name": "74 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7360.178971,
+        "total_price": 658000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0074"
+            }
+        ],
+        "lotNumber": "74",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "75": {
+        "id": 306,
+        "name": "75 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7360.178971,
+        "total_price": 658000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0075"
+            }
+        ],
+        "lotNumber": "75",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "76": {
+        "id": 307,
+        "name": "76 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7360.178971,
+        "total_price": 658000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0076"
+            }
+        ],
+        "lotNumber": "76",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "77": {
+        "id": 308,
+        "name": "77 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7360.178971,
+        "total_price": 658000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0077"
+            }
+        ],
+        "lotNumber": "77",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "78": {
+        "id": 309,
+        "name": "78 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7360.178971,
+        "total_price": 658000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0078"
+            }
+        ],
+        "lotNumber": "78",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "79": {
+        "id": 310,
+        "name": "79 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7360.178971,
+        "total_price": 658000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0079"
+            }
+        ],
+        "lotNumber": "79",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "80": {
+        "id": 311,
+        "name": "80 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7360.178971,
+        "total_price": 658000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0080"
+            }
+        ],
+        "lotNumber": "80",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "81": {
+        "id": 312,
+        "name": "81 ALUNA 100E",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7360.178971,
+        "total_price": 658000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0081"
+            }
+        ],
+        "lotNumber": "81",
+        "modelo": "ALUNA 100E",
+        "stage_id": 4
+    },
+    "82": {
+        "id": 313,
+        "name": "82 ALUNA 100+",
+        "depth": 14.9,
+        "front": 7,
+        "area": 104.3,
+        "price_square_meter": 6380.153404,
+        "total_price": 665450,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0082"
+            }
+        ],
+        "lotNumber": "82",
+        "modelo": "ALUNA 100+",
+        "stage_id": 4
+    },
+    "83": {
+        "id": 314,
+        "name": "83 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6789.709172,
+        "total_price": 607000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0083"
+            }
+        ],
+        "lotNumber": "83",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "84": {
+        "id": 315,
+        "name": "84 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7326.630172,
+        "total_price": 655000.7374,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0084"
+            }
+        ],
+        "lotNumber": "84",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "85": {
+        "id": 316,
+        "name": "85 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7326.630172,
+        "total_price": 655000.7374,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0085"
+            }
+        ],
+        "lotNumber": "85",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "86": {
+        "id": 317,
+        "name": "86 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7326.630172,
+        "total_price": 655000.7374,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0086"
+            }
+        ],
+        "lotNumber": "86",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "87": {
+        "id": 318,
+        "name": "87 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7326.630172,
+        "total_price": 655000.7374,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0087"
+            }
+        ],
+        "lotNumber": "87",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "88": {
+        "id": 319,
+        "name": "88 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7326.630172,
+        "total_price": 655000.7374,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0088"
+            }
+        ],
+        "lotNumber": "88",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "89": {
+        "id": 320,
+        "name": "89 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7326.630172,
+        "total_price": 655000.7374,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0089"
+            }
+        ],
+        "lotNumber": "89",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "90": {
+        "id": 321,
+        "name": "90 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7326.630172,
+        "total_price": 655000.7374,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0090"
+            }
+        ],
+        "lotNumber": "90",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "91": {
+        "id": 322,
+        "name": "91 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7326.630172,
+        "total_price": 655000.7374,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0091"
+            }
+        ],
+        "lotNumber": "91",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "92": {
+        "id": 323,
+        "name": "92 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7326.630172,
+        "total_price": 655000.7374,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0092"
+            }
+        ],
+        "lotNumber": "92",
+        "modelo": "ALUNA 100",
+        "stage_id": 4
+    },
+    "93": {
+        "id": 267,
+        "name": "93 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.263982,
+        "total_price": 680000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0093"
+            }
+        ],
+        "lotNumber": "93",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "94": {
+        "id": 268,
+        "name": "94 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.263982,
+        "total_price": 680000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0094"
+            }
+        ],
+        "lotNumber": "94",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "95": {
+        "id": 269,
+        "name": "95 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.263982,
+        "total_price": 680000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0095"
+            }
+        ],
+        "lotNumber": "95",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "96": {
+        "id": 270,
+        "name": "96 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.263982,
+        "total_price": 680000,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0096"
+            }
+        ],
+        "lotNumber": "96",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "97": {
+        "id": 271,
+        "name": "97 ALUNA 100+",
+        "depth": 14.9,
+        "front": 7.76,
+        "area": 102.58,
+        "price_square_meter": 7606.263982,
+        "total_price": 780250.559284,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0097"
+            }
+        ],
+        "lotNumber": "97",
+        "modelo": "ALUNA 100+",
+        "stage_id": 5
+    },
+    "98": {
+        "id": 272,
+        "name": "98 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.263982,
+        "total_price": 680000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0098"
+            }
+        ],
+        "lotNumber": "98",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "99": {
+        "id": 273,
+        "name": "99 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.263982,
+        "total_price": 680000,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0099"
+            }
+        ],
+        "lotNumber": "99",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "100": {
+        "id": 274,
+        "name": "100 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.263982,
+        "total_price": 680000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0100"
+            }
+        ],
+        "lotNumber": "100",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "101": {
+        "id": 275,
+        "name": "101 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.263982,
+        "total_price": 680000,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0101"
+            }
+        ],
+        "lotNumber": "101",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "102": {
+        "id": 276,
+        "name": "102 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.263982,
+        "total_price": 680000,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0102"
+            }
+        ],
+        "lotNumber": "102",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "103": {
+        "id": 277,
+        "name": "103 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.264642,
+        "total_price": 680000.059,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0103"
+            }
+        ],
+        "lotNumber": "103",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "104": {
+        "id": 278,
+        "name": "104 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.264642,
+        "total_price": 680000.059,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0104"
+            }
+        ],
+        "lotNumber": "104",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "105": {
+        "id": 279,
+        "name": "105 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.264642,
+        "total_price": 680000.059,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0105"
+            }
+        ],
+        "lotNumber": "105",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "106": {
+        "id": 280,
+        "name": "106 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.264642,
+        "total_price": 680000.059,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0106"
+            }
+        ],
+        "lotNumber": "106",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "107": {
+        "id": 281,
+        "name": "107 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.264642,
+        "total_price": 680000.059,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0107"
+            }
+        ],
+        "lotNumber": "107",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "108": {
+        "id": 282,
+        "name": "108 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.264642,
+        "total_price": 680000.059,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0108"
+            }
+        ],
+        "lotNumber": "108",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "109": {
+        "id": 283,
+        "name": "109 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.264642,
+        "total_price": 680000.059,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0109"
+            }
+        ],
+        "lotNumber": "109",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "110": {
+        "id": 284,
+        "name": "110 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.264642,
+        "total_price": 680000.059,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0110"
+            }
+        ],
+        "lotNumber": "110",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "111": {
+        "id": 285,
+        "name": "111 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.264642,
+        "total_price": 680000.059,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0111"
+            }
+        ],
+        "lotNumber": "111",
+        "modelo": "ALUNA 100",
+        "stage_id": 5
+    },
+    "112": {
+        "id": 286,
+        "name": "112 ALUNA 100+",
+        "depth": 14.9,
+        "front": 7,
+        "area": 100.34,
+        "price_square_meter": 6883.397342,
+        "total_price": 690680.08926,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0112"
+            }
+        ],
+        "lotNumber": "112",
+        "modelo": "ALUNA 100+",
+        "stage_id": 5
+    },
+    "113": {
+        "id": 287,
+        "name": "113 ALUNA 100+",
+        "depth": 14.9,
+        "front": 7,
+        "area": 104.22,
+        "price_square_meter": 6524.659374,
+        "total_price": 680000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0113"
+            }
+        ],
+        "lotNumber": "113",
+        "modelo": "ALUNA 100+",
+        "stage_id": 5
+    },
+    "114": {
+        "id": 288,
+        "name": "114 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0114"
+            }
+        ],
+        "lotNumber": "114",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "115": {
+        "id": 289,
+        "name": "115 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0115"
+            }
+        ],
+        "lotNumber": "115",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "116": {
+        "id": 290,
+        "name": "116 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0116"
+            }
+        ],
+        "lotNumber": "116",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "117": {
+        "id": 291,
+        "name": "117 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0117"
+            }
+        ],
+        "lotNumber": "117",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "118": {
+        "id": 292,
+        "name": "118 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0118"
+            }
+        ],
+        "lotNumber": "118",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "119": {
+        "id": 293,
+        "name": "119 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0119"
+            }
+        ],
+        "lotNumber": "119",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "120": {
+        "id": 294,
+        "name": "120 ALUNA 90+",
+        "depth": 15.39,
+        "front": 6,
+        "area": 125.29,
+        "price_square_meter": 5427.408412,
+        "total_price": 680000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "serviciosadicionales",
+                "value": null
+            },
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0120"
+            }
+        ],
+        "lotNumber": "120",
+        "modelo": "ALUNA 90+",
+        "stage_id": 5
+    },
+    "121": {
+        "id": 295,
+        "name": "121 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0121"
+            }
+        ],
+        "lotNumber": "121",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "122": {
+        "id": 296,
+        "name": "122 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0122"
+            }
+        ],
+        "lotNumber": "122",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "123": {
+        "id": 297,
+        "name": "123 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0123"
+            }
+        ],
+        "lotNumber": "123",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "124": {
+        "id": 298,
+        "name": "124 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0124"
+            }
+        ],
+        "lotNumber": "124",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "125": {
+        "id": 299,
+        "name": "125 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850112,
+        "total_price": 667000,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0125"
+            }
+        ],
+        "lotNumber": "125",
+        "modelo": "ALUNA 90",
+        "stage_id": 5
+    },
+    "126": {
+        "id": 300,
+        "name": "126 ALUNA 100+",
+        "depth": 14.9,
+        "front": 7,
+        "area": 104.3,
+        "price_square_meter": 6658.964842,
+        "total_price": 694530.033,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0126"
+            }
+        ],
+        "lotNumber": "126",
+        "modelo": "ALUNA 100+",
+        "stage_id": 5
+    },
+    "127": {
+        "id": 242,
+        "name": "127 ALUNA 100+",
+        "depth": 14.9,
+        "front": 7,
+        "area": 101.01,
+        "price_square_meter": 6844.075709,
+        "total_price": 691320.087332,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0127"
+            }
+        ],
+        "lotNumber": "127",
+        "modelo": "ALUNA 100+",
+        "stage_id": 6
+    },
+    "128": {
+        "id": 243,
+        "name": "128 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 4117.1875,
+        "total_price": 368076.5625,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0128"
+            }
+        ],
+        "lotNumber": "128",
+        "modelo": "ALUNA 100",
+        "stage_id": 6
+    },
+    "129": {
+        "id": 244,
+        "name": "129 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 4085.271318,
+        "total_price": 365223.255814,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0129"
+            }
+        ],
+        "lotNumber": "129",
+        "modelo": "ALUNA 100",
+        "stage_id": 6
+    },
+    "130": {
+        "id": 245,
+        "name": "130 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 4053.846154,
+        "total_price": 362413.846154,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0130"
+            }
+        ],
+        "lotNumber": "130",
+        "modelo": "ALUNA 100",
+        "stage_id": 6
+    },
+    "131": {
+        "id": 246,
+        "name": "131 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 4022.900763,
+        "total_price": 359647.328244,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0131"
+            }
+        ],
+        "lotNumber": "131",
+        "modelo": "ALUNA 100",
+        "stage_id": 6
+    },
+    "132": {
+        "id": 247,
+        "name": "132 ALUNA 100+",
+        "depth": 14.9,
+        "front": 10.82,
+        "area": 143.23,
+        "price_square_meter": 5114.047758,
+        "total_price": 732485.060318,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0132"
+            }
+        ],
+        "lotNumber": "132",
+        "modelo": "ALUNA 100+",
+        "stage_id": 6
+    },
+    "133": {
+        "id": 248,
+        "name": "133 ALUNA 100+",
+        "depth": 14.9,
+        "front": 10.82,
+        "area": 143.23,
+        "price_square_meter": 5114.047436,
+        "total_price": 732485.014271,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0133"
+            }
+        ],
+        "lotNumber": "133",
+        "modelo": "ALUNA 100+",
+        "stage_id": 6
+    },
+    "134": {
+        "id": 249,
+        "name": "134 ALUNA 70",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 3932.835821,
+        "total_price": 351595.522388,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0134"
+            }
+        ],
+        "lotNumber": "134",
+        "modelo": "ALUNA 70",
+        "stage_id": 6
+    },
+    "135": {
+        "id": 250,
+        "name": "135 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 3903.703704,
+        "total_price": 348991.111111,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0135"
+            }
+        ],
+        "lotNumber": "135",
+        "modelo": "ALUNA 100",
+        "stage_id": 6
+    },
+    "136": {
+        "id": 251,
+        "name": "136 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 3875,
+        "total_price": 346425,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0136"
+            }
+        ],
+        "lotNumber": "136",
+        "modelo": "ALUNA 100",
+        "stage_id": 6
+    },
+    "137": {
+        "id": 252,
+        "name": "137 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 3846.715328,
+        "total_price": 343896.350365,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0137"
+            }
+        ],
+        "lotNumber": "137",
+        "modelo": "ALUNA 100",
+        "stage_id": 6
+    },
+    "138": {
+        "id": 253,
+        "name": "138 ALUNA 100+",
+        "depth": 14.9,
+        "front": 7,
+        "area": 104.3,
+        "price_square_meter": 4858.333333,
+        "total_price": 506724.166667,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0138"
+            }
+        ],
+        "lotNumber": "138",
+        "modelo": "ALUNA 100+",
+        "stage_id": 6
+    },
+    "139": {
+        "id": 254,
+        "name": "139 ALUNA 90+",
+        "depth": 29.22,
+        "front": 6,
+        "area": 169.32,
+        "price_square_meter": 4399.480331,
+        "total_price": 744920.009634,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0139"
+            }
+        ],
+        "lotNumber": "139",
+        "modelo": "ALUNA 90+",
+        "stage_id": 6
+    },
+    "140": {
+        "id": 255,
+        "name": "140 ALUNA 90+",
+        "depth": 27.22,
+        "front": 6,
+        "area": 157.37,
+        "price_square_meter": 4659.528857,
+        "total_price": 733270.056249,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0140"
+            }
+        ],
+        "lotNumber": "140",
+        "modelo": "ALUNA 90+",
+        "stage_id": 6
+    },
+    "141": {
+        "id": 256,
+        "name": "141 ALUNA 90+",
+        "depth": 25.23,
+        "front": 6,
+        "area": 145.41,
+        "price_square_meter": 4962.589035,
+        "total_price": 721610.071646,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0141"
+            }
+        ],
+        "lotNumber": "141",
+        "modelo": "ALUNA 90+",
+        "stage_id": 6
+    },
+    "142": {
+        "id": 257,
+        "name": "142 ALUNA 90+",
+        "depth": 23.24,
+        "front": 6,
+        "area": 133.46,
+        "price_square_meter": 5319.646394,
+        "total_price": 709960.007792,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0142"
+            }
+        ],
+        "lotNumber": "142",
+        "modelo": "ALUNA 90+",
+        "stage_id": 6
+    },
+    "143": {
+        "id": 258,
+        "name": "143 ALUNA 90+",
+        "depth": 21.25,
+        "front": 6,
+        "area": 121,
+        "price_square_meter": 5767.024755,
+        "total_price": 697809.995385,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0143"
+            }
+        ],
+        "lotNumber": "143",
+        "modelo": "ALUNA 90+",
+        "stage_id": 6
+    },
+    "144": {
+        "id": 259,
+        "name": "144 ALUNA 90+",
+        "depth": 19.35,
+        "front": 6,
+        "area": 117.75,
+        "price_square_meter": 5899.278222,
+        "total_price": 694640.010667,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0144"
+            }
+        ],
+        "lotNumber": "144",
+        "modelo": "ALUNA 90+",
+        "stage_id": 6
+    },
+    "145": {
+        "id": 260,
+        "name": "145 ALUNA 100+",
+        "depth": 22.76,
+        "front": 6.2,
+        "area": 199.82,
+        "price_square_meter": 3876.789172,
+        "total_price": 774660.012432,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0145"
+            }
+        ],
+        "lotNumber": "145",
+        "modelo": "ALUNA 100+",
+        "stage_id": 6
+    },
+    "146": {
+        "id": 261,
+        "name": "146 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850247,
+        "total_price": 667000.012044,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0146"
+            }
+        ],
+        "lotNumber": "146",
+        "modelo": "ALUNA 90",
+        "stage_id": 6
+    },
+    "147": {
+        "id": 262,
+        "name": "147 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.85034,
+        "total_price": 667000.020408,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0147"
+            }
+        ],
+        "lotNumber": "147",
+        "modelo": "ALUNA 90",
+        "stage_id": 6
+    },
+    "148": {
+        "id": 263,
+        "name": "148 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850595,
+        "total_price": 667000.043157,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0148"
+            }
+        ],
+        "lotNumber": "148",
+        "modelo": "ALUNA 90",
+        "stage_id": 6
+    },
+    "149": {
+        "id": 264,
+        "name": "149 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850389,
+        "total_price": 667000.0248,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0149"
+            }
+        ],
+        "lotNumber": "149",
+        "modelo": "ALUNA 90",
+        "stage_id": 6
+    },
+    "150": {
+        "id": 265,
+        "name": "150 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7460.850333,
+        "total_price": 667000.0198,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0150"
+            }
+        ],
+        "lotNumber": "150",
+        "modelo": "ALUNA 90",
+        "stage_id": 6
+    },
+    "151": {
+        "id": 266,
+        "name": "151 ALUNA 90",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 7606.264258,
+        "total_price": 680000.02469,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0151"
+            }
+        ],
+        "lotNumber": "151",
+        "modelo": "ALUNA 90",
+        "stage_id": 6
+    },
+    "152": {
+        "id": 229,
+        "name": "152 ALUNA 90+",
+        "depth": 23.84,
+        "front": 6,
+        "area": 139.2,
+        "price_square_meter": 4350.251474,
+        "total_price": 605555.005137,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0152"
+            }
+        ],
+        "lotNumber": "152",
+        "modelo": "ALUNA 90+",
+        "stage_id": 7
+    },
+    "153": {
+        "id": 230,
+        "name": "153 ALUNA 90+",
+        "depth": 22.56,
+        "front": 6,
+        "area": 131.47,
+        "price_square_meter": 4548.718536,
+        "total_price": 598020.025921,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0153"
+            }
+        ],
+        "lotNumber": "153",
+        "modelo": "ALUNA 90+",
+        "stage_id": 7
+    },
+    "154": {
+        "id": 231,
+        "name": "154 ALUNA 90+",
+        "depth": 21.27,
+        "front": 6,
+        "area": 123.75,
+        "price_square_meter": 4771.647091,
+        "total_price": 590491.3275,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0154"
+            }
+        ],
+        "lotNumber": "154",
+        "modelo": "ALUNA 90+",
+        "stage_id": 7
+    },
+    "155": {
+        "id": 232,
+        "name": "155 ALUNA 90+",
+        "depth": 19.98,
+        "front": 6,
+        "area": 116.02,
+        "price_square_meter": 6244.000355,
+        "total_price": 724428.921168,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0155"
+            }
+        ],
+        "lotNumber": "155",
+        "modelo": "ALUNA 90+",
+        "stage_id": 7
+    },
+    "156": {
+        "id": 233,
+        "name": "156 ALUNA 90+",
+        "depth": 18.69,
+        "front": 6,
+        "area": 108.29,
+        "price_square_meter": 5313.674692,
+        "total_price": 575417.83243,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0156"
+            }
+        ],
+        "lotNumber": "156",
+        "modelo": "ALUNA 90+",
+        "stage_id": 7
+    },
+    "157": {
+        "id": 234,
+        "name": "157 ALUNA 70+",
+        "depth": 17.41,
+        "front": 6,
+        "area": 100.57,
+        "price_square_meter": 3583.343949,
+        "total_price": 360376.900955,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0157"
+            }
+        ],
+        "lotNumber": "157",
+        "modelo": "ALUNA 70+",
+        "stage_id": 7
+    },
+    "158": {
+        "id": 235,
+        "name": "158 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 6230.425456,
+        "total_price": 557000.035739,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0158"
+            }
+        ],
+        "lotNumber": "158",
+        "modelo": "ALUNA 100",
+        "stage_id": 7
+    },
+    "159": {
+        "id": 236,
+        "name": "159 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 3503.144654,
+        "total_price": 313181.132075,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0159"
+            }
+        ],
+        "lotNumber": "159",
+        "modelo": "ALUNA 100",
+        "stage_id": 7
+    },
+    "160": {
+        "id": 237,
+        "name": "160 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 8081.25,
+        "total_price": 722463.75,
+        "status": "for_sale",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0160"
+            }
+        ],
+        "lotNumber": "160",
+        "modelo": "ALUNA 100",
+        "stage_id": 7
+    },
+    "161": {
+        "id": 238,
+        "name": "161 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 3459.627329,
+        "total_price": 309290.68323,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0161"
+            }
+        ],
+        "lotNumber": "161",
+        "modelo": "ALUNA 100",
+        "stage_id": 7
+    },
+    "162": {
+        "id": 239,
+        "name": "162 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 3438.271605,
+        "total_price": 307381.481481,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0162"
+            }
+        ],
+        "lotNumber": "162",
+        "modelo": "ALUNA 100",
+        "stage_id": 7
+    },
+    "163": {
+        "id": 240,
+        "name": "163 ALUNA 100",
+        "depth": 14.9,
+        "front": 6,
+        "area": 89.4,
+        "price_square_meter": 3417.177914,
+        "total_price": 305495.705521,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0163"
+            }
+        ],
+        "lotNumber": "163",
+        "modelo": "ALUNA 100",
+        "stage_id": 7
+    },
+    "164": {
+        "id": 241,
+        "name": "164 ALUNA 100+",
+        "depth": 14.9,
+        "front": 8.34,
+        "area": 114.73,
+        "price_square_meter": 6142.219463,
+        "total_price": 704696.839038,
+        "status": "reserved",
+        "custom_fields": [
+            {
+                "code": "codigo_erp",
+                "value": "AC01A0164"
+            }
+        ],
+        "lotNumber": "164",
+        "modelo": "ALUNA 100+",
+        "stage_id": 7
+    }
+}
