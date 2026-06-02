@@ -139,12 +139,12 @@ export const useOnboardingStore = create<OnboardingState>()(
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              edad: state.edad,
-              familia: state.familia,
-              uso: state.uso,
-              presupuesto: state.presupuesto,
-              subsidio: state.subsidio,
-              interes: state.interes,
+              age: state.edad,
+              family: state.familia,
+              usage: state.uso,
+              budget: state.presupuesto,
+              subsidy: state.subsidio,
+              interest: state.interes,
               status: "complete",
             }),
           });
