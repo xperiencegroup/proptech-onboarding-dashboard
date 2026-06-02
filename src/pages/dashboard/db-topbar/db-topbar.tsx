@@ -123,7 +123,10 @@ export default function DBTopbar() {
 
         <DBAlertas />
 
-        <Link className="back-to-platform" to="/click-and-xperience">
+        <Link
+          className="back-to-platform"
+          to="https://aluna-clon-frontend.vercel.app/inicio"
+        >
           <svg
             fill="none"
             stroke="currentColor"
