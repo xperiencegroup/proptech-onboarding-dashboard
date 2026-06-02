@@ -38,4 +38,39 @@ export interface LeadDetail extends Lead {
   interest?: string;
   status: string;
   created_at: string;
+  chat: LeadChat[];
+  navigation: LeadNavigation[];
+  quotes: LeadQuote[];
+}
+
+export interface LeadChat {
+  id: string;
+  session_id: string | null;
+  role: string;
+  content: string;
+  created_at: string;
+}
+
+export interface LeadNavigation {
+  id: string;
+  view: string;
+  duration_s: number | null;
+  created_at: string;
+}
+
+export interface LeadQuote {
+  id: string;
+  lot_number: number | null;
+  modelo: string | null;
+  area: number | null;
+  precio_lista: number | null;
+  modalidad: string | null;
+  tasa: number | null;
+  enganche_pct: number | null;
+  enganche_monto: number | null;
+  financiado: number | null;
+  plazo_anios: number | null;
+  cuota_mensual: number | null;
+  generado_en: string | null;
+  created_at: string;
 }
