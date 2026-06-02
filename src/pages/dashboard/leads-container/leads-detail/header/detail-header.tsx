@@ -140,6 +140,7 @@ export default function DetailHeader() {
   const selectedLead = useDashboardStore((state) => state.selectedLead);
   const { isClientMode, toggleClientMode } = useUIStore();
   const selectedLeadId = useDashboardStore((state) => state.selectedLeadId);
+  const toggleChat = useUIStore((state) => state.toggleChat);
 
   useEffect(() => {
     if (selectedLeadId) {
@@ -227,10 +228,7 @@ export default function DetailHeader() {
       <div className="action-bar">
         <div className="action-group">
           <span className="action-group-label">Contacto</span>
-          <button
-            className="btn-chat-takeover"
-            // onClick="openChatDrawer()"
-          >
+          <button className="btn-chat-takeover" onClick={toggleChat}>
             <svg
               fill="none"
               stroke="currentColor"

@@ -3,6 +3,7 @@ import "./dashboard.css";
 import DBTopbar from "./db-topbar/db-topbar";
 import FilterBar from "./filter-bar/filter-bar";
 import LeadsContainer from "./leads-container/leads-container";
+import ChatDrawer from "./leads-container/leads-detail/chat-drawer/chat-drawer";
 import PresenterBanner from "./presenter-banner/presenter-banner";
 
 export default function Dashboard() {
@@ -13,6 +14,7 @@ export default function Dashboard() {
       <PresenterBanner />
       <FilterBar />
       <LeadsContainer />
+      <ChatDrawer />
     </div>
   );
 }
