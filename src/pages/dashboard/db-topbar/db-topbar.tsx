@@ -55,7 +55,7 @@ export default function DBTopbar() {
   }, []);
 
   const handleEnterApp = () => {
-    window.location.href = `https://aluna-clon-frontend.vercel.app/inicio?staff_id=${userId}`;
+    window.location.href = `https://aluna-clon-frontend.vercel.app/inicio?user_id=${userId}`;
   };
 
   return (
