@@ -14,7 +14,7 @@ export default function BrochureButton() {
       <svg
         fill="none"
         stroke="currentColor"
-        stroke-width="1.8"
+        strokeWidth="1.8"
         stroke-linecap="round"
         stroke-linejoin="round"
         viewBox="0 0 24 24"

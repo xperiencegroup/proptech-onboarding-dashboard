@@ -1,0 +1,35 @@
+.db-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--bg-line);
+  min-width: 260px;
+}
+.db-search svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--text-dim);
+}
+.db-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.8rem;
+}
+.db-search input::placeholder {
+  color: var(--text-low);
+}
+.db-search kbd {
+  padding: 2px 6px;
+  background: var(--bg-panel-3);
+  border: 1px solid var(--bg-line-strong);
+  border-radius: 3px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}

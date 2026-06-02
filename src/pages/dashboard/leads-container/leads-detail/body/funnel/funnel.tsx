@@ -51,8 +51,8 @@ export default function Funnel() {
       <div className="funnel-vertical">
         {FUNNEL_STAGES.map(
           ({ step, name, time, status, badge, badgeType }, i) => (
-            <>
-              <div key={name} className={`funnel-stage ${status}`}>
+            <div key={i}>
+              <div className={`funnel-stage ${status}`}>
                 <div className="funnel-step">{step}</div>
                 <div className="funnel-stage-info">
                   <div className="funnel-stage-name">{name}</div>
@@ -70,7 +70,7 @@ export default function Funnel() {
               {i < FUNNEL_STAGES.length - 1 && (
                 <div key={`c-${i}`} className="funnel-connector" />
               )}
-            </>
+            </div>
           ),
         )}
       </div>

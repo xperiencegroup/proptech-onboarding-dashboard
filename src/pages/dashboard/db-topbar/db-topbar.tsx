@@ -1,25 +1,18 @@
 import { useRef, useEffect, useState } from "react";
 import "./db-topbar.css";
 import { useSessionStore } from "../../../store/session/useSessionStore";
-import { useUIStore } from "../../../store/ui/useUIStore";
 import { supabase } from "../../../utils/supabase";
 import DBAlertas from "./db-alertas/db-alertas";
-import { useDashboardStore } from "../../../store/dashboard/useDashboardStore";
+import logoAlunaBlanco from "../../../assets/main/LogoPrincipal_blanco.png";
+import DbToggleView from "./db-toggle-view/db-toggle-view";
+import DbSearcher from "./db-searcher/db-searcher";
 
 export default function DBTopbar() {
-  const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const selectedLeadId = useDashboardStore((state) => state.selectedLeadId);
 
-  const { isClientMode, toggleClientMode, setSearchQuery, searchQuery } =
-    useUIStore();
   const { name, avatarInitials, role, clearSession, userId } =
     useSessionStore();
-
-  const toggleViewMode = () => {
-    toggleClientMode();
-  };
 
   const handleLogout = async () => {
     const { error } = await supabase.auth.signOut();
@@ -42,84 +35,31 @@ export default function DBTopbar() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  // Shortcut ⌘K
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
-        e.preventDefault();
-        inputRef.current?.focus();
-      }
-    };
-    document.addEventListener("keydown", handler);
-    return () => document.removeEventListener("keydown", handler);
-  }, []);
-
   const handleEnterApp = () => {
     window.location.href = `https://aluna-clon-frontend.vercel.app/inicio?user_id=${userId}`;
   };
 
   return (
     <div className="db-topbar">
+      {/* Logo y nombre */}
       <div className="db-brand">
-        <div className="db-brand-x logo-placeholder">X</div>
+        <div className="w-[clamp(59.17px,10.416667vw,80px)] h-fit">
+          <img src={logoAlunaBlanco} alt="Logo de aluna" />
+        </div>
         <div className="db-brand-name">
-          <div className="db-brand-1">Dashboard Xperience</div>
+          <div className="db-brand-1">Xperience Intelligence</div>
           <div className="db-brand-2">ALUNA RESIDENCIAL 2026</div>
         </div>
       </div>
 
-      <div
-        className={`view-toggle ${isClientMode ? "client-mode" : ""} ${!selectedLeadId ? "view-toggle--disabled" : ""}`}
-        id="viewToggle"
-        onClick={selectedLeadId ? toggleViewMode : undefined}
-        title={
-          !selectedLeadId
-            ? "Selecciona un lead para activar la vista cliente"
-            : isClientMode
-              ? "En vista cliente · click para volver a vista vendedor"
-              : "En vista vendedor · click para vista cliente"
-        }
-      >
-        <div className="view-toggle-track">
-          <div className="view-toggle-thumb" />
-        </div>
-        <div className="view-toggle-labels">
-          <span
-            className={`view-toggle-label ${!isClientMode ? "active" : ""}`}
-            data-view="vendor"
-          >
-            Vista vendedor
-          </span>
-          <span
-            className={`view-toggle-label ${isClientMode ? "active" : ""}`}
-            data-view="client"
-          >
-            Vista cliente
-          </span>
-        </div>
-      </div>
+      {/* Toggle */}
+      <DbToggleView />
 
       <div className="db-actions">
-        <div className="db-search">
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            viewBox="0 0 24 24"
-          >
-            <circle cx="11" cy="11" r="7" />
-            <path d="M21 21l-4.3-4.3" />
-          </svg>
-          <input
-            ref={inputRef}
-            id="dashSearch"
-            placeholder="Buscar leads, folios, unidades..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <kbd>⌘K</kbd>
-        </div>
+        {/* Buscador */}
+        <DbSearcher />
 
+        {/* Botón de alertas */}
         <DBAlertas />
 
         <button className="back-to-platform" onClick={handleEnterApp}>

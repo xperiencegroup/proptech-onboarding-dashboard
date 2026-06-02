@@ -26,7 +26,9 @@ export default function LeadsList() {
     return (
       lead.name.toLowerCase().includes(q) ||
       lead.folio.toLowerCase().includes(q) ||
-      lead.last_units_visited.some((unit) => unit.toLowerCase().includes(q))
+      (lead.last_units_visited ?? []).some((unit) =>
+        unit.toLowerCase().includes(q),
+      )
     );
   });
 

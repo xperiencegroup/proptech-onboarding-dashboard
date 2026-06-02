@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../../utils/supabase";
 import "./login.css";
 import { useSessionStore } from "../../store/session/useSessionStore";
+import logoAlunaBlanco from "../../assets/main/LogoPrincipal_blanco.png";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -76,14 +77,11 @@ export default function Login() {
       </div>
 
       {/* Logo flotante */}
-      <Link to={"/"} className="login-logo">
-        <div className="login-logo-mark">
-          <div className="login-logo-mark-inner" />
-        </div>
-        <div>
-          <div className="login-logo-name">Aluna</div>
-          <div className="login-logo-sub">Residencial</div>
-        </div>
+      <Link
+        to={"/"}
+        className="login-logo w-[clamp(88.75px,15.625vw,120px)] h-fit"
+      >
+        <img src={logoAlunaBlanco} alt="Logo de aluna" />
       </Link>
 
       {/* Card central */}
@@ -91,7 +89,7 @@ export default function Login() {
         {/* Lado izquierdo — branding */}
         <div className="login-card-left">
           <div className="login-card-left-inner">
-            <div className="login-eyebrow">Dashboard Xperience</div>
+            <div className="login-eyebrow">Xperience Intelligence</div>
             <h1 className="login-headline">
               Tu pipeline,
               <br />
@@ -101,22 +99,6 @@ export default function Login() {
               Visualiza el journey de cada lead, sus simulaciones, comparaciones
               de unidades y el estado completo de tu operación.
             </p>
-            <div className="login-stats">
-              <div className="login-stat">
-                <span className="login-stat-num">20+</span>
-                <span className="login-stat-label">Leads activos</span>
-              </div>
-              <div className="login-stat-sep" />
-              <div className="login-stat">
-                <span className="login-stat-num">Q 4.2M</span>
-                <span className="login-stat-label">Pipeline</span>
-              </div>
-              <div className="login-stat-sep" />
-              <div className="login-stat">
-                <span className="login-stat-num">87</span>
-                <span className="login-stat-label">Score máx.</span>
-              </div>
-            </div>
           </div>
           <div className="login-card-left-border" />
         </div>

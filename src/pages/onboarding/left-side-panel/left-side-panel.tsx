@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import "./left-side-panel.css";
+import logoPrincipalAluna from "../../../assets/main/LogoPrincipal_Verdeobscuro.png";
 
 export default function LeftSidePanel() {
   return (
     <>
       {/* <!-- SIDE: branding + contexto --> */}
       <div className="aluna-ob-side">
-        <Link to={"/"} className="aluna-ob-side-top w-fit">
-          <div className="aluna-ob-side-logo">Aluna</div>
-          <div className="aluna-ob-side-logo-sub">RESIDENCIAL</div>
+        <Link
+          to={"/"}
+          className="aluna-ob-side-top w-[clamp(88.75px,15.625vw,120px)] h-fit"
+        >
+          <img src={logoPrincipalAluna} alt="Logo Aluna Residencial" />
         </Link>
 
         <div className="aluna-ob-side-mid">

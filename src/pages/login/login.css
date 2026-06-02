@@ -258,6 +258,7 @@
   padding: 52px 44px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   background: var(--bg-panel);
 }
 

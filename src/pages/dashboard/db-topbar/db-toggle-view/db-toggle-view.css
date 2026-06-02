@@ -1,0 +1,72 @@
+/* toggle */
+/* View toggle: vendedor / cliente */
+.view-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 14px 5px 6px;
+  background: var(--bg-panel);
+  border: 1px solid var(--bg-line-strong);
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.18s;
+}
+.view-toggle:hover {
+  border-color: var(--xp-yellow);
+}
+.view-toggle-track {
+  width: 36px;
+  height: 18px;
+  background: rgba(251, 203, 34, 0.18);
+  border-radius: 999px;
+  position: relative;
+  transition: background 0.2s;
+}
+.view-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background: var(--xp-yellow);
+  border-radius: 50%;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(251, 203, 34, 0.4);
+}
+.view-toggle.client-mode .view-toggle-thumb {
+  transform: translateX(18px);
+}
+.view-toggle.client-mode .view-toggle-track {
+  background: rgba(95, 145, 220, 0.22);
+}
+.view-toggle.client-mode .view-toggle-thumb {
+  background: #7da9e0;
+  box-shadow: 0 2px 6px rgba(95, 145, 220, 0.5);
+}
+.view-toggle-labels {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.view-toggle-label {
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+.view-toggle-label.active {
+  color: var(--text-high);
+}
+.view-toggle-label[data-view="client"] {
+  display: none;
+}
+.view-toggle.client-mode .view-toggle-label[data-view="vendor"] {
+  display: none;
+}
+.view-toggle.client-mode .view-toggle-label[data-view="client"] {
+  display: inline;
+  color: #7da9e0;
+}

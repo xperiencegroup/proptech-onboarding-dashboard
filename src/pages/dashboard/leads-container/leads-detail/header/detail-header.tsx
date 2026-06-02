@@ -232,7 +232,7 @@ export default function DetailHeader() {
             <svg
               fill="none"
               stroke="currentColor"
-              stroke-width="2.4"
+              strokeWidth="2.4"
               viewBox="0 0 24 24"
             >
               <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
@@ -264,7 +264,7 @@ export default function DetailHeader() {
             <svg
               fill="none"
               stroke="currentColor"
-              stroke-width="2.2"
+              strokeWidth="2.2"
               viewBox="0 0 24 24"
             >
               <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -279,7 +279,7 @@ export default function DetailHeader() {
             <svg
               fill="none"
               stroke="currentColor"
-              stroke-width="2.2"
+              strokeWidth="2.2"
               viewBox="0 0 24 24"
             >
               <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
@@ -296,7 +296,7 @@ export default function DetailHeader() {
             <svg
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
+              strokeWidth="2"
               viewBox="0 0 24 24"
             >
               <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
