@@ -3,17 +3,6 @@ import "./detail-analytics.css";
 import { useDashboardStore } from "../../../../../../store/dashboard/useDashboardStore";
 import type { LeadNavigation } from "../../../../../../types/lead";
 
-function getType(view: string) {
-  if (
-    view.startsWith("aluna:chat:") &&
-    !view.includes(":on") &&
-    !view.includes(":off")
-  )
-    return "chat";
-  if (view.startsWith("aluna:")) return "chat-event";
-  return "page";
-}
-
 function getIcon(view: string) {
   if (view === "aluna:chat:open")
     return (
