@@ -1,5 +1,4 @@
 import { useRef, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./db-topbar.css";
 import { useSessionStore } from "../../../store/session/useSessionStore";
 import { useUIStore } from "../../../store/ui/useUIStore";
@@ -15,7 +14,8 @@ export default function DBTopbar() {
 
   const { isClientMode, toggleClientMode, setSearchQuery, searchQuery } =
     useUIStore();
-  const { name, avatarInitials, role, clearSession } = useSessionStore();
+  const { name, avatarInitials, role, clearSession, userId } =
+    useSessionStore();
 
   const toggleViewMode = () => {
     toggleClientMode();
@@ -53,6 +53,10 @@ export default function DBTopbar() {
     document.addEventListener("keydown", handler);
     return () => document.removeEventListener("keydown", handler);
   }, []);
+
+  const handleEnterApp = () => {
+    window.location.href = `https://aluna-clon-frontend.vercel.app/inicio?staff_id=${userId}`;
+  };
 
   return (
     <div className="db-topbar">
@@ -123,10 +127,7 @@ export default function DBTopbar() {
 
         <DBAlertas />
 
-        <Link
-          className="back-to-platform"
-          to="https://aluna-clon-frontend.vercel.app/inicio"
-        >
+        <button className="back-to-platform" onClick={handleEnterApp}>
           <svg
             fill="none"
             stroke="currentColor"
@@ -136,7 +137,7 @@ export default function DBTopbar() {
             <path d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
           Ir a Click &amp; Xperience
-        </Link>
+        </button>
 
         {/* Perfil con dropdown */}
         <div className="vendor-chip-wrap" ref={dropdownRef}>
