@@ -18,7 +18,41 @@ export default function UnitComparator() {
   const selectedLead = useDashboardStore((state) => state.selectedLead);
   const quotes = selectedLead?.quotes ?? [];
 
-  if (!quotes.length) return null;
+  if (!quotes.length)
+    return (
+      <div className="panel panel-comparator" id="panelComparator">
+        <div className="panel-header">
+          <div className="panel-title featured">
+            <span className="panel-title-dot" />
+            Comparador de unidades
+            <span className="panel-title-flag">Xperience</span>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center gap-3 px-6 py-10 text-center">
+          <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              className="h-5 w-5 text-stone-400"
+            >
+              <path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3" />
+              <path d="M9 15h3l8.5-8.5a1.5 1.5 0 00-3-3L9 12v3" />
+              <path d="M16 5l3 3" />
+            </svg>
+          </div>
+          <p className="text-sm font-medium text-white">
+            Sin cotizaciones registradas
+          </p>
+          <p className="max-w-[260px] text-xs leading-relaxed text-stone-500">
+            Este lead aún no ha simulado ninguna unidad. Las cotizaciones
+            aparecerán aquí cuando use el simulador financiero.
+          </p>
+        </div>
+      </div>
+    );
 
   return (
     <div className="panel panel-comparator" id="panelComparator">
