@@ -16,7 +16,34 @@ function formatStage(stage_id: number) {
 
 export default function UnitComparator() {
   const selectedLead = useDashboardStore((state) => state.selectedLead);
-  const quotes = selectedLead?.quotes ?? [];
+  const selectQuote = useDashboardStore((state) => state.selectQuote);
+  const selectedQuote = useDashboardStore((state) => state.selectedQuote);
+
+  const quotes = (() => {
+    const raw = selectedLead?.quotes ?? [];
+
+    const map = new Map<
+      string,
+      (typeof raw)[number] & { simulations: string[] }
+    >();
+
+    for (const q of raw) {
+      if (!q.lot_number) continue;
+      const key = String(q.lot_number);
+      const existing = map.get(key);
+
+      if (!existing) {
+        map.set(key, { ...q, simulations: [q.id] });
+      } else {
+        existing.simulations.push(q.id);
+        if (new Date(q.created_at) > new Date(existing.created_at)) {
+          map.set(key, { ...q, simulations: existing.simulations });
+        }
+      }
+    }
+
+    return Array.from(map.values());
+  })();
 
   if (!quotes.length)
     return (
@@ -75,7 +102,7 @@ export default function UnitComparator() {
           <div className="comp-header-cell">Recámaras</div>
           <div className="comp-header-cell">Vista al cerro</div>
           <div className="comp-header-cell">Precio lista</div>
-          <div className="comp-header-cell">Mensualidad 72M</div>
+          <div className="comp-header-cell">Mensualidad</div>
           <div className="comp-header-cell">Disponibilidad</div>
           <div className="comp-header-cell">Simulaciones cliente</div>
         </div>
@@ -131,7 +158,26 @@ export default function UnitComparator() {
               </div>
 
               {/* Simulaciones — del quote */}
-              <div className="comp-cell comp-value-strong">{q.id}</div>
+              <div className="comp-cell flex flex-wrap gap-1.5">
+                {q.simulations.map((simId, index) => (
+                  <button
+                    key={simId}
+                    onClick={() => {
+                      const sim = selectedLead?.quotes?.find(
+                        (r) => r.id === simId,
+                      );
+                      if (sim) selectQuote(sim);
+                    }}
+                    className={`rounded px-2 py-1 font-mono text-[0.62rem] tracking-widest transition-colors hover:cursor-pointer ${
+                      selectedQuote?.id === simId
+                        ? "bg-yellow-500/20 text-yellow-400 ring-1 ring-yellow-500/40"
+                        : "bg-white/5 text-stone-400 hover:bg-white/10 hover:text-stone-200"
+                    }`}
+                  >
+                    SIMULACIÓN {index + 1}
+                  </button>
+                ))}
+              </div>
             </div>
           );
         })}

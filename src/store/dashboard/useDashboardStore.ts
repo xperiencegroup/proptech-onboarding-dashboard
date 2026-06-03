@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { type Lead, type LeadDetail } from "../../types/lead";
+import { type Lead, type LeadDetail, type LeadQuote } from "../../types/lead";
 import { API_ROUTES } from "../../config/api";
 
 type DashboardState = {
@@ -16,6 +16,10 @@ type DashboardState = {
   selectedLeadId: string;
   selectLeadId: (id: string) => Promise<void>; // hace el fetch del detalle
   clearLead: () => void;
+
+  // Simulación seleccionada
+  selectedQuote: LeadQuote | null;
+  selectQuote: (quote: LeadQuote | null) => void;
 
   // Derivados — calculados del store
   enSeguimiento: number;
@@ -103,7 +107,12 @@ export const useDashboardStore = create<DashboardState>()(
 
     // Id
     selectedLeadId: "",
-    selectLeadId: (id) => set({ selectedLeadId: id }),
-    clearLead: () => set({ selectedLeadId: "", selectedLead: null }),
+    selectLeadId: (id) => set({ selectedLeadId: id, selectedQuote: null }),
+    clearLead: () =>
+      set({ selectedLeadId: "", selectedLead: null, selectedQuote: null }),
+
+    // Quotes
+    selectedQuote: null,
+    selectQuote: (quote) => set({ selectedQuote: quote }),
   })),
 );
