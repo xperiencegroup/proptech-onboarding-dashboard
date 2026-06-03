@@ -45,12 +45,12 @@ export default function LeadRow({ lead, selected, onSelect }: LeadRowProps) {
       </div>
 
       <div className="lead-score">
-        <div className={`score-num ${lead.heatStatus}`}>{lead.score}</div>
+        <div className={`score-num ${lead.heatStatus ?? "warm"}`}>100</div>
         <div className="score-bar">
           <div
             className="score-bar-fill"
             style={{
-              width: `${lead.score}%`,
+              width: `${100}%`,
               ...(lead.heatStatus === "won"
                 ? { background: "var(--status-won)" }
                 : {}),
