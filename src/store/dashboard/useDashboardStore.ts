@@ -175,6 +175,9 @@ export const useDashboardStore = create<DashboardState>()(
       // Polling fallback (Vercel) — cada 10 segundos
       const interval = setInterval(() => {
         get().fetchLeads();
+
+        const { selectedLeadId } = get();
+        if (selectedLeadId) get().selectLead(selectedLeadId);
       }, 10000);
 
       // Guardar el interval para limpiarlo después
