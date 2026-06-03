@@ -31,7 +31,6 @@ type DashboardState = {
   // WebSockets
   initSocket: () => void;
   destroySocket: () => void;
-  _pollingInterval: ReturnType<typeof setInterval> | null;
 };
 
 export const useDashboardStore = create<DashboardState>()(
@@ -132,7 +131,6 @@ export const useDashboardStore = create<DashboardState>()(
     selectQuote: (quote) => set({ selectedQuote: quote }),
 
     // Web sockets
-    _pollingInterval: null,
 
     initSocket: () => {
       socket.on("leads:updated", () => {
@@ -171,17 +169,6 @@ export const useDashboardStore = create<DashboardState>()(
           },
         });
       });
-
-      // Polling fallback (Vercel) — cada 10 segundos
-      const interval = setInterval(() => {
-        get().fetchLeads();
-
-        const { selectedLeadId } = get();
-        if (selectedLeadId) get().selectLead(selectedLeadId);
-      }, 10000);
-
-      // Guardar el interval para limpiarlo después
-      set({ _pollingInterval: interval });
     },
 
     destroySocket: () => {
@@ -189,9 +176,6 @@ export const useDashboardStore = create<DashboardState>()(
       socket.off("lead:navigation");
       socket.off("lead:chat");
       socket.off("lead:quote");
-
-      const { _pollingInterval } = get();
-      if (_pollingInterval) clearInterval(_pollingInterval);
     },
   })),
 );
