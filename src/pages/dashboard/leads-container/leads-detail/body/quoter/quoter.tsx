@@ -1,8 +1,27 @@
 import { useDashboardStore } from "../../../../../../store/dashboard/useDashboardStore";
+import type { LeadQuote } from "../../../../../../types/lead";
 import "./quoter.css";
 
+const EXAMPLE_QUOTE: LeadQuote = {
+  id: "example",
+  lot_number: 146,
+  modelo: "ALUNA 90",
+  area: 89.4,
+  precio_lista: 667000,
+  modalidad: "lip",
+  tasa: 0.0495,
+  enganche_pct: 15,
+  enganche_monto: 100050,
+  financiado: 566950,
+  plazo_anios: 20,
+  cuota_mensual: 3744,
+  generado_en: new Date().toISOString(),
+  created_at: new Date().toISOString(),
+};
+
 export default function Quoter() {
-  const selectedQuote = useDashboardStore((state) => state.selectedQuote);
+  const selectedQuote =
+    useDashboardStore((state) => state.selectedQuote) ?? EXAMPLE_QUOTE;
 
   if (!selectedQuote) return null;
 
@@ -99,7 +118,10 @@ export default function Quoter() {
       <div className="panel-header">
         <div className="panel-title">
           <span className="panel-title-dot" />
-          Cotizador · A {selectedQuote.lot_number} · {selectedQuote.modelo}
+          {selectedQuote.id === "example"
+            ? "Cotización de ejemplo"
+            : "Cotizador"}{" "}
+          · A {selectedQuote.lot_number} · {selectedQuote.modelo}
         </div>
         <div className="panel-action">Vía Adara API · Ajustar →</div>
       </div>

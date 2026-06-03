@@ -1,6 +1,7 @@
 import { useDashboardStore } from "../../../../../../store/dashboard/useDashboardStore";
 import "./unit-comparator.css";
 import aluna_lotes from "../../../../../../data/aluna_lotes_etapas.json";
+import { useEffect } from "react";
 
 function formatStatus(status: string) {
   if (status === "for_sale") return { label: "Disponible", cls: "comp-check" };
@@ -44,6 +45,14 @@ export default function UnitComparator() {
 
     return Array.from(map.values());
   })();
+
+  // Seleccionar primer simulación por default
+  useEffect(() => {
+    if (!quotes.length) return;
+    const firstSimId = quotes[0].simulations[0];
+    const firstQuote = selectedLead?.quotes?.find((q) => q.id === firstSimId);
+    if (firstQuote) selectQuote(firstQuote);
+  }, [selectedLead]);
 
   if (!quotes.length)
     return (
