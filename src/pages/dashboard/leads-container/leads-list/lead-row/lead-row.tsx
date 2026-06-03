@@ -15,7 +15,9 @@ export default function LeadRow({ lead, selected, onSelect }: LeadRowProps) {
       data-leadkey={lead.initials + lead.folio}
       onClick={() => onSelect(lead.id)}
     >
-      <div className={`lead-avatar ${lead.heatStatus}`}>
+      <div
+        className={`lead-avatar ${lead.heatStatus ? `${lead.heatStatus}` : "warm"}`}
+      >
         {lead.initials}
         {lead.heatStatus === "hot" && <div className="lead-avatar-dot" />}
       </div>

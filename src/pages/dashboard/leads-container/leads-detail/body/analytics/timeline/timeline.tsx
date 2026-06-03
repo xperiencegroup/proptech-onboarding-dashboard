@@ -72,6 +72,8 @@ export default function Timeline({
     navigation[navigation.length - 1].created_at,
   );
 
+  console.log(navigation);
+
   return (
     <>
       <div

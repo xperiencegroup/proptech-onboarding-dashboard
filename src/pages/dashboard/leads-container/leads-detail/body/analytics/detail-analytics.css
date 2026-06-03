@@ -1,5 +1,5 @@
 .panel-analytics {
-  grid-column: 1;
+  grid-column: 1 / -1;
   background: linear-gradient(
     160deg,
     var(--bg-panel) 0%,

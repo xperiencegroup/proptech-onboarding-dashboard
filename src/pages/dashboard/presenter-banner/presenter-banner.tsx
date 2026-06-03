@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDashboardStore } from "../../../store/dashboard/useDashboardStore";
 import "./presenter-banner.css";
 import { useSessionStore } from "../../../store/session/useSessionStore";
@@ -12,6 +12,13 @@ export default function PresenterBanner() {
   const conversion = useDashboardStore((state) => state.conversion);
   const name = useSessionStore((state) => state.name);
 
+  const [now, setNow] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     fetchLeads();
   }, []);
@@ -21,9 +28,21 @@ export default function PresenterBanner() {
       {/* <!-- Greeting  --> */}
       <div className="greeting-bar">
         <div>
-          <div className="greeting-eyebrow" id="greetingEyebrow">
-            Cargando fecha…
+          <div className="greeting-eyebrow">
+            {now.toLocaleDateString("es-MX", {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+            {" · "}
+            {now.toLocaleTimeString("es-MX", {
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+            })}
           </div>
+
           <div className="greeting-title" id="greetingTitle">
             Buenas tardes, <span className="name">{name}</span>.
           </div>

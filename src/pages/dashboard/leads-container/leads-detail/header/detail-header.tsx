@@ -219,7 +219,7 @@ export default function DetailHeader() {
 
         <div className="score-badge-big">
           <div className="label">Score · {selectedLead.stage}</div>
-          <div className="num">{selectedLead.score}</div>
+          <div className="num">100</div>
           <div className="desc">Alta intención</div>
         </div>
       </div>
@@ -240,27 +240,13 @@ export default function DetailHeader() {
             Chat XP en vivo
             <span className="takeover-badge">3</span>
           </button>
-          <button
-            className="btn-whatsapp"
-            title="Enviar WhatsApp"
-            // onClick="
-            //   alunaToast(
-            //     'Mensaje WhatsApp enviado a Patricio Treviño',
-            //   )
-            // "
-          >
+          <button className="btn-whatsapp" title="Enviar WhatsApp">
             <svg fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.5 14.4l-2.2-1.1c-.3-.1-.6-.1-.8.2l-.7.9c-.2.2-.4.3-.7.2-.9-.3-1.9-1-2.6-1.7-.7-.7-1.4-1.7-1.7-2.6-.1-.3 0-.5.2-.7l.9-.7c.3-.2.4-.5.2-.8L9 4.9c-.2-.4-.6-.5-1-.4-1 .3-1.8 1.1-2 2.1-.2 1.6.5 4 3 6.5s4.9 3.2 6.5 3c1-.2 1.8-1 2.1-2 .1-.4-.1-.8-.5-1zM12 2C6.5 2 2 6.5 2 12c0 1.7.4 3.3 1.2 4.7L2 22l5.4-1.2c1.4.8 3 1.2 4.6 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z" />
             </svg>
             WhatsApp
           </button>
-          <button
-            className="btn-email"
-            title="Enviar correo"
-            // onClick="
-            //   alunaToast('Correo enviado a p.trevino@gmail.com')
-            // "
-          >
+          <button className="btn-email" title="Enviar correo">
             <svg
               fill="none"
               stroke="currentColor"
@@ -289,10 +275,7 @@ export default function DetailHeader() {
         </div>
         <div className="action-group">
           <span className="action-group-label">Reporte</span>
-          <button
-            className="btn-analysis"
-            // onClick="openAnalysisModal()"
-          >
+          <button className="btn-analysis">
             <svg
               fill="none"
               stroke="currentColor"
