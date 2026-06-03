@@ -34,7 +34,7 @@ const getIdentityFields = (lead: LeadDetail) => [
   },
   {
     label: "FUENTE",
-    value: lead.detailed_source,
+    value: "Proptech",
     source: lead.source,
     icon: (
       <>
