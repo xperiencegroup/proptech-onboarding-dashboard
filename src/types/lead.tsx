@@ -56,6 +56,7 @@ export interface LeadNavigation {
   view: string;
   duration_s: number | null;
   created_at: string;
+  lote?: string;
 }
 
 export interface LeadQuote {

@@ -11,6 +11,7 @@ export default function XperienceAnalytics() {
   if (!selectedLead) return null;
 
   const navigation = selectedLead.navigation ?? [];
+  const quotes = selectedLead.quotes ?? [];
 
   return (
     <div className="panel panel-analytics">
@@ -23,7 +24,7 @@ export default function XperienceAnalytics() {
         <div className="panel-action">Sesión completa →</div>
       </div>
 
-      <Metrics navigation={navigation} />
+      <Metrics navigation={navigation} quotes={quotes} />
 
       {/* Path real desde BD */}
       <div className="path-section-title">

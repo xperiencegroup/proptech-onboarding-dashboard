@@ -1,10 +1,19 @@
 import type { LeadNavigation } from "../../../../../../../types/lead";
 import SecsBetween from "../../../../../../../utils/helpers/dashboard/secs-between";
 
+// Icóno dependiendo el tipo de acción que se realizó
 function getIcon(view: string) {
   if (view === "aluna:chat:open")
     return (
       <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
+    );
+  if (view === "aluna:chat:close")
+    return (
+      <>
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" />
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </>
     );
   if (view.includes("guided-nav:on"))
     return <path d="M3 12h18M3 6l9-3 9 3M3 18l9 3 9-3" />;
@@ -22,25 +31,49 @@ function getIcon(view: string) {
         <polyline points="12 6 12 12 16 14" />
       </>
     );
-  return (
-    <>
-      <rect x="3" y="4" width="18" height="16" rx="1" />
-      <path d="M3 10h18" />
-    </>
-  );
+  // rutas "/"
+  return <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />;
 }
 
-function formatLabel(view: string) {
+function getSubMessage(view: string): string | null {
+  if (view.startsWith("aluna:chat:quick-suggestion:")) {
+    const parts = view.split(":");
+    // formato: aluna:chat:quick-suggestion:{mensaje}
+    const suggestion = parts.slice(3, -1).join(":");
+    return suggestion;
+  }
+  return null;
+}
+
+const ROUTE_LABELS: Record<string, string> = {
+  "/ubicacion": "Visitó la sección de ubicación",
+  "/disponibilidades": "Exploró el mapa de disponibilidades",
+  "/masterplan": "Vio el masterplan",
+  "/amenidades": "Revisó las amenidades",
+  "/inicio": "Visitó la página de inicio",
+  "/planodeconjunto": "Exploró el plano de conjunto",
+};
+
+function formatLabel(view: string, lote?: string | null) {
   if (view === "aluna:chat:open") return "Abrió el chat";
+  if (view === "aluna:chat:close") return "Cerró el chat";
   if (view === "aluna:chat:guided-nav:on") return "Navegación guiada activada";
   if (view === "aluna:chat:guided-nav:off")
     return "Navegación guiada desactivada";
+  if (view.startsWith("aluna:chat:quick-suggestion:")) {
+    return `Interactuó con el asistente`;
+  }
   if (view.startsWith("aluna:"))
     return view.replace("aluna:", "").replace(/:/g, " · ");
-  return view;
+
+  // rutas "/"
+  const base = ROUTE_LABELS[view] ?? `Visitó ${view}`;
+  if (lote) return `${base} · Exploró A ${lote}`;
+  return base;
 }
 
-function getTag(view: string) {
+function getTag(view: string, lote?: string | null) {
+  if (lote) return { label: `Lote ${lote}`, type: "chat" };
   if (view.startsWith("aluna:")) return { label: "Chat XP", type: "chat" };
   return null;
 }
@@ -72,8 +105,6 @@ export default function Timeline({
     navigation[navigation.length - 1].created_at,
   );
 
-  console.log(navigation);
-
   return (
     <>
       <div
@@ -91,11 +122,12 @@ export default function Timeline({
       </div>
       <div className="path">
         {navigation.map((ev, i) => {
-          const tag = getTag(ev.view);
+          const tag = getTag(ev.view, ev.lote);
+          const subMessage = getSubMessage(ev.view);
           const timeSpent =
             i < navigation.length - 1
               ? SecsBetween(ev.created_at, navigation[i + 1].created_at)
-              : null; // el último no tiene "siguiente", tiempo desconocido
+              : null;
           const isLast = i === navigation.length - 1;
 
           return (
@@ -110,13 +142,26 @@ export default function Timeline({
                   >
                     {getIcon(ev.view)}
                   </svg>
-                  {formatLabel(ev.view)}
+                  {formatLabel(ev.view, ev.lote)}
                 </div>
                 <div className="path-step-time">
                   {formatTime(ev.created_at)}
-                  {timeSpent !== null ? ` · ${timeSpent}s` : " · activo"}{" "}
+                  {timeSpent !== null ? ` · ${timeSpent}s` : " · activo"}
                 </div>
               </div>
+
+              {/* Submensaje de quick suggestion */}
+              {subMessage && (
+                <div
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                  }}
+                  className="my-[0.5vw] px-[1vw] py-[1vh] border-l-2 border-yellow text-[.75rem] italic text-white/90 bg-deep"
+                >
+                  "{subMessage}"
+                </div>
+              )}
+
               {tag && (
                 <span className={`path-step-tag ${tag.type}`}>{tag.label}</span>
               )}

@@ -1,4 +1,7 @@
-import type { LeadNavigation } from "../../../../../../../types/lead";
+import type {
+  LeadNavigation,
+  LeadQuote,
+} from "../../../../../../../types/lead";
 import SecsBetween from "../../../../../../../utils/helpers/dashboard/secs-between";
 
 function calcMetrics(navigation: LeadNavigation[]) {
@@ -27,23 +30,19 @@ function calcMetrics(navigation: LeadNavigation[]) {
   const totalMin = Math.round(totalSecs / 60);
 
   // ── Unidades vistas ───────────────────────────────────────
-  // Eventos cuyo view contiene "unidad" (ajusta al string real de tu BD)
   const unidades = new Set(
-    navigation.filter((ev) => ev.view.includes("unidad")).map((ev) => ev.view), // si cada view tiene el ID de unidad
+    navigation.filter((ev) => ev.lote).map((ev) => ev.lote),
   ).size;
 
-  // ── Simulaciones ─────────────────────────────────────────
-  const simulaciones = navigation.filter((ev) =>
-    ev.view.includes("simulador"),
-  ).length;
-
-  return { sessions, totalMin, unidades, simulaciones };
+  return { sessions, totalMin, unidades };
 }
 
 export default function Metrics({
   navigation,
+  quotes,
 }: {
   navigation: LeadNavigation[];
+  quotes: LeadQuote[];
 }) {
   const m = calcMetrics(navigation);
 
@@ -69,7 +68,7 @@ export default function Metrics({
         },
         {
           label: "Simulaciones",
-          value: String(m.simulaciones),
+          value: quotes?.length ?? "0",
           trend: "Ver cotizador",
           clickable: true,
         },
@@ -83,6 +82,18 @@ export default function Metrics({
           <div
             key={label}
             className={`activity-cell${clickable ? " clickable" : ""}`}
+            onClick={() => {
+              if (clickable) {
+                if (label === "Unidades vistas")
+                  document.getElementById("panelComparator")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+                if (label === "Simulaciones")
+                  document.getElementById("panelCotizador")?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+              }
+            }}
           >
             <div className="activity-label">{label}</div>
             <div className="activity-value">{value}</div>

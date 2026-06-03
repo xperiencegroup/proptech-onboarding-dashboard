@@ -13,7 +13,10 @@ export default function LeadRow({ lead, selected, onSelect }: LeadRowProps) {
       className={`lead-row${selected ? " selected" : ""}`}
       data-stage={lead.stage}
       data-leadkey={lead.initials + lead.folio}
-      onClick={() => onSelect(lead.id)}
+      onClick={() => {
+        if (selected) return;
+        onSelect(lead.id);
+      }}
     >
       <div
         className={`lead-avatar ${lead.heatStatus ? `${lead.heatStatus}` : "warm"}`}
