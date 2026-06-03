@@ -1,44 +1,105 @@
+import { useDashboardStore } from "../../../../../../store/dashboard/useDashboardStore";
 import "./quoter.css";
 
-const PARAMS = [
-  { label: "Precio de lista", value: "Q 1.21M GTQ" },
-  { label: "Descuento aplicado", value: "0.00%" },
-  { label: "Apartado", value: "Q 5k" },
-  { label: "Enganche · 15%", value: "Q 182k" },
-  { label: "Plazo financiamiento", value: "72 meses" },
-];
+export default function Quoter() {
+  const selectedQuote = useDashboardStore((state) => state.selectedQuote);
 
-const SUMMARY = [
-  { label: "Precio de lista", amount: "Q 1.21M" },
-  { label: "Apartado (firma)", amount: "Q 5k" },
-  { label: "Enganche", amount: "Q 182k" },
-  { label: "Saldo a financiar", amount: "Q 1.02M" },
-  { label: "Mensualidades", amount: "72 × Q 15k" },
-  { label: "Mensualidad final", amount: "Q 15k GTQ", total: true },
-];
+  if (!selectedQuote) return null;
 
-const AMORT_ROWS = [
-  { num: 1, fecha: "15-MAY-26", pago: "Q 15k", saldo: "Q 1.02M" },
-  { num: 2, fecha: "15-JUN-26", pago: "Q 15k", saldo: "Q 1.01M" },
-  { num: 3, fecha: "15-JUL-26", pago: "Q 15k", saldo: "Q 1M" },
-  { num: 4, fecha: "15-AGO-26", pago: "Q 15k", saldo: "Q 996k" },
-  { num: 5, fecha: "15-SEP-26", pago: "Q 15k", saldo: "Q 989k" },
-  { num: 6, fecha: "15-OCT-26", pago: "Q 15k", saldo: "Q 982k" },
-  { num: 7, fecha: "15-NOV-26", pago: "Q 15k", saldo: "Q 974k" },
-  { num: 8, fecha: "15-DIC-26", pago: "Q 15k", saldo: "Q 967k" },
-  { num: 9, fecha: "15-ENE-27", pago: "Q 15k", saldo: "Q 959k" },
-  { num: 10, fecha: "15-FEB-27", pago: "Q 15k", saldo: "Q 952k" },
-  { num: 11, fecha: "15-MAR-27", pago: "Q 15k", saldo: "Q 944k" },
-  { num: 12, fecha: "15-ABR-27", pago: "Q 15k", saldo: "Q 936k" },
-];
+  const fmt = (n: number | null) =>
+    n !== null
+      ? `Q ${n.toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+      : "—";
 
-export default function Cotizador() {
+  const PARAMS = [
+    { label: "Precio de lista", value: fmt(selectedQuote.precio_lista) },
+    {
+      label: "Modalidad",
+      value: selectedQuote.modalidad?.toUpperCase() ?? "—",
+    },
+    {
+      label: `Enganche · ${Number(selectedQuote.enganche_pct)?.toFixed(0) ?? "—"}%`,
+      value: fmt(selectedQuote.enganche_monto),
+    },
+    {
+      label: "Tasa anual",
+      value:
+        selectedQuote.tasa !== null
+          ? `${(selectedQuote.tasa * 100).toFixed(2)}%`
+          : "—",
+    },
+    {
+      label: "Plazo financiamiento",
+      value:
+        selectedQuote.plazo_anios !== null
+          ? `${selectedQuote.plazo_anios * 12} meses`
+          : "—",
+    },
+  ];
+
+  const SUMMARY = [
+    { label: "Precio de lista", amount: fmt(selectedQuote.precio_lista) },
+    {
+      label: `Enganche · ${Number(selectedQuote.enganche_pct)?.toFixed(0) ?? "—"}%`,
+      amount: fmt(selectedQuote.enganche_monto),
+    },
+    { label: "Saldo a financiar", amount: fmt(selectedQuote.financiado) },
+    {
+      label: "Mensualidades",
+      amount:
+        selectedQuote.plazo_anios !== null &&
+        selectedQuote.cuota_mensual !== null
+          ? `${selectedQuote.plazo_anios * 12} × ${fmt(selectedQuote.cuota_mensual)}`
+          : "—",
+    },
+    {
+      label: "Mensualidad",
+      amount: fmt(selectedQuote.cuota_mensual),
+      total: true,
+    },
+  ];
+
+  // Amortización
+  const r = selectedQuote.tasa !== null ? selectedQuote.tasa / 12 : 0;
+  const n =
+    selectedQuote.plazo_anios !== null ? selectedQuote.plazo_anios * 12 : 0;
+  const cuota = selectedQuote.cuota_mensual ?? 0;
+
+  const startDate = selectedQuote.generado_en
+    ? new Date(selectedQuote.generado_en)
+    : new Date();
+
+  const AMORT_ROWS = (() => {
+    let saldo = selectedQuote.financiado ?? 0;
+
+    return Array.from({ length: Math.min(n, n) }, (_, i) => {
+      const fecha = new Date(startDate);
+      fecha.setMonth(fecha.getMonth() + i + 1);
+      const interes = saldo * r;
+      const capital = cuota - interes;
+      saldo = Math.max(saldo - capital, 0);
+
+      return {
+        num: i + 1,
+        fecha: fecha
+          .toLocaleDateString("es-MX", {
+            day: "2-digit",
+            month: "short",
+            year: "2-digit",
+          })
+          .toUpperCase(),
+        pago: fmt(cuota),
+        saldo: fmt(saldo),
+      };
+    });
+  })();
+
   return (
     <div className="panel panel-cotizador" id="panelCotizador">
       <div className="panel-header">
         <div className="panel-title">
           <span className="panel-title-dot" />
-          Cotizador · A 146 · Aluna 100
+          Cotizador · A {selectedQuote.lot_number} · {selectedQuote.modelo}
         </div>
         <div className="panel-action">Vía Adara API · Ajustar →</div>
       </div>
@@ -50,7 +111,7 @@ export default function Cotizador() {
           {PARAMS.map(({ label, value }) => (
             <div key={label} className="cot-input-row">
               <label className="cot-label">{label}</label>
-              <input className="cot-input" defaultValue={value} />
+              <input className="cot-input" defaultValue={value} disabled />
             </div>
           ))}
         </div>
