@@ -132,42 +132,42 @@ export default function UnitComparator() {
               </div>
 
               {/* Nivel — del JSON */}
-              <div className="comp-cell">
+              <div className="flex-1 comp-cell">
                 {lot ? formatStage(lot.stage_id) : "—"}
               </div>
 
               {/* Superficie — del JSON (más preciso que el quote) */}
-              <div className="comp-cell comp-value-strong">
+              <div className="flex-1 comp-cell comp-value-strong">
                 {lot ? `${lot.area} m²` : `${q.area} m²`}
               </div>
 
               {/* Recámaras — no disponible */}
-              <div className="comp-cell comp-x">—</div>
+              <div className="flex-1 comp-cell comp-x">—</div>
 
               {/* Vista al cerro — no disponible */}
-              <div className="comp-cell comp-x">—</div>
+              <div className="flex-1 comp-cell comp-x">—</div>
 
               {/* Precio lista — del quote */}
-              <div className="comp-cell comp-value-yellow">
+              <div className="flex-1 comp-cell comp-value-yellow">
                 ${Number(q.precio_lista).toLocaleString("es-MX")}
               </div>
 
               {/* Mensualidad 72M — del quote (plazo real, no fijo) */}
-              <div className="comp-cell comp-value-yellow">
+              <div className="flex-1 comp-cell comp-value-yellow">
                 ${Number(q.cuota_mensual).toLocaleString("es-MX")} ·{" "}
                 {q.plazo_anios}a
               </div>
 
               {/* Disponibilidad — del JSON */}
               <div
-                className={`comp-cell${status.cls ? ` ${status.cls}` : ""}`}
+                className={`flex-1 comp-cell${status.cls ? ` ${status.cls}` : ""}`}
                 style={status.style}
               >
                 {status.label}
               </div>
 
               {/* Simulaciones — del quote */}
-              <div className="comp-cell flex flex-wrap gap-1.5">
+              <div className="flex-1 comp-cell flex flex-wrap gap-1.5">
                 {q.simulations.map((simId, index) => (
                   <button
                     key={simId}

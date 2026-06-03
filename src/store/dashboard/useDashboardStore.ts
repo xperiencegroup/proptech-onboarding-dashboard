@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { type Lead, type LeadDetail, type LeadQuote } from "../../types/lead";
 import { API_ROUTES } from "../../config/api";
+import { socket } from "../../lib/socket";
 
 type DashboardState = {
   // Lista — datos livianos
@@ -26,10 +27,14 @@ type DashboardState = {
   cerrados: number;
   pipeline: string;
   conversion: string;
+
+  // WebSockets
+  initSocket: () => void;
+  destroySocket: () => void;
 };
 
 export const useDashboardStore = create<DashboardState>()(
-  devtools((set) => ({
+  devtools((set, get) => ({
     // Datos de leads en forma de lista
     leads: [],
     enSeguimiento: 0,
@@ -107,12 +112,69 @@ export const useDashboardStore = create<DashboardState>()(
 
     // Id
     selectedLeadId: "",
-    selectLeadId: (id) => set({ selectedLeadId: id, selectedQuote: null }),
+    selectLeadId: (id) => {
+      const { selectedLeadId } = get();
+
+      // Salir del room anterior
+      if (selectedLeadId) socket.emit("leave:lead", selectedLeadId);
+
+      // Entrar al nuevo room
+      socket.emit("join:lead", id);
+
+      set({ selectedLeadId: id, selectedQuote: null });
+    },
     clearLead: () =>
       set({ selectedLeadId: "", selectedLead: null, selectedQuote: null }),
 
     // Quotes
     selectedQuote: null,
     selectQuote: (quote) => set({ selectedQuote: quote }),
+
+    // Web sockets
+    initSocket: () => {
+      socket.on("leads:updated", () => {
+        get().fetchLeads();
+      });
+
+      socket.on("lead:navigation", (data) => {
+        const { selectedLead } = get();
+        if (!selectedLead) return;
+        set({
+          selectedLead: {
+            ...selectedLead,
+            navigation: [...(selectedLead.navigation ?? []), data],
+          },
+        });
+      });
+
+      socket.on("lead:chat", (data) => {
+        const { selectedLead } = get();
+        if (!selectedLead) return;
+        set({
+          selectedLead: {
+            ...selectedLead,
+            chat: [...(selectedLead.chat ?? []), data],
+          },
+        });
+      });
+
+      socket.on("lead:quote", (data) => {
+        const { selectedLead } = get();
+        if (!selectedLead) return;
+        set({
+          selectedLead: {
+            ...selectedLead,
+            quotes: [...(selectedLead.quotes ?? []), data],
+          },
+        });
+      });
+    },
+
+    destroySocket: () => {
+      socket.off("leads:updated");
+      socket.off("lead:navigation");
+      socket.off("lead:chat");
+      socket.off("lead:quote");
+    },
   })),
 );
